@@ -5837,5 +5837,34 @@
       "illegal_code": 8
     },
     "compile_fails": 8
+  },
+  "synthesis_failure_classes": {
+    "compiler_accepts": {
+      "n": 15,
+      "classes": {
+        "multiple_drivers": 1,
+        "unsupported_construct": 1,
+        "timing_control": 3,
+        "simulation_statement": 5,
+        "async_reset": 1,
+        "mixed_assignments": 2,
+        "instance_mismatch": 2
+      },
+      "groups": {
+        "revold": 1,
+        "mutant": 8,
+        "trap": 6
+      }
+    },
+    "compiler_rejects": {
+      "n": 9,
+      "classes": {
+        "illegal_code": 9
+      },
+      "groups": {
+        "mutant": 1,
+        "noncompile": 8
+      }
+    }
   }
 }

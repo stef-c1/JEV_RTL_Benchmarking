@@ -65,6 +65,15 @@ def analyse():
         'n': len(no_reason), 'splits': dict(Counter(q['split'] for q in no_reason)),
         'classes': dict(Counter(c for q in no_reason for c in q['evidence']['classes'])),
         'compile_fails': sum(not q['correct_answer']['compiles'] for q in no_reason)}
+    # The kinds (DC message classes) and the sources (dataset groups) of the test synthesis failures,
+    # split by the compile check.
+    out['synthesis_failure_classes'] = {}
+    for compiles in [True, False]:
+        subset = [q for q in basic if not q['correct_answer']['synthesizes'] and q['correct_answer']['compiles'] == compiles]
+        assert all(len(q['evidence']['classes']) == 1 for q in subset)
+        out['synthesis_failure_classes']['compiler_accepts' if compiles else 'compiler_rejects'] = {
+            'n': len(subset), 'classes': dict(Counter(q['evidence']['classes'][0] for q in subset)),
+            'groups': dict(Counter(q['group'] for q in subset))}
     for group in sorted({q['group'] for q in allq}):
         ab = [q for q in allq if q['group'] == group and q['request'] == 'basic']
         tb = [q for q in basic if q['group'] == group]

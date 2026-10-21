@@ -2,146 +2,161 @@
   {
     "number": 1,
     "title": "What can KEV tell us about an RTL design?",
-    "section": "OVERVIEW"
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 2,
-    "title": "The test in one picture",
-    "section": "OVERVIEW"
+    "title": "The four parts of this deck",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 3,
-    "title": "The designs: 151 designs from five sources",
-    "section": "OVERVIEW"
+    "title": "The test in one picture",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 4,
-    "title": "The eight questions",
-    "section": "OVERVIEW"
+    "title": "The designs: 151 designs from five sources",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 5,
-    "title": "The five levels of area, power, and timing",
-    "section": "OVERVIEW"
+    "title": "The eight questions",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 6,
-    "title": "Experiment 2: three solved examples per question",
-    "section": "OVERVIEW"
+    "title": "The five levels of area, power, and timing",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 7,
-    "title": "How to read the result charts",
-    "section": "OVERVIEW"
+    "title": "Experiment 2: three solved examples per question",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 8,
-    "title": "The findings in one table",
-    "section": "OVERVIEW"
+    "title": "How to read the result charts",
+    "section": "PART 1  \u2022  THE TEST"
   },
   {
     "number": 9,
-    "title": "Yes/no checks: only the compile check is reliable",
-    "section": "RESULTS"
+    "title": "The four parts of this deck",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 10,
-    "title": "KEV misses most synthesis failures that compile",
-    "section": "RESULTS"
+    "title": "The findings in one table",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 11,
-    "title": "The ten failure reasons and how often each occurs",
-    "section": "RESULTS"
+    "title": "Yes/no checks: only the compile check is reliable",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 12,
-    "title": "KEV-27B names a known failure but does not detect it",
-    "section": "RESULTS"
+    "title": "KEV misses most synthesis failures that compile",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 13,
-    "title": "Area levels are usable; power levels are not",
-    "section": "RESULTS"
+    "title": "The ten failure reasons and how often each occurs",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 14,
-    "title": "Timing levels: no model beats a constant answer",
-    "section": "RESULTS"
+    "title": "KEV-27B names a known failure but does not detect it",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 15,
-    "title": "KEV-27B\u2019s chosen levels do not match the tool\u2019s levels",
-    "section": "RESULTS"
+    "title": "Area levels are usable; power levels are not",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 16,
-    "title": "Pairs: KEV-27B with examples picks the better design",
-    "section": "RESULTS"
+    "title": "Timing levels: no model beats a constant answer",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 17,
-    "title": "What the results support, and what to do next",
-    "section": "CONCLUSION"
+    "title": "KEV-27B\u2019s chosen levels do not match the tool\u2019s levels",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 18,
-    "title": "Full results and reproduction",
-    "section": "APPENDIX"
+    "title": "Relative questions: KEV-27B picks the better design",
+    "section": "PART 2  \u2022  RESULTS"
   },
   {
     "number": 19,
-    "title": "Every score, without and with three examples",
-    "section": "APPENDIX"
+    "title": "The four parts of this deck",
+    "section": "PART 3  \u2022  CONCLUSIONS"
   },
   {
     "number": 20,
-    "title": "Yes/no checks: correct answers per tool outcome",
-    "section": "APPENDIX"
+    "title": "Relative questions work; absolute questions do not",
+    "section": "PART 3  \u2022  CONCLUSIONS"
   },
   {
     "number": 21,
-    "title": "Yes probability of every design, no examples",
-    "section": "APPENDIX"
+    "title": "The four parts of this deck",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 22,
-    "title": "Yes probability of every design, three examples",
-    "section": "APPENDIX"
+    "title": "Every score, without and with three examples",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 23,
-    "title": "Failure reasons: correct answers per class",
-    "section": "APPENDIX"
+    "title": "Yes/no checks: correct answers per tool outcome",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 24,
-    "title": "Ranking score and probability error, yes/no checks",
-    "section": "APPENDIX"
+    "title": "Yes probability of every design, no examples",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 25,
-    "title": "Within one level, and mean level error",
-    "section": "APPENDIX"
+    "title": "Yes probability of every design, three examples",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 26,
-    "title": "Pair questions: both orders, one order, neither",
-    "section": "APPENDIX"
+    "title": "Failure reasons: correct answers per class",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 27,
-    "title": "Design groups in the test split",
-    "section": "APPENDIX"
+    "title": "Ranking score and probability error, yes/no checks",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 28,
-    "title": "The Condor runs of the two experiments",
-    "section": "APPENDIX"
+    "title": "Within one level, and mean level error",
+    "section": "PART 4  \u2022  APPENDIX"
   },
   {
     "number": 29,
+    "title": "Pair questions: both orders, one order, neither",
+    "section": "PART 4  \u2022  APPENDIX"
+  },
+  {
+    "number": 30,
+    "title": "Design groups in the test split",
+    "section": "PART 4  \u2022  APPENDIX"
+  },
+  {
+    "number": 31,
+    "title": "The Condor runs of the two experiments",
+    "section": "PART 4  \u2022  APPENDIX"
+  },
+  {
+    "number": 32,
     "title": "Files and checksums for reproduction",
-    "section": "APPENDIX"
+    "section": "PART 4  \u2022  APPENDIX"
   }
 ]

@@ -1,7 +1,8 @@
 # KEV findings deck
 
 `KEV_RTL_findings_20261015.pptx` and `.pdf`: the results of the four KEV sizes on dataset v1, without
-and with three solved examples. 29 slides: one slide per question, both experiments side by side.
+and with three solved examples. 32 slides in four parts (the test, results per question, conclusions,
+appendix): one slide per question, both experiments side by side; an overview slide marks the current part.
 
 ## Rebuild
 

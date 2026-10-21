@@ -4,7 +4,7 @@ Run from the project root:
   /users/micas/scuycken/no_backup/miniconda3/envs/mx_env/bin/python presentations/src/build_kev_findings.py
   Add --cached to reuse presentations/data/verified_metrics*.json instead of recomputing them.
 
-Structure (MV, 2026-10-21: the deck of 19 October was chaotic): one slide per question, and on each
+Structure (MV, 2026-10-21: the previous deck was chaotic): one slide per question, and on each
 result slide the two experiments side by side: no examples (15 October) and three solved examples
 (16 October). analyse_kev.py recomputes and verifies every number from the saved answers. The
 claims in the titles, the tables, and the takeaways are checked with assertions.
@@ -55,7 +55,7 @@ C = dict(navy='00407A', bg='F4F8FA', pale='E3EFF5', cyan='52BDEC', teal='1D8DB0'
          muted='4A5A66', grid='C8D3DA', gray='B5BFC3', white='FFFFFF', orange='E97132')
 E1, E2 = C['cyan'], C['navy']          # bar colors: no examples, three examples
 LEG1, LEG2 = 'no examples', 'three examples'
-FOOTER = 'KEV v1.0  •  Dataset v1  •  runs of 15 and 16 October 2026'
+FOOTER = 'KEV v1.0  •  Dataset v1'
 FONT = {False: '/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf',
         True: '/usr/share/fonts/liberation-sans/LiberationSans-Bold.ttf'}
 
@@ -70,6 +70,11 @@ prs.core_properties.keywords = 'RTL, KEV, synthesis, compilation, area, power, t
 TEXT_BOXES = []
 SLIDE_META = []
 WARN = []
+SEC = ['PART 1  •  THE TEST', 'PART 2  •  RESULTS', 'PART 3  •  CONCLUSIONS', 'PART 4  •  APPENDIX']
+PARTS = [('The test', 'What KEV is, the designs, the eight questions, the five levels, the three examples, how to read the charts'),
+         ('Results per question', 'All findings in one table; then compile and synthesis, the failure reason, the levels, and the pairs'),
+         ('Conclusions', 'Relative questions are reliable, absolute questions are not; what KEV can and cannot do'),
+         ('Appendix', 'Every score with the paired test, class counts, probabilities, level errors, pair orders, runs, files')]
 
 
 # ----------------------------------------------------------------------------------------------
@@ -87,6 +92,27 @@ def width_in(text, size, bold=False):
     """The width of the widest line of a text in inches (Liberation Sans has the Arial metrics)."""
     font = ImageFont.truetype(FONT[bold], int(size * 10))
     return max(font.getlength(line) for line in str(text).split('\n')) / 10 / 72
+
+
+def lines_needed(text, size, width, bold=False):
+    """The number of lines of a word-wrapped text in a box of the given width (greedy wrap)."""
+    lines = 0
+    for paragraph in str(text).split('\n'):
+        line = ''
+        lines += 1
+        for word in paragraph.split(' '):
+            candidate = (line + ' ' + word).strip()
+            if width_in(candidate, size, bold) <= width:
+                line = candidate
+            else:
+                lines += 1
+                line = word
+    return lines
+
+
+def fits(text, size, w, h, bold=False):
+    """True if the word-wrapped text fits the box: LibreOffice renders a line pitch of 1.09 x 1.149 x size."""
+    return lines_needed(text, size, w, bold) * size * 1.09 * 1.149 / 72 + .05 <= h
 
 
 def metric(key, field='accuracy', d=None):
@@ -191,8 +217,8 @@ def arrow_line(s, x1, y1, x2, y2, color=None, width=2):
 def notes(s, content, source=None):
     text = (content.strip() + '\n\nEvidence and reproducibility\n' +
             (source or 'data/questions/dataset_v1.jsonl; data/questions/dataset_v1_fewshot3.jsonl; results/kev/*/; harness/score.py; harness/compare.py') +
-            '\nAll results use the test split: 123 designs, 725 questions. No examples = experiment 1 (Condor jobs 4.0 to 7.0, 15 October 2026); '
-            'three examples = experiment 2 (Condor jobs 8.0 to 11.0, 16 October 2026).' +
+            '\nAll results use the test split: 123 designs, 725 questions. No examples = experiment 1 (Condor jobs 4.0 to 7.0); '
+            'three examples = experiment 2 (Condor jobs 8.0 to 11.0).' +
             '\nDataset SHA-256: ' + D['dataset_sha256'] + ' (dataset_v1.jsonl); ' + D2['dataset_sha256'] + ' (dataset_v1_fewshot3.jsonl).' +
             '\nVerified calculations: presentations/data/verified_metrics.json, verified_metrics_fewshot3.json, compare_fewshot3.csv (presentations/src/analyse_kev.py).' +
             '\nRebuild: ' + PYTHON + ' presentations/src/build_kev_findings.py' +
@@ -221,7 +247,7 @@ def bar_legend(s, x, y, size=12):
     txt(s, LEG2, x + 1.78, y, 1.4, .3, size=size, color=C['muted'])
 
 
-def slide(title, subtitle='', section='RESULTS', bg=None, legend=False):
+def slide(title, subtitle='', section=None, bg=None, legend=False):
     s = prs.slides.add_slide(prs.slide_layouts[-1])
     for sh in list(s.shapes):
         sh._element.getparent().remove(sh._element)
@@ -236,6 +262,7 @@ def slide(title, subtitle='', section='RESULTS', bg=None, legend=False):
         txt(s, subtitle, .89, 1.38, wsub, .48, size=16, color=C['muted'])
     if legend:
         bar_legend(s, 9.35, 1.42)
+    section = section or SEC[1]
     txt(s, FOOTER + '  |  ' + section, .89, 7.04, 10.65, .22, size=10.5, color=C['muted'])
     txt(s, str(len(prs.slides)), 11.85, 7.02, .58, .25, size=11, color=C['muted'], align=PP_ALIGN.RIGHT)
     SLIDE_META.append({'number': len(prs.slides), 'title': title, 'section': section})
@@ -251,22 +278,38 @@ def card(s, x, y, w, h, title, body, color=None, body_size=18, title_size=None):
     txt(s, body, x + .25, y + (.55 if compact else 1.05), w - .5, h - (.62 if compact else 1.2), size=body_size)
 
 
+def overview(current):
+    """The four parts of the deck; the current part is marked (MV: show where we are)."""
+    name = PARTS[current][0]
+    s = slide('The four parts of this deck', f'Part {current + 1} starts here: {name.lower()}.', SEC[current])
+    for i, (title, desc) in enumerate(PARTS):
+        y = 2.0 + i * 1.04
+        on = i == current
+        box(s, .89, y, 11.55, .92, fill=C['navy'] if on else C['pale'], radius=True)
+        txt(s, str(i + 1), 1.15, y + .17, .6, .6, size=30, bold=True, color=C['white'] if on else C['navy'])
+        txt(s, title, 1.9, y + .13, 4.0, .4, size=20, bold=True, color=C['white'] if on else C['navy'])
+        txt(s, desc, 1.9, y + .52, 10.4, .35, size=13, color='D7E8F2' if on else C['muted'])
+    notes(s, f'The deck has four parts; this copy of the overview marks part {current + 1}, {name}. ' + ' '.join(f'Part {i + 1}, {t}: {d}.' for i, (t, d) in enumerate(PARTS)) +
+          ' The footer of every slide names its part.')
+    return s
+
+
 def takeaway(s, text, y=6.25, size=15):
     box(s, .89, y, 11.55, .66, fill=C['pale'], radius=True)
     txt(s, text, 1.08, y + .06, 11.17, .54, size=size, bold=True, valign=MSO_ANCHOR.MIDDLE)
 
 
-def table(s, headers, rows, x, y, widths, h, size=16, head_size=14, row_header=False, head_h=.62, left_cols=(0,), nowrap=False):
+def table(s, headers, rows, x, y, widths, h, size=16, head_size=14, row_header=False, head_h=.62, left_cols=(0,), nowrap=False, row_h=None, wrap_ok=()):
     t = s.shapes.add_table(len(rows) + 1, len(headers), Inches(x), Inches(y),
                            Inches(sum(widths)), Inches(h)).table
     for j, width in enumerate(widths):
         t.columns[j].width = Inches(width)
     t.rows[0].height = Inches(head_h)
     for i in range(1, len(rows) + 1):
-        t.rows[i].height = Inches((h - head_h) / len(rows))
+        t.rows[i].height = Inches(row_h[i - 1] if row_h else (h - head_h) / len(rows))
     for i, row in enumerate([headers] + rows):
         for j, value in enumerate(row):
-            if nowrap and i > 0 and width_in(value, size, row_header and j == 0) > widths[j] - .22:
+            if nowrap and i > 0 and i not in wrap_ok and width_in(value, size, row_header and j == 0) > widths[j] - .22:
                 WARN.append(f'table cell too wide ({width_in(value, size, row_header and j == 0):.2f} in, column {widths[j]}): {value}')
             cell = t.cell(i, j)
             cell.margin_left = Inches(.12); cell.margin_right = Inches(.10)
@@ -288,7 +331,7 @@ def table(s, headers, rows, x, y, widths, h, size=16, head_size=14, row_header=F
     return t
 
 
-def gpanel(s, x, y, w, h, title, desc, vals, labels, reference=None, label_w=1.35, label_size=11):
+def gpanel(s, x, y, w, h, title, desc, vals, labels, reference=None, label_w=1.35, label_size=11, step=.68):
     """A white panel with two bars per model: no examples (light) and three examples (dark).
     vals = (values without examples, values with examples), fractions of 1; labels = the same two
     lists with the one-line label of each bar; reference = (fraction or list of fractions, legend)."""
@@ -296,7 +339,7 @@ def gpanel(s, x, y, w, h, title, desc, vals, labels, reference=None, label_w=1.3
     txt(s, title, x + .22, y + .16, w - .44, .4, size=18, bold=True)
     txt(s, desc, x + .22, y + .58, w - .44, .3, size=12.5, color=C['muted'])
     px, pw = x + .93, w - .93 - .3 - label_w
-    ry, step, bh, off = y + 1.0, .68, .22, .27
+    ry, bh, off = y + 1.0, round(step * .325, 3), round(step * .4, 3)
     top, bottom = ry - .06, ry + 3 * step + off + bh + .05
     for tick in [0, 50, 100]:
         xx = px + pw * tick / 100
@@ -446,6 +489,8 @@ C27_1, C27_2 = DM['kev-27b']['binary']['compiles'], D2M['kev-27b']['binary']['co
 H = {(k, 1): hits(k) for k in ['compiles', 'synthesizes', 'reason', 'area', 'power', 'reach', 'slack', 'smaller_area', 'lower_power', 'higher_reach']}
 H.update({(k, 2): hits(k, D2) for k, _ in H})
 QKEYS = ['compiles', 'synthesizes', 'reason', 'area', 'power', 'reach', 'slack', 'smaller_area', 'lower_power', 'higher_reach']
+REASON_NAMES = {'multiple_drivers': 'More than one driver', 'illegal_code': 'Illegal code', 'unsupported_construct': 'Unsupported construct', 'timing_control': 'Unsupported timing control',
+                'simulation_statement': 'Simulation-only statement', 'async_reset': 'Asynchronous reset', 'mixed_assignments': 'Mixed assignment styles', 'instance_mismatch': 'Module-instance mismatch'}
 CONST_08 = [k for k in QKEYS if one_answer('kev-0.8b', k, D2)]
 assert CONST_08 == ['synthesizes', 'area', 'power', 'slack', 'smaller_area', 'higher_reach']
 SUB = {(k, e): [d['models'][m]['synthesis_failure_subsets'][k] for m in M] for k in ['compiler_accepts', 'compiler_rejects'] for e, d in [(1, D), (2, D2)]}
@@ -473,28 +518,29 @@ assert H[('compiles', 1)][3] == 122 and H[('compiles', 2)][3] == 117
 # ----------------------------------------------------------------------------------------------
 # 1. Cover
 # ----------------------------------------------------------------------------------------------
-s = slide('', section='OVERVIEW', bg=C['navy'])
+s = slide('', section=SEC[0], bg=C['navy'])
 for sh in list(s.shapes):
     sh._element.getparent().remove(sh._element)
 TEXT_BOXES[:] = [b for b in TEXT_BOXES if b['slide'] != 1]
 box(s, 9.35, 1.45, 2.0, 2.0, line=C['teal'], radius=True)
-txt(s, 'JEV_RTL STUDY  •  KEV v1.0', .89, 1.95, 10, .35, size=16, color=C['cyan'], bold=True)
+txt(s, 'JEV_RTL STUDY', .89, 1.95, 10, .35, size=16, color=C['cyan'], bold=True)
 txt(s, 'What can KEV tell us\nabout an RTL design?', .89, 2.55, 9.1, 1.62, size=43, color=C['white'], bold=True)
 txt(s, 'Eight questions, four model sizes, 123 test designs,\nwithout and with three solved examples', .89, 4.55, 9.9, 1.0, size=23, color='BFDDEC')
-txt(s, 'Runs of 15 October 2026 (no examples) and 16 October 2026 (three examples)  •  Deck of 21 October 2026',
-    .89, 6.3, 11.4, .4, size=16, color='BFDDEC')
+txt(s, 'KEV v1.0: 0.8B, 4B, 9B, 27B  •  Dataset v1: 123 test designs, 725 questions', .89, 6.3, 11.4, .4, size=16, color='BFDDEC')
 SLIDE_META[0]['title'] = 'What can KEV tell us about an RTL design?'
 notes(s, 'This deck reports the completed KEV v1.0 runs of the four sizes KEV-0.8B, KEV-4B, KEV-9B, and KEV-27B (B = about a billion parameters) on dataset v1 of the JEV_RTL study. '
       'RTL means register-transfer level: source code that describes digital hardware. KEV is the open decision model of the Jev family: it returns typed answers only (a yes probability, one choice, or one level), no text. '
       'Dataset v1 has 151 designs; the test split has 123 designs and 725 questions, the development split 28 designs and 150 questions. '
-      'Experiment 1 (15 October 2026) sends the questions without examples. Experiment 2 (16 October 2026) sends the same 725 test questions, one per request, each with three solved development designs before the design. '
+      'Experiment 1 sends the questions without examples. Experiment 2 sends the same 725 test questions, one per request, each with three solved development designs before the design. '
       'Each result slide shows both experiments side by side: the light bar is the score without examples, the dark bar the score with three examples. '
       'All findings are specific to this dataset and tool flow. No Jev, base Qwen, or commercial LLM result is included.')
+
+overview(0)
 
 # ----------------------------------------------------------------------------------------------
 # 2. The test in one picture
 # ----------------------------------------------------------------------------------------------
-s = slide('The test in one picture', 'The tools and KEV get the same RTL design. The score counts the KEV answers that agree with the tools.', 'OVERVIEW')
+s = slide('The test in one picture', 'The tools and KEV get the same RTL design. The score counts the KEV answers that agree with the tools.', SEC[0])
 card(s, .89, 2.5, 2.7, 1.55, 'RTL design', 'Verilog source, top module, flow description. Power questions also get the testbench.', C['navy'], 13)
 card(s, 4.45, 1.98, 4.0, 1.3, 'Reference tools', 'QuestaSim vlog, Design Compiler, PrimeTime give the correct answer.', C['teal'], 13)
 card(s, 4.45, 3.27, 4.0, 1.3, 'KEV 0.8B, 4B, 9B, 27B', 'One typed answer per question, no text: a yes probability, a choice, or a level.', C['blue'], 13)
@@ -505,19 +551,19 @@ arrow_line(s, 8.45, 2.63, 9.3, 3.0)
 arrow_line(s, 8.45, 3.92, 9.3, 3.55)
 card(s, .89, 4.85, 3.7, 1.25, 'Four KEV sizes', 'KEV v1.0 with 0.8B, 4B, 9B, and 27B parameters. Each size answers every question.', body_size=13)
 card(s, 4.81, 4.85, 3.7, 1.25, '123 test designs', 'From 151 designs of five sources. The 28 development designs serve only as examples.', body_size=13)
-card(s, 8.74, 4.85, 3.7, 1.25, 'Two experiments', 'No examples (15 October). Three solved development examples before each question (16 October).', body_size=13)
+card(s, 8.74, 4.85, 3.7, 1.25, 'Two experiments', 'Experiment 1: no examples. Experiment 2: three solved development examples before each question.', body_size=13)
 takeaway(s, 'KEV never sees the tool logs. A tool run of each design gives the correct answer of every question about that design.')
 notes(s, 'Each design gets one QuestaSim vlog -sv run (compile check) and one run of MV’s flow at 500 MHz: Design Compiler U-2022.12-SP2 with compile_ultra (synthesis, cell area, worst slack) and PrimeTime (power with the power testbench), NanGate 15 nm, typical corner, 0.8 V, 25 C. '
       'These runs give the correct answers. The model receives the state fields rtl (all source files, top module last), top, flow (a fixed text with the tool, library, and constraints), and for the power questions tb_power. '
       'The correct_answer and evidence fields stay local for scoring; the Condor client sends only the state, the model name, and the questions to /v1/systemone. '
       'The questions of one design go in up to three requests (basic, reason, performance) so that no question shows the answer of another question; a pair request holds two designs. '
-      'The score of a question type is the share of its test questions with a correct answer (plain accuracy; MV, 2026-10-19). The reference is the score of one fixed answer for every design, computed from the test labels.',
+      'The score of a question type is the share of its test questions with a correct answer (plain accuracy). The reference is the score of one fixed answer for every design, computed from the test labels.',
       'notes/README.md; notes/DATASET.md; harness/build.py; condor/kev_client.py')
 
 # ----------------------------------------------------------------------------------------------
 # 3. The designs
 # ----------------------------------------------------------------------------------------------
-s = slide('The designs: 151 designs from five sources', '875 questions on 151 designs, both splits. An edit (mutant, trap, noncompile) counts for the source of its base design.', 'OVERVIEW')
+s = slide('The designs: 151 designs from five sources', '875 questions on 151 designs, both splits. An edit (mutant, trap, noncompile) counts for the source of its base design.', SEC[0])
 pic = s.shapes.add_picture(str(DEST / 'dataset_v1_sources.png'), Inches(.89), Inches(2.0), width=Inches(11.55))
 assert pic.height / 914400 < 4.2
 GROUPS = D['groups']
@@ -539,18 +585,32 @@ TT = D['test_truth_counts']
 PAIRS = {k: PC[1][M[0]][k]['pairs'] for k in ['smaller_area', 'lower_power', 'higher_reach']}
 assert PAIRS == {'smaller_area': 23, 'lower_power': 22, 'higher_reach': 6}
 assert D['test_request_counts'] == {'basic': 123, 'performance': 92, 'reason': 16, 'pair': 50}
-s = slide('The eight questions', 'Each question has a typed answer. The correct answer of every question comes from a tool run of the same design.', 'OVERVIEW')
-table(s, ['Question', 'KEV answers with', 'Correct answer from', 'Test questions'], [
-    ['Does it compile?', 'a yes probability', 'QuestaSim vlog -sv', f'{n_of("compiles")} designs: {TT["compiles"]["True"]} yes, {TT["compiles"]["False"]} no'],
-    ['Does it synthesize?', 'a yes probability', 'Design Compiler, compile_ultra', f'{n_of("synthesizes")} designs: {TT["synthesizes"]["True"]} yes, {TT["synthesizes"]["False"]} no'],
-    ['Why does synthesis fail?', 'one of ten reasons', 'the Design Compiler message', f'{n_of("reason")} designs; the prompt says that it fails'],
-    ['Area level', 'one of five levels', 'Design Compiler, cell area', f'{n_of("area")} designs'],
-    ['Power level', 'one of five levels', 'PrimeTime, with the testbench', f'{n_of("power")} designs'],
-    ['Reachable clock frequency level', 'one of five levels', 'Design Compiler, worst slack', f'{n_of("reach")} designs'],
-    ['Timing margin (slack) level', 'one of five levels', 'Design Compiler, worst slack', f'{n_of("slack")} designs'],
-    ['Which of two designs has the smaller area, the lower power, the higher frequency?', 'A or B', 'the same tool runs', f'{PAIRS["smaller_area"]}, {PAIRS["lower_power"]}, {PAIRS["higher_reach"]} pairs, each asked in both orders'],
-], .89, 1.98, [4.25, 1.9, 2.55, 2.85], 4.1, size=14, head_size=14, head_h=.45, left_cols=(0, 1, 2, 3))
-takeaway(s, 'Compile and synthesize are two questions in one request; the power question of a design is in the same request as its area and timing questions.')
+s = slide('The eight questions', 'A bracket marks the questions that go to the model together, in one request.', SEC[0])
+ROW_H = [.42] * 7 + [.8]
+table(s, ['Question', 'KEV answers with', 'Correct answer from', 'Test designs'], [
+    ['Does it compile?', 'yes probability', 'QuestaSim vlog -sv', f'123: {TT["compiles"]["True"]} yes, {TT["compiles"]["False"]} no'],
+    ['Does it synthesize?', 'yes probability', 'Design Compiler', f'123: {TT["synthesizes"]["True"]} yes, {TT["synthesizes"]["False"]} no'],
+    ['Why does synthesis fail?', 'one of ten reasons', 'Design Compiler message', f'{n_of("reason")}, told that it fails'],
+    ['Area level', 'one of five levels', 'Design Compiler area', f'{n_of("area")}'],
+    ['Power level', 'one of five levels', 'PrimeTime + testbench', f'{n_of("power")}'],
+    ['Reachable clock frequency level', 'one of five levels', 'Design Compiler slack', f'{n_of("reach")}'],
+    ['Timing margin (slack) level', 'one of five levels', 'Design Compiler slack', f'{n_of("slack")}'],
+    ['Which of two designs has the smaller area and/or the lower power and/or the higher frequency?', 'A or B', 'the same tool runs',
+     f'{PAIRS["smaller_area"]}, {PAIRS["lower_power"]}, and {PAIRS["higher_reach"]} pairs, each asked in both orders'],
+], .89, 1.98, [3.3, 1.85, 2.35, 2.6], .45 + sum(ROW_H), size=13, head_size=13, head_h=.45, left_cols=(0, 1, 2, 3), nowrap=True, row_h=ROW_H, wrap_ok={8})
+
+
+def bracket(s, first, last, label):
+    y0 = 1.98 + .45 + sum(ROW_H[:first - 1])
+    y1 = y0 + sum(ROW_H[first - 1:last])
+    sh = s.shapes.add_shape(MSO_SHAPE.RIGHT_BRACKET, Inches(11.12), Inches(y0 + .05), Inches(.16), Inches(y1 - y0 - .1))
+    sh.fill.background(); sh.line.color.rgb = rgb(C['teal']); sh.line.width = Pt(1.75)
+    txt(s, label, 11.38, (y0 + y1) / 2 - .13, 1.06, .3, size=11.5, color=C['muted'])
+
+
+for first, last in [(1, 2), (3, 3), (4, 7), (8, 8)]:
+    bracket(s, first, last, 'one request')
+takeaway(s, 'Questions in one bracket go to the model in one request. A pair request asks only the metrics in which the two designs differ by 10% or more.')
 notes(s, 'The eight question types of dataset v1 (notes/README.md). Does it compile: can QuestaSim vlog -sv accept the source? Does it synthesize: can Design Compiler build a complete gate-level netlist (no error, no unresolved module, no unmapped register)? '
       f'In the test split {TT["synthesizes"]["True"]} designs compile and synthesize, {TT["compiles"]["True"] - TT["synthesizes"]["True"]} compile but fail synthesis, and {TT["compiles"]["False"]} fail both. '
       'Why does synthesis fail: the prompt states that Design Compiler does not synthesize the module and offers ten reasons; only designs that fail synthesis with messages of one class get this question (16 test designs; 8 further test designs with an injected compile error get no reason question). '
@@ -562,7 +622,7 @@ notes(s, 'The eight question types of dataset v1 (notes/README.md). Does it comp
 # ----------------------------------------------------------------------------------------------
 # 5. The five levels
 # ----------------------------------------------------------------------------------------------
-s = slide('The five levels of area, power, and timing', 'The model chooses a level from the source code and the flow description, not an exact value.', 'OVERVIEW')
+s = slide('The five levels of area, power, and timing', 'The model chooses a level from the source code and the flow description, not an exact value.', SEC[0])
 table(s, ['Question', 'Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5'], [
     ['Area (gate equivalents)', 'below 100', '100 to 1,000', '1,000 to 10,000', '10,000 to 100,000', '100,000 or more'],
     ['Power (microwatts)', 'below 10', '10 to 100', '100 to 1,000', '1,000 to 10,000', '10,000 or more'],
@@ -602,7 +662,7 @@ def example_answers(key, word, tool):
 
 for pair_key, metric_key in [('smaller_area', 'area'), ('lower_power', 'power'), ('higher_reach', 'reach')]:
     assert [e['design'] for e in EX[pair_key]['examples']] == [e['design'] for e in EX[metric_key]['examples']]
-s = slide('Experiment 2: three solved examples per question', 'The same 725 test questions, one per request. The three examples are development designs with their tool result.', 'OVERVIEW')
+s = slide('Experiment 2: three solved examples per question', 'The same 725 test questions, one per request. The three examples are development designs with their tool result.', SEC[0])
 t = table(s, ['Question', 'The three examples before the design, with their tool result'], [
     ['Does it compile?', example_answers('compiles', 'compiles', 'vlog')],
     ['Does it synthesize?', example_answers('synthesizes', 'synthesizes', 'DC')],
@@ -615,7 +675,7 @@ t = table(s, ['Question', 'The three examples before the design, with their tool
 ], .89, 1.98, [2.75, 8.8], 4.05, size=15, head_size=15, row_header=True, head_h=.45, left_cols=(0, 1))
 takeaway(s, 'All questions of one kind get the same three examples. No example shares a base design with a test design.')
 V1_PER_REQUEST = '; '.join(f'{v} {k.split(":")[0]} requests with {k.split(":")[1]} questions' for k, v in sorted(D2['v1_questions_per_test_request'].items())).replace('with 1 questions', 'with 1 question')
-notes(s, 'Experiment 2 (MV, 2026-10-16) asks the 725 test questions of experiment 1 again. Each request holds one question; experiment 1 sent up to four questions in one request '
+notes(s, 'Experiment 2 asks the 725 test questions of experiment 1 again. Each request holds one question; experiment 1 sent up to four questions in one request '
       f'(test split: {V1_PER_REQUEST}). The state of each request is the state of experiment 1 with one new first field, examples; the analysis checks this for all 725 requests. '
       'Kev answers each question in its own row (the state followed by that question), and the Kev README reports that asking questions together or separately gives probabilities within 4e-6 in its fp32 tests. One question per request therefore should not change an answer by itself; the examples are the change. '
       'Rules of the example sets (harness/fewshot.py): compile and synth get the two shortest development designs that the tool rejects (with different errors or classes) and the working base design of the first one; reason gets the three shortest failed designs of three classes; '
@@ -627,17 +687,19 @@ notes(s, 'Experiment 2 (MV, 2026-10-16) asks the 725 test questions of experimen
 # ----------------------------------------------------------------------------------------------
 # 7. How to read the result charts
 # ----------------------------------------------------------------------------------------------
-s = slide('How to read the result charts', 'The same chart form on every result slide. The example: the synthesis question.', 'OVERVIEW', legend=True)
+s = slide('How to read the result charts', 'The same chart form on every result slide. The example: the synthesis question.', SEC[0], legend=True)
 yes_no_panel(s, .89, 2.0, 5.65, 4.1, 'synthesizes', 'Does it synthesize?')
 card(s, 6.79, 2.0, 5.65, 1.25, 'Two bars per model', 'Light bar: the score without examples (experiment 1).\nDark bar: the score with three solved examples (experiment 2).', body_size=13.5)
 card(s, 6.79, 3.42, 5.65, 1.25, 'The label beside a bar', 'The score, then the correct answers on the designs where the tool says “yes”, and on the designs where it says “no”.', body_size=13.5)
 card(s, 6.79, 4.84, 5.65, 1.26, 'The dashed lines', 'The score of a model that always answers “no”, and of one that always answers “yes”. A bar at a dashed line shows no skill.', body_size=13.5)
 takeaway(s, 'The score is the share of the test questions with a correct answer. Each question has the same weight.')
-notes(s, 'Every result slide uses this chart form. One panel is one question. Each model has two bars: the light bar is the score without examples (experiment 1, 15 October 2026) and the dark bar the score with three solved examples (experiment 2, 16 October 2026). '
-      'The score is plain accuracy: the share of the test questions of that type with a correct answer (MV, 2026-10-19). For a yes/no question the label gives the score and then the correct answers on the designs where the tool says yes and on the designs where it says no; the two counts add up to the correct answers of the bar. '
+notes(s, 'Every result slide uses this chart form. One panel is one question. Each model has two bars: the light bar is the score without examples (experiment 1) and the dark bar the score with three solved examples (experiment 2). '
+      'The score is plain accuracy: the share of the test questions of that type with a correct answer. For a yes/no question the label gives the score and then the correct answers on the designs where the tool says yes and on the designs where it says no; the two counts add up to the correct answers of the bar. '
       'A yes probability of 0.5 or more counts as yes, exactly as in the saved scorer. The dashed lines are the scores of a constant answer, computed from the test labels: for synthesis always yes scores 80.5% (99 of 123) and always no 19.5% (24 of 123). '
       'For a level question the label gives the score and the count of exact levels, and the dashed line is the most common level of the test labels. For a pair question the dashed line is 50%: both orders of each pair are asked, so a model that always answers A or always B is right exactly once per pair. '
       'A constant answer is a descriptive reference from the test labels, not a separate run and not a predictor chosen on the development split.')
+
+overview(1)
 
 # ----------------------------------------------------------------------------------------------
 # 8. The findings in one table
@@ -659,11 +721,11 @@ QLABEL = {'compiles': 'Does it compile?', 'synthesizes': 'Does it synthesize?', 
 CONST = {'compiles': f'“yes”: {pct(N_PASS["compiles"] / 123)}', 'synthesizes': f'“yes”: {pct(N_PASS["synthesizes"] / 123)}',
          'reason': f'one reason: {pct(REASON_MAX / 16)}', 'smaller_area': 'A: 50.0%', 'lower_power': 'A: 50.0%', 'higher_reach': 'A: 50.0%'}
 CONST.update({k: f'level {LEVEL_REF[k][0]}: {pct(LEVEL_REF[k][1] / LEVEL_REF[k][2])}' for k in LEVEL_REF})
-s = slide('The findings in one table', 'KEV-27B, the largest size. Each score: correct answers in % (count). The other sizes are on the result slides.', 'OVERVIEW')
+s = slide('The findings in one table', 'KEV-27B, the largest size. Each score: correct answers in % (count). The other sizes are on the result slides.', SEC[1])
 table(s, ['Question', LEG1.capitalize(), LEG2.capitalize(), 'Always the same answer', 'Finding'],
       [[QLABEL[k], score_cell(k, D), score_cell(k, D2), CONST[k], FINDING[k]] for k in QKEYS],
       .89, 1.98, [3.2, 1.85, 1.85, 1.85, 2.8], 4.15, size=12.5, head_size=13, head_h=.45, left_cols=(0, 4))
-takeaway(s, 'KEV-27B is reliable on the compile check, and good on the failure reason and on the better of two designs. It is weak on the synthesis check and on the power and timing levels.')
+takeaway(s, 'Relative questions (the better of two designs) are reliable. Absolute questions (the level of one design) are not, except the area level.')
 notes(s, 'The scores of KEV-27B, the largest size, on the ten question keys, without examples and with three examples, with the score of a constant answer. The constant answer is the most common test label of each question: '
       + '; '.join(f'{QLABEL[k]}: {CONST[k]}' for k in QKEYS) + '. '
       f'Compile: {H[("compiles", 1)][3]} of 123 without examples, {H[("compiles", 2)][3]} with examples; the examples add {C27_2["pass_wrong"]} wrong “no” answers on designs that compile. '
@@ -680,7 +742,7 @@ notes(s, 'The scores of KEV-27B, the largest size, on the ten question keys, wit
 GAIN = {(m, e): BIN[('synthesizes', e)][i]['pass_correct'] + BIN[('synthesizes', e)][i]['fail_correct'] - N_PASS['synthesizes'] for i, m in enumerate(M) for e in (1, 2)}
 assert max(GAIN.values()) == GAIN[('kev-27b', 2)] == 9 and YES2['synthesizes'][0] == 0 and YES2['compiles'][0] == 1
 assert C27_1['pass_correct'] == 114 and C27_1['fail_correct'] == 8 and C27_2['fail_correct'] == 9 and C27_2['pass_wrong'] == 6
-s = slide('Yes/no checks: only the compile check is reliable', 'Compile: KEV-27B gets 122 of 123 right. Synthesis: all scores near always “yes”.', 'RESULTS', legend=True)
+s = slide('Yes/no checks: only the compile check is reliable', 'Compile: KEV-27B gets 122 of 123 right. Synthesis: all scores near always “yes”.', SEC[1], legend=True)
 yes_no_panel(s, .89, 2.0, 5.65, 4.1, 'compiles', 'Does it compile?')
 yes_no_panel(s, 6.79, 2.0, 5.65, 4.1, 'synthesizes', 'Does it synthesize?')
 takeaway(s, f'Synthesis: the best score, KEV-27B with examples, is {GAIN[("kev-27b", 2)]} designs above always “yes”. KEV-0.8B with examples answers “no” to every design on synthesis.')
@@ -688,7 +750,7 @@ notes(s, 'One test set of 123 designs answers both questions. Each bar is the sh
       f'“Yes” answers of 123 without examples: compile {", ".join(map(str, YES1["compiles"]))}, synthesis {", ".join(map(str, YES1["synthesizes"]))}; with examples: compile {", ".join(map(str, YES2["compiles"]))}, synthesis {", ".join(map(str, YES2["synthesizes"]))} (0.8B, 4B, 9B, 27B). '
       f'Compile, KEV-27B: {C27_1["pass_correct"]} of 114 yes and {C27_1["fail_correct"]} of 9 no without examples; with examples {C27_2["pass_correct"]} of 114 and {C27_2["fail_correct"]} of 9, so the examples catch the last compile error but add {C27_2["pass_wrong"]} wrong no answers '
       f'({pval(CMP["kev-27b"]["keys"]["compiles"]["by_class"]["True"]["mcnemar_p"])} within the 114 designs that compile). '
-      f'KEV-0.8B answers no to compile for {123 - YES1["compiles"][0]} of 123 designs without examples and {123 - YES2["compiles"][0]} with examples: its 9 of 9 on the compile errors is a near-constant no, not a detection (MV asked about this on 2026-10-16). '
+      f'KEV-0.8B answers no to compile for {123 - YES1["compiles"][0]} of 123 designs without examples and {123 - YES2["compiles"][0]} with examples: its 9 of 9 on the compile errors is a near-constant no, not a detection. '
       f'Synthesis, KEV-27B: {S27_1["pass_correct"]} of 99 yes and {S27_1["fail_correct"]} of 24 no without examples; {S27_2["pass_correct"]} of 99 and {S27_2["fail_correct"]} of 24 with examples '
       f'(within the 24 failures: {CMP["kev-27b"]["keys"]["synthesizes"]["by_class"]["False"]["only_2"]} gained, {CMP["kev-27b"]["keys"]["synthesizes"]["by_class"]["False"]["only_1"]} lost, {pval(CMP["kev-27b"]["keys"]["synthesizes"]["by_class"]["False"]["mcnemar_p"])}; all 123: {pval(CMP["kev-27b"]["keys"]["synthesizes"]["mcnemar_p"])}). '
       f'Designs above the nearer constant answer, synthesis: without examples {", ".join(str(GAIN[(m, 1)]) for m in M)}; with examples {", ".join(str(GAIN[(m, 2)]) for m in M)} (0.8B with examples: 0 yes answers, so it sits on the always-no line). '
@@ -701,16 +763,32 @@ def sub_labels(k, e):
     return [f'{pct(x["correct"] / x["n"])} · {x["correct"]} of {x["n"]}' for x in SUB[(k, e)]]
 
 
+SFC = D['synthesis_failure_classes']
+assert SFC['compiler_accepts']['n'] == 15 and SFC['compiler_rejects']['n'] == 9
+assert SFC['compiler_accepts']['groups'] == {'mutant': 8, 'trap': 6, 'revold': 1} and SFC['compiler_rejects']['groups'] == {'noncompile': 8, 'mutant': 1}
+assert SFC['compiler_rejects']['classes'] == {'illegal_code': 9}
+KIND_WORDS = {'simulation_statement': ('simulation-only statement', 'simulation-only statements'), 'timing_control': ('unsupported timing control', 'unsupported timing controls'),
+              'mixed_assignments': ('mixed assignment style', 'mixed assignment styles'), 'instance_mismatch': ('module-instance mismatch', 'module-instance mismatches'),
+              'multiple_drivers': ('multiple driver', 'multiple drivers'), 'unsupported_construct': ('unsupported construct', 'unsupported constructs'),
+              'async_reset': ('asynchronous reset', 'asynchronous resets'), 'illegal_code': ('illegal code', 'illegal code')}
+KINDS_A = ', '.join(f'{n} {KIND_WORDS[c][1 if n > 1 else 0]}' for c, n in sorted(SFC['compiler_accepts']['classes'].items(), key=lambda kv: -kv[1]))
 A27 = (SUB[('compiler_accepts', 1)][3]['correct'], SUB[('compiler_accepts', 2)][3]['correct'])
 R27 = (SUB[('compiler_rejects', 1)][3]['correct'], SUB[('compiler_rejects', 2)][3]['correct'])
 assert A27 == (0, 4) and R27 == (4, 8) and SUB[('compiler_accepts', 2)][0]['correct'] == 15 and SUB[('compiler_rejects', 2)][0]['correct'] == 9
-s = slide('KEV misses most synthesis failures that compile', 'The 24 synthesis failures split by the compile check. Bars: failures answered “no”.', 'RESULTS', legend=True)
-gpanel(s, .89, 2.0, 5.65, 4.1, 'Failures whose source compiles', f'{SUB[("compiler_accepts", 1)][0]["n"]} designs: only synthesis rejects them',
+s = slide('KEV misses most synthesis failures that compile', 'The 24 synthesis failures split by the compile check. Bars: failures answered “no”.', SEC[1], legend=True)
+gpanel(s, .89, 2.0, 5.65, 3.4, 'Failures whose source compiles', f'{SUB[("compiler_accepts", 1)][0]["n"]} designs: only synthesis rejects them',
        ([x['correct'] / x['n'] for x in SUB[('compiler_accepts', 1)]], [x['correct'] / x['n'] for x in SUB[('compiler_accepts', 2)]]),
-       (sub_labels('compiler_accepts', 1), sub_labels('compiler_accepts', 2)))
-gpanel(s, 6.79, 2.0, 5.65, 4.1, 'Failures whose source does not compile', f'{SUB[("compiler_rejects", 1)][0]["n"]} designs: vlog rejects them too',
+       (sub_labels('compiler_accepts', 1), sub_labels('compiler_accepts', 2)), step=.55)
+gpanel(s, 6.79, 2.0, 5.65, 3.4, 'Failures whose source does not compile', f'{SUB[("compiler_rejects", 1)][0]["n"]} designs: vlog rejects them too',
        ([x['correct'] / x['n'] for x in SUB[('compiler_rejects', 1)]], [x['correct'] / x['n'] for x in SUB[('compiler_rejects', 2)]]),
-       (sub_labels('compiler_rejects', 1), sub_labels('compiler_rejects', 2)))
+       (sub_labels('compiler_rejects', 1), sub_labels('compiler_rejects', 2)), step=.55)
+KIND_TEXTS = [
+    f'Kinds: {KINDS_A}. Sources: {SFC["compiler_accepts"]["groups"]["mutant"]} mutants with one injected error, {SFC["compiler_accepts"]["groups"]["trap"]} rejected trap twins, {SFC["compiler_accepts"]["groups"]["revold"]} natural failure.',
+    f'Kinds: {SFC["compiler_rejects"]["classes"]["illegal_code"]} illegal code: a syntax error or an undeclared name, which vlog also rejects. Sources: {SFC["compiler_rejects"]["groups"]["noncompile"]} injected compile errors (a removed semicolon or an undeclared name), {SFC["compiler_rejects"]["groups"]["mutant"]} injected mutant.']
+for x, text in zip((.94, 6.84), KIND_TEXTS):
+    if not fits(text, 10.5, 5.5, .8):
+        WARN.append(f'kinds text needs {lines_needed(text, 10.5, 5.5)} lines and does not fit: {text}')
+    txt(s, text, x, 5.42, 5.55, .8, size=10.5, color=C['muted'])
 takeaway(s, f'KEV-27B catches {A27[1]} of the 15 failures that compile with examples, {A27[0]} without; and {R27[1]} of the 9 that do not compile ({R27[0]} without). KEV-0.8B’s full bars are a constant “no”.')
 notes(s, 'A derived subgroup analysis of the synthesis answers: the 24 failing test designs are split by the compile label of the same design. All bars are synthesis yes/no decisions at the 0.5 threshold; the right panel is not the separate compile answer. '
       f'Failures that compile (15), answered no: without examples {", ".join(str(x["correct"]) for x in SUB[("compiler_accepts", 1)])}; with examples {", ".join(str(x["correct"]) for x in SUB[("compiler_accepts", 2)])} (0.8B, 4B, 9B, 27B). '
@@ -718,7 +796,8 @@ notes(s, 'A derived subgroup analysis of the synthesis answers: the 24 failing t
       'KEV-0.8B with examples gives every one of the 123 designs a synthesis probability below 0.5, so its 15 of 15 and 9 of 9 are a constant no, not a detection. '
       f'Ranking (AUROC of the 99 successes against each subgroup), KEV-27B: {SUB[("compiler_accepts", 2)][3]["auroc_vs_successes"]:.3f} for the 15 and {SUB[("compiler_rejects", 2)][3]["auroc_vs_successes"]:.3f} for the 9 with examples '
       f'(without examples {SUB[("compiler_accepts", 1)][3]["auroc_vs_successes"]:.3f} and {SUB[("compiler_rejects", 1)][3]["auroc_vs_successes"]:.3f}). '
-      'The 15 failures that compile are 9 mutants with one injected synthesis error and 6 rejected trap twins; the 9 that do not compile are 8 noncompile edits and 1 natural failure. Small subgroups: no general claim.')
+      f'The 15 failures that compile: {KINDS_A}; 8 are mutants with one injected synthesis error, 6 are the rejected twins of the trap pairs (a wait statement, a force statement, or a $random value in a clocked block), and 1 is a natural multiple-driver failure of an LLM-written candidate. '
+      'The 9 that do not compile are all illegal code: 8 injected compile errors (one removed semicolon or one undeclared name) and 1 injected illegal-code mutant. Small subgroups: no general claim.')
 
 # ----------------------------------------------------------------------------------------------
 # 11. The ten failure reasons
@@ -727,7 +806,7 @@ RO, RC = D['reason_options'], D['reason_counts_by_split']
 NT, ND = sum(RC['test'].values()), sum(RC['dev'].values())
 NR = D['synthesis_failures_without_reason']
 assert NR['splits'] == {'test': NR['n']} and NR['classes'] == {'illegal_code': NR['n']} == {'illegal_code': NR['compile_fails']}
-s = slide('The ten failure reasons and how often each occurs', f'The prompt says that synthesis failed. {NT + ND} reason questions: {NT} in the test split, {ND} in the development split (dev).', 'RESULTS')
+s = slide('The ten failure reasons and how often each occurs', f'The prompt says that synthesis failed. {NT + ND} reason questions: {NT} in the test split, {ND} in the development split (dev).', SEC[1])
 t = table(s, ['Reason', 'Text of the option, as the model reads it', 'Test', 'Dev'],
           [[k, v, RC['test'].get(k, 0), RC['dev'].get(k, 0)] for k, v in RO.items()],
           .89, 1.95, [2.3, 7.65, .7, .9], 4.0, size=10.5, head_size=13, row_header=True, head_h=.4, left_cols=(0, 1))
@@ -738,7 +817,7 @@ notes(s, f'The ten options of the failure-reason question exactly as the model r
       f'The columns count the reason questions whose correct answer is that option: {NT} in the test split and {ND} in the development split. In the test split, {len(RC["test"])} of the ten options occur; event_list and unbounded_loop occur only in the development split, once each. '
       'The correct answer comes from the Design Compiler message IDs (and the vlog result to separate illegal_code from unsupported_construct), with the rules in notes/synth_reason.md; a design is kept only if all its messages belong to one class. '
       f'{D["reason_injected_edits"]} of the {NT + ND} failing designs are injected one-construct edits of a working design (mutants and the rejected twins of the trap pairs). The other {NT + ND - D["reason_injected_edits"]} are natural failures: one MetRex design and two LLM-written candidates. '
-      f'{NR["n"]} further test designs fail synthesis with illegal_code; they are the injected compile errors (one removed semicolon or one undeclared name) and get only the yes/no questions, by the dataset rules. MV asked for this table on 2026-10-16.',
+      f'{NR["n"]} further test designs fail synthesis with illegal_code; they are the injected compile errors (one removed semicolon or one undeclared name) and get only the yes/no questions, by the dataset rules.',
       'data/questions/dataset_v1.jsonl (records with request = reason); notes/synth_reason.md; notes/DATASET.md; presentations/data/verified_metrics.json')
 
 # ----------------------------------------------------------------------------------------------
@@ -751,7 +830,7 @@ WRONG27 = {k: sorted(p for p in v['predictions'] if p != k) for k, v in R27.item
 assert WRONG27 == {'multiple_drivers': ['event_list'], 'async_reset': ['event_list']}
 EVENT2 = [sum(v['predictions'].get('event_list', 0) for v in D2M[m]['reason_by_class'].values()) for m in M]
 EVENT1 = [CMP[m]['reason_predictions_1'].get('event_list', 0) for m in M]
-s = slide('KEV-27B names a known failure but does not detect it', 'Left: the reason question. Right: synthesis and reason answers of the 16 designs.', 'RESULTS', legend=True)
+s = slide('KEV-27B names a known failure but does not detect it', 'Left: the reason question. Right: synthesis and reason answers of the 16 designs.', SEC[1], legend=True)
 gpanel(s, .89, 2.0, 5.65, 4.1, 'Why does synthesis fail?', '16 designs · the prompt says that synthesis failed',
        (metric('reason'), metric('reason', d=D2)), (count_labels('reason', D), count_labels('reason', D2)),
        reference=(REASON_MAX / 16, f'always {REASON_MODE[0]} = {pct(REASON_MAX / 16)} ({REASON_MAX} of 16)'))
@@ -775,7 +854,7 @@ notes(s, f'Left panel: correct reason choices of 16 without examples {", ".join(
 AW = (round(metric('area', 'within_one')[3] * 92), round(metric('area', 'within_one', D2)[3] * 92))
 assert AW == (92, 92) and H[('area', 1)][3] == 61 and H[('area', 2)][3] == 48 and one_answer('kev-0.8b', 'area', D2) == '5' and one_answer('kev-0.8b', 'power', D2) == '5'
 assert CMP['kev-27b']['keys']['area']['mcnemar_p'] < .05 and CMP['kev-27b']['keys']['power']['mcnemar_p'] < .05
-s = slide('Area levels are usable; power levels are not', 'Bars: exact level. Dashed line: the most common level of the tool labels.', 'RESULTS', legend=True)
+s = slide('Area levels are usable; power levels are not', 'Bars: exact level. Dashed line: the most common level of the tool labels.', SEC[1], legend=True)
 level_panel(s, .89, 2.0, 5.65, 4.1, 'area', 'Area level', '92 designs · all five levels occur')
 level_panel(s, 6.79, 2.0, 5.65, 4.1, 'power', 'Power level', '85 designs · levels 1 to 4 occur')
 takeaway(s, f'Area: KEV-27B is exact for {H[("area", 1)][3]} of 92 designs and within one level for all 92; with examples the exact count drops to {H[("area", 2)][3]}. Power: only KEV-4B without examples ({H[("power", 1)][1]} of 85) is above always level {LEVEL_REF["power"][0]} ({LEVEL_REF["power"][1]} of 85).')
@@ -793,7 +872,7 @@ notes(s, f'Exact area levels of 92: without examples {", ".join(map(str, H[("are
 # 14. Timing levels
 # ----------------------------------------------------------------------------------------------
 assert H[('reach', 2)][3] == 36 and H[('slack', 2)][3] == 60 and H[('slack', 2)][0] == LEVEL_REF['slack'][1] == 63 and one_answer('kev-0.8b', 'slack', D2) == '5'
-s = slide('Timing levels: no model beats a constant answer', 'Bars: exact level. Dashed line: the most common tool level. No slack is negative.', 'RESULTS', legend=True)
+s = slide('Timing levels: no model beats a constant answer', 'Bars: exact level. Dashed line: the most common tool level. No slack is negative.', SEC[1], legend=True)
 level_panel(s, .89, 2.0, 5.65, 4.1, 'reach', 'Reachable clock frequency level', '92 designs · levels 1 to 4 occur')
 level_panel(s, 6.79, 2.0, 5.65, 4.1, 'slack', 'Timing margin (slack) level', '92 designs · levels 2 to 5 occur')
 takeaway(s, f'With examples KEV-27B reaches {H[("reach", 2)][3]} of 92 (frequency) and {H[("slack", 2)][3]} of 92 (slack); the constant answers score {LEVEL_REF["reach"][1]} and {LEVEL_REF["slack"][1]}. KEV-0.8B’s {H[("slack", 2)][0]} of 92 is level 5 for every design.')
@@ -816,7 +895,7 @@ def gap(a, b):
 
 
 assert all(gap(T27[k][2], T27[k][0]) < gap(T27[k][1], T27[k][0]) for k in T27)
-s = slide('KEV-27B’s chosen levels do not match the tool’s levels', 'Designs at each level: the tool, then KEV-27B without and with examples. Equal counts are not correct answers.', 'RESULTS')
+s = slide('KEV-27B’s chosen levels do not match the tool’s levels', 'Designs at each level: the tool, then KEV-27B without and with examples. Equal counts are not correct answers.', SEC[1])
 dist3(s, .89, 2.0, 5.65, 4.1, 'Reachable clock frequency level', '92 designs · counts at each level', *T27['reach'])
 dist3(s, 6.79, 2.0, 5.65, 4.1, 'Power level', '85 designs · counts at each level', *T27['power'])
 takeaway(s, f'Without examples KEV-27B puts {T27["reach"][1][0]} of 92 designs in frequency level 1 and no design in power level 1 or 2. With examples the counts come closer to the tool’s, but the exact scores stay below the constant answer.')
@@ -833,7 +912,7 @@ BOTH = {e: {k: PC[e]['kev-27b'][k]['both_correct'] for k in PAIRS} for e in (1, 
 assert BOTH[1]['smaller_area'] == 17 and BOTH[2]['smaller_area'] == 20 and H[('smaller_area', 1)][2] == 40 == max(H[('smaller_area', 1)])
 LET = {m: D2M[m]['pair_letters'] for m in M}
 assert LET['kev-0.8b']['smaller_area'] == {'A': 46} and LET['kev-0.8b']['higher_reach'] == {'B': 12} and LET['kev-4b']['higher_reach'] == {'B': 12}
-s = slide('Pairs: KEV-27B with examples picks the better design', 'Two designs of one problem, A and B, asked in both orders. Always A scores 50%.', 'RESULTS', legend=True)
+s = slide('Relative questions: KEV-27B picks the better design', 'Two designs of one problem, A and B, asked in both orders. Always A scores 50%.', SEC[1], legend=True)
 for x, key, title in [(.89, 'smaller_area', 'Smaller area'), (4.81, 'lower_power', 'Lower power'), (8.74, 'higher_reach', 'Higher frequency')]:
     n = n_of(key)
     gpanel(s, x, 2.0, 3.7, 4.1, title, f'{PAIRS[key]} pairs · {n} questions', (metric(key), metric(key, d=D2)),
@@ -848,41 +927,33 @@ notes(s, 'Pair inputs are two REvolution candidates of the same problem with the
       'The two orders share designs and different pairs can share candidates, so the questions are not independent samples. The pair questions show the three examples of their metric with the exact values only.')
 
 # ----------------------------------------------------------------------------------------------
-# 17. Conclusion
+# 17. Conclusions
 # ----------------------------------------------------------------------------------------------
-s = slide('What the results support, and what to do next', 'Observations on dataset v1 and one fixed example set, not a guarantee for other designs or other examples.', 'CONCLUSION')
-card(s, .89, 2.0, 3.7, 4.1, 'Supported', f'• Compile check: KEV-27B, {H[("compiles", 1)][3]} of 123, no examples needed.\n'
-     f'• Failure reason: KEV-27B, {H[("reason", 1)][3]} of 16, when the prompt says that synthesis failed.\n'
-     f'• Area level: KEV-27B, {H[("area", 1)][3]} of 92 exact, all 92 within one level.\n'
-     f'• Better of two designs: KEV-27B with examples, {H[("smaller_area", 2)][3]} of 46 (area), {H[("lower_power", 2)][3]} of 44 (power).', C['navy'], 14)
-card(s, 4.81, 2.0, 3.7, 4.1, 'Not supported', f'• Synthesis check: at most {GAIN[("kev-27b", 2)]} designs above always “yes”; KEV-27B misses {S27_2["fail_wrong"]} of 24 failures with examples, {S27_1["fail_wrong"]} without.\n'
-     '• Power, frequency, and slack levels: no score more than 2 designs above the constant answer.\n'
-     f'• KEV-0.8B: one answer for every design in {len(CONST_08)} of 10 questions with examples.', C['teal'], 14)
-card(s, 8.74, 2.0, 3.7, 4.1, 'Next steps', '• Dataset v2: more synthesis failures of code that compiles, designs that miss the timing target, equal yes and no counts.\n'
-     '• Other example sets, and more than three examples.\n'
-     '• Jev 1.13 and other models under the same protocol.\n'
-     '• Thresholds and example sets chosen on the development split only.', C['blue'], 14)
-takeaway(s, f'KEV does not replace the tools: the best synthesis check misses {S27_2["fail_wrong"]} of 24 failures. KEV can screen compile errors and rank two designs.')
-notes(s, 'Supported: the measured scores of KEV-27B that are far above the constant answer in at least one experiment: the compile check, the failure reason with a known failure, the exact area level, and the pair questions. '
-      f'Not supported: the synthesis check (the best score of any size and experiment is {GAIN[("kev-27b", 2)]} designs above always yes), the power, frequency, and slack levels (only KEV-4B on power without examples is above the dashed line, by 2 designs), and KEV-0.8B as a whole '
-      f'(with examples it gives one answer to every design in {len(CONST_08)} of 10 question keys: {", ".join(CONST_08)}). '
-      'The yes/no examples hold one yes and two no designs (MV’s setup); the effect of this mix is not measured. event_list is the class of one reason example and of no test design. '
-      'Any threshold or example-set choice must use the development split, not these test labels. The test set has no negative-slack design, no level-5 power design, and no level-5 frequency design. '
-      'Not measured: Jev, base Qwen, commercial LLMs, renamed or commented controls, energy per operation, post-route timing, and measured silicon.')
+overview(2)
+assert all(H[(k, 2)][3] / n_of(k) >= .79 for k in ['smaller_area', 'lower_power', 'higher_reach'])
+s = slide('Relative questions work; absolute questions do not', 'KEV-27B with three examples, unless stated. All numbers are on the result slides.', SEC[2])
+card(s, .89, 2.0, 5.65, 2.45, 'Relative questions: reliable',
+     f'Which of two designs is better? KEV-27B picks the right one in {H[("smaller_area", 2)][3]} of 46 area, {H[("lower_power", 2)][3]} of 44 power, and {H[("higher_reach", 2)][3]} of 12 frequency questions; chance is 50%. '
+     f'{BOTH[2]["smaller_area"]} of 23 area pairs are right in both orders. Without examples: {H[("smaller_area", 1)][3]}, {H[("lower_power", 1)][3]}, and {H[("higher_reach", 1)][3]}.', C['navy'], 13.5)
+card(s, 6.79, 2.0, 5.65, 2.45, 'Absolute questions: not reliable',
+     f'Which level has one design? Power {H[("power", 2)][3]} of 85, frequency {H[("reach", 2)][3]} of 92, slack {H[("slack", 2)][3]} of 92: none above the constant answers {LEVEL_REF["power"][1]}, {LEVEL_REF["reach"][1]}, and {LEVEL_REF["slack"][1]}. '
+     f'Area is the exception: {H[("area", 1)][3]} of 92 exact without examples, and all 92 within one level.', C['navy'], 13.5)
+card(s, .89, 4.65, 3.7, 1.45, 'Compile check: reliable', f'KEV-27B gets {H[("compiles", 1)][3]} of 123 designs right without examples.', body_size=13.5)
+card(s, 4.81, 4.65, 3.7, 1.45, 'Synthesis check: weak', f'At best {S27_2["fail_correct"]} of 24 failures caught, and {A27[1]} of the 15 that compile. All scores near always “yes”.', body_size=13.5)
+card(s, 8.74, 4.65, 3.7, 1.45, 'Failure reason: good', f'Told that synthesis failed, KEV-27B names the reason for {H[("reason", 1)][3]} of 16 designs. By itself it flags {RL[1][3]["detected"]} of them.', body_size=13.5)
+takeaway(s, 'KEV can compare two designs and screen compile errors. It cannot replace the tools for the absolute cost of a design or for synthesis.')
+notes(s, f'Relative questions: with examples KEV-27B is right in {pct(metric("smaller_area", d=D2)[3])}, {pct(metric("lower_power", d=D2)[3])}, and {pct(metric("higher_reach", d=D2)[3])} of the area, power, and frequency pair questions; a constant letter scores 50%. '
+      f'Without examples {pct(metric("smaller_area")[3])}, {pct(metric("lower_power")[3])}, and {pct(metric("higher_reach")[3])}; KEV-9B leads the area pairs without examples ({H[("smaller_area", 1)][2]} of 46). '
+      f'Absolute questions: the best exact count of any size and experiment is {BEST["power"]} of 85 (power, KEV-4B without examples; constant {LEVEL_REF["power"][1]}), {BEST["reach"]} of 92 (frequency; constant {LEVEL_REF["reach"][1]}), and {BEST["slack"]} of 92 (slack; this count is KEV-0.8B with level 5 for every design; constant {LEVEL_REF["slack"][1]}). '
+      f'Area: KEV-27B {H[("area", 1)][3]} of 92 exact without examples, {H[("area", 2)][3]} with examples, all 92 within one level in both experiments; the area ranges are decades. '
+      f'Compile check: KEV-27B {H[("compiles", 1)][3]} of 123 without examples, {H[("compiles", 2)][3]} with examples. Synthesis check: the best score of any size and experiment is {GAIN[("kev-27b", 2)]} designs above always yes; KEV-27B catches {S27_1["fail_correct"]} then {S27_2["fail_correct"]} of the 24 failures, and {A27[0]} then {A27[1]} of the 15 failures that compile. '
+      f'Failure reason: KEV-27B names {H[("reason", 1)][3]} of 16 known failures without examples and {H[("reason", 2)][3]} with examples, when the prompt states the failure; it flags {RL[1][3]["detected"]} then {RL[2][3]["detected"]} of these 16 by itself. '
+      'Three examples help the relative questions and the synthesis detection, and lower the exact area level. These are observations on dataset v1 and one fixed example set.')
 
 # ----------------------------------------------------------------------------------------------
 # Appendix
 # ----------------------------------------------------------------------------------------------
-s = slide('', section='APPENDIX', bg=C['navy'])
-for sh in list(s.shapes):
-    sh._element.getparent().remove(sh._element)
-TEXT_BOXES[:] = [b for b in TEXT_BOXES if b['slide'] != len(prs.slides)]
-txt(s, 'APPENDIX', .89, 2.0, 11.2, .4, size=16, color=C['cyan'], bold=True)
-txt(s, 'Full results and\nreproduction', .89, 2.7, 10.9, 1.65, size=43, color=C['white'], bold=True)
-txt(s, 'Every score of every size, the class counts, the probabilities, the level errors, the pair orders, the runs, and the files', .89, 5.05, 11.2, .75, size=23, color='BFDDEC')
-SLIDE_META[-1]['title'] = 'Full results and reproduction'
-notes(s, 'Appendix for review and reproduction. The tables give all primary scores of the four sizes in both experiments with the paired test of each change, the yes/no class counts, every yes probability, the reason classes, the probability metrics, the level tolerance and error, the pair order counts, the design groups, the Condor runs, and the files with their checksums. '
-      'There is no single overall score across the question types, because the types have different meanings, counts, and label mixes.')
+overview(3)
 
 # A2. Every score, both experiments, with the paired test.
 LABELS = {'compiles': 'Does it compile?', 'synthesizes': 'Does it synthesize?', 'reason': 'Failure reason (told)', 'area': 'Area: exact level', 'power': 'Power: exact level',
@@ -894,7 +965,7 @@ def change_cell(m, k):
     return f'{pct(c["correct_1"] / c["n"])} → {pct(c["correct_2"] / c["n"])}'
 
 
-s = slide('Every score, without and with three examples', f'Each cell: correct answers in %, no examples → three examples. Bold: p < 0.05 ({len(SIG)} of {len(M) * len(QKEYS)} changes).', 'APPENDIX')
+s = slide('Every score, without and with three examples', f'Each cell: correct answers in %, no examples → three examples. Bold: p < 0.05 ({len(SIG)} of {len(M) * len(QKEYS)} changes).', SEC[3])
 t = table(s, ['Question', 'n'] + SHORT + ['Constant'], [[LABELS[k], n_of(k)] + [change_cell(m, k) for m in M] + [CONST[k].split(': ')[1]] for k in QKEYS],
           .89, 1.98, [2.6, .65, 1.75, 1.75, 1.75, 1.75, 1.3], 4.3, size=12.5, head_size=13, head_h=.45)
 for i, k in enumerate(QKEYS, 1):
@@ -911,7 +982,7 @@ notes(s, 'The complete primary table of both experiments from the saved scorer, 
       'Counts per cell: ' + '; '.join(f'{SHORT[i]} ' + ', '.join(f'{LABELS[k]} {CMP[m]["keys"][k]["correct_1"]} → {CMP[m]["keys"][k]["correct_2"]} of {CMP[m]["keys"][k]["n"]} ({pval(CMP[m]["keys"][k]["mcnemar_p"])})' for k in QKEYS) for i, m in enumerate(M)) + '.')
 
 # A3. Yes/no class counts.
-s = slide('Yes/no checks: correct answers per tool outcome', 'Each cell: designs of the group with a correct answer, no examples → three examples. “Yes” answers: of 123.', 'APPENDIX')
+s = slide('Yes/no checks: correct answers per tool outcome', 'Each cell: designs of the group with a correct answer, no examples → three examples. “Yes” answers: of 123.', SEC[3])
 rows = []
 for key, label in [('compiles', 'Compile'), ('synthesizes', 'Synthesis')]:
     for outcome, word in [('pass', 'the tool says “yes”'), ('fail', 'the tool says “no”')]:
@@ -930,7 +1001,7 @@ notes(s, 'The four binary groups (compile: 114 designs that compile and 9 that d
 
 # A4, A5. Every yes probability.
 for e, d, word in [(1, D, 'no examples'), (2, D2, 'three examples')]:
-    s = slide(f'Yes probability of every design, {word}', 'Each dot is one test design. 0.5 or more counts as “yes”. Teal: the tool says “yes”; orange: it says “no”.', 'APPENDIX')
+    s = slide(f'Yes probability of every design, {word}', 'Each dot is one test design. 0.5 or more counts as “yes”. Teal: the tool says “yes”; orange: it says “no”.', SEC[3])
     strip_panel(s, .89, 1.99, 5.65, 4.08, 'Does it compile?', 'compiles', ['vlog accepts', 'vlog rejects'], d)
     strip_panel(s, 6.79, 1.99, 5.65, 4.08, 'Does it synthesize?', 'synthesizes', ['tool synthesizes', 'tool fails'], d)
     right_both = [(m, key) for m in M for key in ['compiles', 'synthesizes'] if d['models'][m]['binary'][key]['pass_rate'] > .5 and d['models'][m]['binary'][key]['fail_rate'] > .5]
@@ -951,9 +1022,7 @@ for e, d, word in [(1, D, 'no examples'), (2, D2, 'three examples')]:
           'results/kev/*/dataset_v1*__*.jsonl; presentations/src/analyse_kev.py; github.com/jaredpalmer/kev README and evals/ (commit 5e42a7a)')
 
 # A6. Reason classes.
-REASON_NAMES = {'multiple_drivers': 'More than one driver', 'illegal_code': 'Illegal code', 'unsupported_construct': 'Unsupported construct', 'timing_control': 'Unsupported timing control',
-                'simulation_statement': 'Simulation-only statement', 'async_reset': 'Asynchronous reset', 'mixed_assignments': 'Mixed assignment styles', 'instance_mismatch': 'Module-instance mismatch'}
-s = slide('Failure reasons: correct answers per class', 'The 16 test designs by their true reason. Each cell: correct answers, no examples → three examples.', 'APPENDIX')
+s = slide('Failure reasons: correct answers per class', 'The 16 test designs by their true reason. Each cell: correct answers, no examples → three examples.', SEC[3])
 rows = [[REASON_NAMES[k], n] + [change(DM[m]['reason_by_class'][k]['correct'], D2M[m]['reason_by_class'][k]['correct']) for m in M] for k, n in D['test_reason_counts'].items()]
 rows.append(['Equal weight per class (balanced accuracy)', ''] + [f'{pct(a)} → {pct(b)}' for a, b in zip(metric('reason', 'balanced_accuracy'), metric('reason', 'balanced_accuracy', D2))])
 table(s, ['True reason', 'Designs'] + SHORT, rows, .89, 1.98, [3.9, 1.0, 1.6625, 1.6625, 1.6625, 1.6625], 4.1, size=14, head_size=14, head_h=.45)
@@ -969,7 +1038,7 @@ notes(s, 'The eight observed reason classes of the 16 test designs, with the cor
 # A7. Probability metrics.
 AUC27 = (DM['kev-27b']['table']['synthesizes']['auroc'], D2M['kev-27b']['table']['synthesizes']['auroc'])
 assert AUC27[1] > AUC27[0]
-s = slide('Ranking score and probability error, yes/no checks', 'A model can rank well and still decide badly at the 0.5 threshold. Cells: no examples → three examples.', 'APPENDIX')
+s = slide('Ranking score and probability error, yes/no checks', 'A model can rank well and still decide badly at the 0.5 threshold. Cells: no examples → three examples.', SEC[3])
 rows = []
 for key, label in [('compiles', 'Compile'), ('synthesizes', 'Synthesis')]:
     rows.append([f'{label}: ranking score (AUROC)'] + [f'{a:.3f} → {b:.3f}' for a, b in zip(metric(key, 'auroc'), metric(key, 'auroc', D2))])
@@ -983,7 +1052,7 @@ notes(s, 'AUROC is the probability that a randomly chosen design that the tool a
       f'KEV-27B synthesis AUROC {AUC27[0]:.3f} to {AUC27[1]:.3f}; its failure recall at 0.5 is {pct(S27_1["fail_rate"])} to {pct(S27_2["fail_rate"])}. Any threshold tuning must use the development split, not these test labels; no recalibrated or alternative-threshold result has been run.')
 
 # A8. Within one level and mean level error.
-s = slide('Within one level, and mean level error', 'Within one level: higher is better. Mean level error: lower is better. Each cell: no examples → three examples.', 'APPENDIX')
+s = slide('Within one level, and mean level error', 'Within one level: higher is better. Mean level error: lower is better. Each cell: no examples → three examples.', SEC[3])
 rows = []
 for key, label in [('area', 'Area'), ('power', 'Power'), ('reach', 'Frequency'), ('slack', 'Slack')]:
     rows.append([label, 'Within one level'] + [f'{pct(a)} → {pct(b)}' for a, b in zip(metric(key, 'within_one'), metric(key, 'within_one', D2))])
@@ -999,7 +1068,7 @@ notes(s, 'The saved scorer computes within_one from the most likely level agains
       + ', '.join(f'{k} {pct(W08[k])}' for k in W08) + '. All values come from the scorer and are verified against the raw answers with a tolerance of 1e-12.')
 
 # A9. Pair orders.
-s = slide('Pair questions: both orders, one order, neither', 'Counts per pair. Each pair has two answers, one per order. Each cell: no examples → three examples.', 'APPENDIX')
+s = slide('Pair questions: both orders, one order, neither', 'Counts per pair. Each pair has two answers, one per order. Each cell: no examples → three examples.', SEC[3])
 rows = []
 for key, label in [('smaller_area', 'Area'), ('lower_power', 'Power'), ('higher_reach', 'Frequency')]:
     n = PAIRS[key]
@@ -1017,7 +1086,7 @@ notes(s, 'For a pair with opposite correct letters in the two orders, the two an
 GROUP_NAMES = {'metrex': 'MetRex designs', 'mutant': 'Injected synthesis errors (mutants)', 'natural': 'LLM-written candidates, natural result',
                'noncompile': 'Injected compile errors', 'reference': 'Human-written reference designs', 'revold': 'REvolution ASP-DAC 2026 candidates (pairs)',
                'revolution': 'ARES v0 designs', 'trap': 'Accepted edits and rejected twins (traps)'}
-s = slide('Design groups in the test split', 'The retained designs by the group of the dataset plan. Pairs come from the REvolution candidates.', 'APPENDIX')
+s = slide('Design groups in the test split', 'The retained designs by the group of the dataset plan. Pairs come from the REvolution candidates.', SEC[3])
 table(s, ['Design group', 'All retained', 'Test designs', 'Test synthesis failures'],
       [[GROUP_NAMES[g], v['all_designs'], v['test_designs'], v['test_synthesis_failures']] for g, v in GROUPS.items()],
       .89, 1.98, [5.55, 1.8, 1.9, 2.3], 3.85, size=15, head_size=14, head_h=.45)
@@ -1026,7 +1095,7 @@ txt(s, 'Not measured here: energy per operation, functional equivalence, post-ro
 notes(s, 'The group counts are based on the retained basic design records only, not on requests or pair questions. All retained designs total 151 and test designs 123. '
       'The plan ran 159 designs; 8 were excluded: 4 mutants with an unintended class, 2 trap twins that did not synthesize as required, and 2 noncompile designs whose DC class was not the intended one. '
       'Twelve retained performance designs across both splits have no usable power value, leaving 98 power questions overall and 85 in the test split. The dataset also skips pairs with incompatible testbenches or with a metric difference below 10%. '
-      'Some groups contain near variants; the split per base design prevents a design and its edit from being in different splits (checked in analyse_kev.py). Names of the sources follow MV (2026-10-16): the REvolution v0 designs are ARES.',
+      'Some groups contain near variants; the split per base design prevents a design and its edit from being in different splits (checked in analyse_kev.py). The REvolution v0 designs are ARES.',
       'data/questions/dataset_v1.card.md; notes/DATASET.md; harness/build.py; presentations/data/verified_metrics.json')
 
 # A11. Condor runs.
@@ -1035,7 +1104,7 @@ MAN1 = [DM[m]['manifest'] for m in M]
 MAN2 = [D2M[m]['manifest'] for m in M]
 assert all(x['model_revision'] == y['model_revision'] for x, y in zip(MAN1, MAN2))
 assert all(x['maximum_actual_input_tokens'] == D2['tokens']['max'] for x in MAN2)
-s = slide('The Condor runs of the two experiments', 'Job times include the setup and differ in hardware: not a speed ranking. All requests answered, zero errors.', 'APPENDIX')
+s = slide('The Condor runs of the two experiments', 'Job times include the setup and differ in hardware: not a speed ranking. All requests answered, zero errors.', SEC[3])
 rows = [[LEG1, NAMES[i], x['job_id'], 'RTX 3080 Ti' if i == 0 else 'A100 80 GB', f"{x['condor_execution_seconds']:.0f} s", f"{x['median_model_latency_ms']:.0f} ms"] for i, x in enumerate(MAN1)]
 rows += [[LEG2, NAMES[i], x['job_id'], GPU_NAME[x['gpu']], f"{x['condor_execution_seconds']:.0f} s", f"{x['median_model_latency_ms']:.0f} ms"] for i, x in enumerate(MAN2)]
 table(s, ['Experiment', 'Model', 'Job', 'GPU', 'Job time', 'Median model time per request'], rows, .89, 1.98, [1.9, 1.5, .9, 2.0, 1.6, 3.65], 4.1, size=14, head_size=14, head_h=.45, left_cols=(0, 1))
@@ -1047,7 +1116,7 @@ LAT1, LAT2 = [', '.join(f"{x['median_model_latency_ms']:.1f}" for x in man) for 
 HOSTS2 = ', '.join(x['host'].split('.')[0] for x in MAN2)
 MEM2 = ', '.join(f"{x['maximum_gpu_memory_of_server_mib']:,}" for x in MAN2)
 OVER = ', '.join(q.split(':', 2)[2] for q in D2['tokens']['over_8192'])
-notes(s, f'Experiment 1: Condor jobs {JOBS1} completed with return code 0 on 15 October 2026; job execution seconds {EXEC1} (setup, smoke file, and inference, without the queue wait); '
+notes(s, f'Experiment 1: Condor jobs {JOBS1} completed with return code 0; job execution seconds {EXEC1} (setup, smoke file, and inference, without the queue wait); '
       f'median server-reported model times {LAT1} ms over the 348 requests. KEV-0.8B ran on euler (RTX 3080 Ti); the larger sizes on aristoteles (A100-SXM4-80GB). '
       f'Experiment 2: jobs {JOBS2} on {HOSTS2}; execution seconds {EXEC2}; '
       f'median model times {LAT2} ms over the 725 requests; peak GPU memory of the Kev server {MEM2} MiB. '
@@ -1055,10 +1124,10 @@ notes(s, f'Experiment 1: Condor jobs {JOBS1} completed with return code 0 on 15 
       'results/kev/*/manifest.json; condor/logs/*.log')
 
 # A12. Files and checksums.
-s = slide('Files and checksums for reproduction', 'Every number is tied to the frozen question files and the saved answers. No model was rerun for this deck.', 'APPENDIX')
-table(s, ['Model', 'Job, no examples', 'Completed', 'Job, three examples', 'Completed', 'Checkpoint revision (prefix)'],
-      [[NAMES[i], x['job_id'], x['completion_time'][5:16], y['job_id'], y['completion_time'][5:16], x['model_revision'][:12]] for i, (x, y) in enumerate(zip(MAN1, MAN2))],
-      .89, 1.98, [1.5, 1.6, 1.9, 1.75, 1.9, 2.9], 2.4, size=14, head_size=13, head_h=.45)
+s = slide('Files and checksums for reproduction', 'Every number is tied to the frozen question files and the saved answers. No model was rerun for this deck.', SEC[3])
+table(s, ['Model', 'Condor job, no examples', 'Condor job, three examples', 'Checkpoint revision (prefix)'],
+      [[NAMES[i], x['job_id'], y['job_id'], x['model_revision'][:12]] for i, (x, y) in enumerate(zip(MAN1, MAN2))],
+      .89, 1.98, [2.0, 2.8, 3.0, 3.75], 2.4, size=14, head_size=13, head_h=.45)
 txt(s, 'Inputs and evidence', 1.05, 4.65, 11.1, .4, size=20, bold=True)
 txt(s, 'Questions: data/questions/dataset_v1.jsonl and dataset_v1_fewshot3.jsonl (harness/fewshot.py)\n'
        'Answers, scores, manifests, and comparisons: results/kev/dataset_v1_<model>_2026101[45]/ and results/kev/dataset_v1_fewshot3_<model>_20261016/\n'
@@ -1067,7 +1136,7 @@ txt(s, 'Questions: data/questions/dataset_v1.jsonl and dataset_v1_fewshot3.jsonl
 notes(s, 'Full provenance:\n' + json.dumps({m: {'job_1': DM[m]['manifest']['job_id'], 'job_2': D2M[m]['manifest']['job_id'], 'revision': DM[m]['manifest']['model_revision'],
                                                'answers_1': DM[m]['answers_file'], 'answers_1_sha256': DM[m]['answers_sha256'],
                                                'answers_2': D2M[m]['answers_file'], 'answers_2_sha256': D2M[m]['answers_sha256']} for m in M}, indent=2) +
-      '\nAll times are the local time of mercury (CEST) as recorded in the manifests. The build verifies unique request IDs, HTTP 200 for every answer, the answer key of each question, no shared base design between the splits, the dataset fingerprints, '
+      '\nThe build verifies unique request IDs, HTTP 200 for every answer, the answer key of each question, no shared base design between the splits, the dataset fingerprints, '
       'the server input tokens against the builder counts (experiment 2), the smoke answers, the saved scores against freshly recomputed scores (tolerance 1e-12), and every paired comparison against compare_with_dataset_v1.json. '
       'The theme and the slide masters come from the supplied TinyTapeOut reference deck.')
 
@@ -1078,8 +1147,15 @@ notes(s, 'Full provenance:\n' + json.dumps({m: {'job_1': DM[m]['manifest']['job_
 def validate_and_save():
     assert not WARN, '\n'.join(WARN)
     issues = []
+    dated = re.compile(r'\b20\d\d\b|October|\d\d-\d\d \d\d:\d\d')
     for i, s in enumerate(prs.slides, 1):
         assert s.has_notes_slide and len(s.notes_slide.notes_text_frame.text) > 200
+        texts = [sh.text_frame.text for sh in s.shapes if sh.has_text_frame] + [c.text for sh in s.shapes if sh.has_table for r in sh.table.rows for c in r.cells]
+        body = ' '.join(texts) + ' ' + s.notes_slide.notes_text_frame.text
+        for name in ['TinyTapeOut 2026 jullie feedback.pptx', 'ASP-DAC 2026', 'U-2022.12-SP2', 'QuestaSim 2022.4']:  # names and versions, not dates
+            body = body.replace(name, '')
+        for m in dated.finditer(body):
+            issues.append(f'Slide {i}: a date on the slide or in the notes: {m.group(0)}')
         for sh in s.shapes:
             if sh.left < -100 or sh.top < -100 or sh.left + sh.width > prs.slide_width + 100 or sh.top + sh.height > prs.slide_height + 100:
                 issues.append(f'Slide {i}: out-of-bounds shape {sh.name}')
@@ -1091,7 +1167,7 @@ def validate_and_save():
         shutil.copy2(OUTPUT, bak / (OUTPUT.stem + '_' + datetime.now().strftime('%Y%m%d_%H%M%S') + '.pptx'))
     prs.save(OUTPUT)
     check = Presentation(OUTPUT)
-    assert len(check.slides) == 29 == len(SLIDE_META)
+    assert len(check.slides) == 32 == len(SLIDE_META)
     assert all(s.has_notes_slide for s in check.slides)
     (DEST / 'qa/slide_manifest.json').write_text(json.dumps(SLIDE_META, indent=2) + '\n')
     (DEST / 'qa/text_boxes.json').write_text(json.dumps(TEXT_BOXES, indent=2) + '\n')
