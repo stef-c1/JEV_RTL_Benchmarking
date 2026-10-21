@@ -1,0 +1,124 @@
+{
+ "base": [
+  "data/questions/dataset_v1.jsonl",
+  "results/kev/dataset_v1_kev-4b_20261015/dataset_v1__kev-4b.jsonl"
+ ],
+ "new": [
+  "data/questions/dataset_v1_fewshot3.jsonl",
+  "results/kev/dataset_v1_fewshot3_kev-4b_20261016/dataset_v1_fewshot3__kev-4b.jsonl"
+ ],
+ "split": "test",
+ "matched": 725,
+ "table": [
+  {
+   "key": "area",
+   "n": 92,
+   "accuracy_base": 0.358695652173913,
+   "accuracy_new": 0.5,
+   "balanced_base": 0.2,
+   "balanced_new": 0.4856132756132756,
+   "only_base_correct": 20,
+   "only_new_correct": 33,
+   "mcnemar_p": 0.09837064844049181
+  },
+  {
+   "key": "compiles",
+   "n": 123,
+   "accuracy_base": 0.926829268292683,
+   "accuracy_new": 0.943089430894309,
+   "balanced_base": 0.5,
+   "balanced_new": 0.6622807017543859,
+   "only_base_correct": 1,
+   "only_new_correct": 3,
+   "mcnemar_p": 0.625
+  },
+  {
+   "key": "higher_reach",
+   "n": 12,
+   "accuracy_base": 0.8333333333333334,
+   "accuracy_new": 0.5,
+   "balanced_base": 0.8333333333333333,
+   "balanced_new": 0.5,
+   "only_base_correct": 4,
+   "only_new_correct": 0,
+   "mcnemar_p": 0.125
+  },
+  {
+   "key": "lower_power",
+   "n": 44,
+   "accuracy_base": 0.5681818181818182,
+   "accuracy_new": 0.6363636363636364,
+   "balanced_base": 0.5681818181818181,
+   "balanced_new": 0.6363636363636364,
+   "only_base_correct": 2,
+   "only_new_correct": 5,
+   "mcnemar_p": 0.453125
+  },
+  {
+   "key": "power",
+   "n": 85,
+   "accuracy_base": 0.4588235294117647,
+   "accuracy_new": 0.4,
+   "balanced_base": 0.2717391304347826,
+   "balanced_new": 0.41773916773916775,
+   "only_base_correct": 13,
+   "only_new_correct": 8,
+   "mcnemar_p": 0.38331031799316406
+  },
+  {
+   "key": "reach",
+   "n": 92,
+   "accuracy_base": 0.11956521739130435,
+   "accuracy_new": 0.22826086956521738,
+   "balanced_base": 0.21153846153846154,
+   "balanced_new": 0.34094551282051283,
+   "only_base_correct": 7,
+   "only_new_correct": 17,
+   "mcnemar_p": 0.06391465663909912
+  },
+  {
+   "key": "reason",
+   "n": 16,
+   "accuracy_base": 0.5625,
+   "accuracy_new": 0.625,
+   "balanced_base": 0.375,
+   "balanced_new": 0.4375,
+   "only_base_correct": 0,
+   "only_new_correct": 1,
+   "mcnemar_p": 1.0
+  },
+  {
+   "key": "slack",
+   "n": 92,
+   "accuracy_base": 0.043478260869565216,
+   "accuracy_new": 0.10869565217391304,
+   "balanced_base": 0.125,
+   "balanced_new": 0.20337301587301587,
+   "only_base_correct": 2,
+   "only_new_correct": 8,
+   "mcnemar_p": 0.109375
+  },
+  {
+   "key": "smaller_area",
+   "n": 46,
+   "accuracy_base": 0.7608695652173914,
+   "accuracy_new": 0.6739130434782609,
+   "balanced_base": 0.7608695652173914,
+   "balanced_new": 0.6739130434782609,
+   "only_base_correct": 8,
+   "only_new_correct": 4,
+   "mcnemar_p": 0.3876953125
+  },
+  {
+   "key": "synthesizes",
+   "n": 123,
+   "accuracy_base": 0.7967479674796748,
+   "accuracy_new": 0.8130081300813008,
+   "balanced_base": 0.494949494949495,
+   "balanced_new": 0.5366161616161617,
+   "only_base_correct": 0,
+   "only_new_correct": 2,
+   "mcnemar_p": 0.5
+  }
+ ]
+}

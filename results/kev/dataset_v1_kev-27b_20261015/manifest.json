@@ -1,0 +1,79 @@
+{
+  "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+  "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+  "requests": 348,
+  "questions": 875,
+  "splits": {
+    "test": {
+      "requests": 281,
+      "questions": 725
+    },
+    "dev": {
+      "requests": 67,
+      "questions": 150
+    }
+  },
+  "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl",
+  "smoke_sha256": "6f2b1710a915fb337fff55809c3071277a13c052ef4990aebc0485661cc72f6a",
+  "smoke_ids": [
+    "dataset_v1:basic:metrex_12644",
+    "dataset_v1:performance:metrex_12644",
+    "dataset_v1:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+    "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:AB",
+    "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA"
+  ],
+  "request_order": [
+    "dataset_v1_smoke",
+    "dataset_v1"
+  ],
+  "model": "jaredpalmer/kev-27b@v1.0",
+  "submission_status": "completed",
+  "last_checked": "2026-10-15T15:10:25+02:00",
+  "job_id": "7.0",
+  "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261015_141031_kev-27b.sub",
+  "resources": {
+    "gpus": 1,
+    "minimum_gpu_memory_gb": 75,
+    "minimum_gpu_compute_capability": 8.0,
+    "cpus": 4,
+    "host_memory_gb": 80,
+    "scratch_disk_gb": 75,
+    "walltime_hours": 8,
+    "gpu_backend": "NVIDIA CUDA"
+  },
+  "source_sha256": {
+    "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+    "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+    "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+    "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99"
+  },
+  "progress": {
+    "dataset_requests_answered": 348,
+    "test_questions_scored": 725
+  },
+  "completion_time": "2026-10-15 14:39:12 Europe/Paris",
+  "start_time": "2026-10-15 14:32:27 Europe/Paris",
+  "return_value": 0,
+  "host": "aristoteles.esat.kuleuven.be",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "model_revision": "af0e6d551bdc2cc724f3e9d7a8bee1cd4fb8f7bf",
+  "requests_answered": 348,
+  "questions_answered": 875,
+  "test_questions_scored": 725,
+  "errors": 0,
+  "maximum_actual_input_tokens": 7706,
+  "median_model_latency_ms": 668.3,
+  "maximum_model_latency_ms": 3589.3,
+  "total_request_wall_seconds": 279.849,
+  "condor_execution_seconds": 400.0,
+  "verification": {
+    "dataset_sha256_unchanged": true,
+    "all_dataset_request_ids_answered_once": true,
+    "all_answer_keys_present": true,
+    "all_status_200": true,
+    "test_missing": 0,
+    "test_unscored": 0,
+    "scores_recomputed_match_with_float_tolerance": true,
+    "condor_exit_zero": true
+  }
+}

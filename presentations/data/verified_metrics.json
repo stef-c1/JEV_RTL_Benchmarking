@@ -1,0 +1,5841 @@
+{
+  "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+  "test_request_counts": {
+    "basic": 123,
+    "performance": 92,
+    "reason": 16,
+    "pair": 50
+  },
+  "test_truth_counts": {
+    "area": {
+      "1": 33,
+      "2": 28,
+      "3": 20,
+      "4": 9,
+      "5": 2
+    },
+    "compiles": {
+      "True": 114,
+      "False": 9
+    },
+    "higher_reach": {
+      "B": 6,
+      "A": 6
+    },
+    "lower_power": {
+      "A": 22,
+      "B": 22
+    },
+    "power": {
+      "2": 37,
+      "1": 23,
+      "3": 18,
+      "4": 7
+    },
+    "reach": {
+      "4": 45,
+      "3": 18,
+      "2": 16,
+      "1": 13
+    },
+    "reason": {
+      "multiple_drivers": 1,
+      "illegal_code": 1,
+      "unsupported_construct": 1,
+      "timing_control": 3,
+      "simulation_statement": 5,
+      "async_reset": 1,
+      "mixed_assignments": 2,
+      "instance_mismatch": 2
+    },
+    "slack": {
+      "5": 63,
+      "4": 16,
+      "3": 8,
+      "2": 5
+    },
+    "smaller_area": {
+      "A": 23,
+      "B": 23
+    },
+    "synthesizes": {
+      "True": 99,
+      "False": 24
+    }
+  },
+  "test_reason_counts": {
+    "multiple_drivers": 1,
+    "illegal_code": 1,
+    "unsupported_construct": 1,
+    "timing_control": 3,
+    "simulation_statement": 5,
+    "async_reset": 1,
+    "mixed_assignments": 2,
+    "instance_mismatch": 2
+  },
+  "groups": {
+    "metrex": {
+      "all_designs": 40,
+      "test_designs": 31,
+      "test_synthesis_failures": 0
+    },
+    "mutant": {
+      "all_designs": 16,
+      "test_designs": 9,
+      "test_synthesis_failures": 9
+    },
+    "natural": {
+      "all_designs": 20,
+      "test_designs": 17,
+      "test_synthesis_failures": 0
+    },
+    "noncompile": {
+      "all_designs": 8,
+      "test_designs": 8,
+      "test_synthesis_failures": 8
+    },
+    "reference": {
+      "all_designs": 15,
+      "test_designs": 11,
+      "test_synthesis_failures": 0
+    },
+    "revold": {
+      "all_designs": 32,
+      "test_designs": 28,
+      "test_synthesis_failures": 1
+    },
+    "revolution": {
+      "all_designs": 10,
+      "test_designs": 9,
+      "test_synthesis_failures": 0
+    },
+    "trap": {
+      "all_designs": 10,
+      "test_designs": 10,
+      "test_synthesis_failures": 6
+    }
+  },
+  "models": {
+    "kev-0.8b": {
+      "table": {
+        "compiles": {
+          "request": "basic",
+          "key": "compiles",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.10569105691056911,
+          "balanced_accuracy": 0.5175438596491229,
+          "truth_counts": {
+            "True": 114,
+            "False": 9
+          },
+          "pred_counts": {
+            "False": 119,
+            "True": 4
+          },
+          "brier": 0.33356593333333334,
+          "auroc": 0.5633528265107213
+        },
+        "synthesizes": {
+          "request": "basic",
+          "key": "synthesizes",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.8048780487804879,
+          "balanced_accuracy": 0.5,
+          "truth_counts": {
+            "True": 99,
+            "False": 24
+          },
+          "pred_counts": {
+            "True": 123
+          },
+          "brier": 0.18736665065040653,
+          "auroc": 0.4896885521885522
+        },
+        "higher_reach": {
+          "request": "pair",
+          "key": "higher_reach",
+          "type": "choice",
+          "n": 12,
+          "unscored": 0,
+          "accuracy": 0.6666666666666666,
+          "balanced_accuracy": 0.6666666666666667,
+          "truth_counts": {
+            "B": 6,
+            "A": 6
+          },
+          "pred_counts": {
+            "B": 8,
+            "A": 4
+          },
+          "same_letter_both_orders": 0.3333333333333333
+        },
+        "lower_power": {
+          "request": "pair",
+          "key": "lower_power",
+          "type": "choice",
+          "n": 44,
+          "unscored": 0,
+          "accuracy": 0.6363636363636364,
+          "balanced_accuracy": 0.6363636363636364,
+          "truth_counts": {
+            "A": 22,
+            "B": 22
+          },
+          "pred_counts": {
+            "A": 6,
+            "B": 38
+          },
+          "same_letter_both_orders": 0.7272727272727273
+        },
+        "smaller_area": {
+          "request": "pair",
+          "key": "smaller_area",
+          "type": "choice",
+          "n": 46,
+          "unscored": 0,
+          "accuracy": 0.4782608695652174,
+          "balanced_accuracy": 0.47826086956521735,
+          "truth_counts": {
+            "A": 23,
+            "B": 23
+          },
+          "pred_counts": {
+            "A": 11,
+            "B": 35
+          },
+          "same_letter_both_orders": 0.5217391304347826
+        },
+        "area": {
+          "request": "performance",
+          "key": "area",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.358695652173913,
+          "balanced_accuracy": 0.2,
+          "truth_counts": {
+            "1": 33,
+            "2": 28,
+            "3": 20,
+            "4": 9,
+            "5": 2
+          },
+          "pred_counts": {
+            "1": 92
+          },
+          "within_one": 0.6630434782608695,
+          "mae_levels": 0.9936298727956461
+        },
+        "power": {
+          "request": "performance",
+          "key": "power",
+          "type": "score",
+          "n": 85,
+          "unscored": 0,
+          "accuracy": 0.27058823529411763,
+          "balanced_accuracy": 0.25016786973308713,
+          "truth_counts": {
+            "2": 37,
+            "1": 23,
+            "3": 18,
+            "4": 7
+          },
+          "pred_counts": {
+            "1": 56,
+            "2": 24,
+            "4": 5
+          },
+          "within_one": 0.8235294117647058,
+          "mae_levels": 0.9713333034194034
+        },
+        "reach": {
+          "request": "performance",
+          "key": "reach",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.14130434782608695,
+          "balanced_accuracy": 0.25,
+          "truth_counts": {
+            "4": 45,
+            "3": 18,
+            "2": 16,
+            "1": 13
+          },
+          "pred_counts": {
+            "1": 92
+          },
+          "within_one": 0.31521739130434784,
+          "mae_levels": 1.1186232726211132
+        },
+        "slack": {
+          "request": "performance",
+          "key": "slack",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.08695652173913043,
+          "balanced_accuracy": 0.19543650793650794,
+          "truth_counts": {
+            "5": 63,
+            "4": 16,
+            "3": 8,
+            "2": 5
+          },
+          "pred_counts": {
+            "3": 87,
+            "5": 5
+          },
+          "within_one": 0.30434782608695654,
+          "mae_levels": 1.509037229842959
+        },
+        "reason": {
+          "request": "reason",
+          "key": "reason",
+          "type": "choice",
+          "n": 16,
+          "unscored": 0,
+          "accuracy": 0.3125,
+          "balanced_accuracy": 0.17916666666666667,
+          "truth_counts": {
+            "multiple_drivers": 1,
+            "illegal_code": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "async_reset": 1,
+            "mixed_assignments": 2,
+            "instance_mismatch": 2
+          },
+          "pred_counts": {
+            "async_reset": 6,
+            "timing_control": 2,
+            "instance_mismatch": 3,
+            "simulation_statement": 3,
+            "unsupported_construct": 2
+          }
+        }
+      },
+      "manifest": {
+        "model": "jaredpalmer/kev-0.8b@v1.0",
+        "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+        "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+        "requests": 348,
+        "questions": 875,
+        "splits": {
+          "test": {
+            "requests": 281,
+            "questions": 725
+          },
+          "dev": {
+            "requests": 67,
+            "questions": 150
+          }
+        },
+        "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl",
+        "smoke_sha256": "6f2b1710a915fb337fff55809c3071277a13c052ef4990aebc0485661cc72f6a",
+        "smoke_ids": [
+          "dataset_v1:basic:metrex_12644",
+          "dataset_v1:performance:metrex_12644",
+          "dataset_v1:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:AB",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA"
+        ],
+        "request_order": [
+          "dataset_v1_smoke",
+          "dataset_v1"
+        ],
+        "submission_status": "completed",
+        "resources": {
+          "gpus": 1,
+          "minimum_gpu_memory_gb": 8,
+          "minimum_gpu_compute_capability": 8.0,
+          "cpus": 2,
+          "host_memory_gb": 12,
+          "scratch_disk_gb": 15,
+          "walltime_hours": 4,
+          "gpu_backend": "NVIDIA CUDA"
+        },
+        "job_id": "4.0",
+        "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261015_112824_kev-0.8b.sub",
+        "jobs": [
+          {
+            "job_id": "3.0",
+            "status": "failed before inference",
+            "host": "psi-test2.esat.kuleuven.be",
+            "reason": "AMD GPU matched the original memory and capability requirements; CUDA unavailable",
+            "return_value": 1
+          },
+          {
+            "job_id": "4.0",
+            "status": "completed",
+            "host": "euler.esat.kuleuven.be",
+            "gpu": "NVIDIA GeForce RTX 3080 Ti",
+            "submit_time": "2026-10-15 11:28:40 Europe/Paris",
+            "start_time": "2026-10-15 11:28:48 Europe/Paris",
+            "return_value": 0
+          }
+        ],
+        "completion_time": "2026-10-15 11:30:55 Europe/Paris",
+        "return_value": 0,
+        "requests_answered": 348,
+        "questions_answered": 875,
+        "errors": 0,
+        "test_questions_scored": 725,
+        "maximum_actual_input_tokens": 7706,
+        "median_model_latency_ms": 109.05,
+        "maximum_model_latency_ms": 613.3,
+        "total_request_wall_seconds": 52.047,
+        "peak_sampled_gpu_memory_mib": 7036,
+        "condor_execution_seconds": 125,
+        "model_revision": "bf75a6a8848ea6960ff2ed108d9ed44c2941174f",
+        "torch_version": "2.8.0+cu128",
+        "dtype": "bfloat16",
+        "model_backend": "CUDA via PyTorch",
+        "source_sha256": {
+          "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+          "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+          "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+          "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99"
+        },
+        "verification": {
+          "all_planned_design_labels_present": true,
+          "all_dataset_request_ids_answered_once": true,
+          "all_answer_keys_present": true,
+          "all_status_200": true,
+          "test_missing": 0,
+          "test_unscored": 0,
+          "dataset_sha256_unchanged": true,
+          "answer_mapping_independently_checked": true
+        }
+      },
+      "answers_file": "results/kev/dataset_v1_kev-0.8b_20261014/dataset_v1__kev-0.8b.jsonl",
+      "answers_sha256": "c2b175aacc788e57d7b3fbc042432c9d3fac78384ae37bc976f8bf52d9c22046",
+      "binary": {
+        "compiles": {
+          "pass_correct": 4,
+          "pass_wrong": 110,
+          "fail_correct": 9,
+          "fail_wrong": 0,
+          "n_pass": 114,
+          "n_fail": 9,
+          "pass_rate": 0.03508771929824561,
+          "fail_rate": 1.0,
+          "yes_answers": 4
+        },
+        "synthesizes": {
+          "pass_correct": 99,
+          "pass_wrong": 0,
+          "fail_correct": 0,
+          "fail_wrong": 24,
+          "n_pass": 99,
+          "n_fail": 24,
+          "pass_rate": 1.0,
+          "fail_rate": 0.0,
+          "yes_answers": 123
+        }
+      },
+      "reason_by_class": {
+        "multiple_drivers": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "async_reset": 1
+          }
+        },
+        "illegal_code": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "async_reset": 1
+          }
+        },
+        "unsupported_construct": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "timing_control": 1
+          }
+        },
+        "timing_control": {
+          "n": 3,
+          "correct": 1,
+          "predictions": {
+            "instance_mismatch": 1,
+            "unsupported_construct": 1,
+            "timing_control": 1
+          }
+        },
+        "simulation_statement": {
+          "n": 5,
+          "correct": 3,
+          "predictions": {
+            "simulation_statement": 3,
+            "async_reset": 2
+          }
+        },
+        "async_reset": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "unsupported_construct": 1
+          }
+        },
+        "mixed_assignments": {
+          "n": 2,
+          "correct": 0,
+          "predictions": {
+            "async_reset": 1,
+            "instance_mismatch": 1
+          }
+        },
+        "instance_mismatch": {
+          "n": 2,
+          "correct": 1,
+          "predictions": {
+            "instance_mismatch": 1,
+            "async_reset": 1
+          }
+        }
+      },
+      "pair_counts": {
+        "smaller_area": {
+          "pairs": 23,
+          "both_correct": 5,
+          "one_correct": 12,
+          "neither_correct": 6
+        },
+        "lower_power": {
+          "pairs": 22,
+          "both_correct": 6,
+          "one_correct": 16,
+          "neither_correct": 0
+        },
+        "higher_reach": {
+          "pairs": 6,
+          "both_correct": 3,
+          "one_correct": 2,
+          "neither_correct": 1
+        }
+      },
+      "noul": {
+        "compiles": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.4113
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.4336
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.3914
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.4617
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.3986
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.3898
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.4164
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.4115
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.3795
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.4082
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.4016
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.4527
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.4714
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.4358
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.3922
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.3903
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.3799
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.4011
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.3921
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.4133
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.3943
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.4798
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.432
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.4468
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.3872
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.4009
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.3823
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.3907
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.4286
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.405
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.3692
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.427
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.3818
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.4097
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.4579
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.46
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.4349
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.394
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.4418
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.4191
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.4215
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.3895
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.4038
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.412
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.4061
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.4028
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.4698
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.4267
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.3362
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.352
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.3048
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.4162
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.3765
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.4081
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.4086
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.4645
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.4352
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.4191
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.4312
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.3981
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.3898
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.4069
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.3992
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.4566
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.4201
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.4051
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.4895
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.4364
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.3466
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.3973
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.4205
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.4444
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.5302
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.5047
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.4796
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.4733
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.4057
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.463
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.3963
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.3984
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.386
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.3681
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.3989
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.4259
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.3943
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.4747
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.4117
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.4051
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.4069
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.3445
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.3287
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.3704
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.3497
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.359
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.4053
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.4044
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.3771
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.4225
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.533
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.457
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.3739
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.413
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.4524
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.3679
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.4842
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.4304
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.4069
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.3777
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.3292
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.3379
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.3868
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.3985
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.5038
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.4093
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.3797
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.3803
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.4169
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.4639
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.3835
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.3796
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.3076
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.4503
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.464
+            ]
+          ]
+        },
+        "synthesizes": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.6149
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.6484
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.6263
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.6188
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.6056
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.6434
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.6273
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.6542
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.6025
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.6297
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.6445
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.6779
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.6756
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.6356
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.649
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.6441
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.5914
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.6936
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.6485
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.6775
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.5699
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.6724
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.604
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.6088
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.5529
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.6588
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.5509
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.6707
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.6563
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.6313
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.6457
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.6603
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.646
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.6302
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.6895
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.7175
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.7091
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.6641
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.6893
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.5722
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.6373
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.6159
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.635
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.6225
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.5893
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.6203
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.7039
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.6814
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.558
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.5321
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.6036
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.6321
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.5932
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.6693
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.6318
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.6505
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.6123
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.6566
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.614
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.6414
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.6419
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.6322
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.6716
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.6065
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.6029
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.7081
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.654
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.5907
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.6604
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.6709
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.6231
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.6865
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.695
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.6996
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.6332
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.6096
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.621
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.6182
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.6329
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.5693
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.5227
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.6275
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.6629
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.6578
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.6646
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.5941
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.5605
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.6739
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.61
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.649
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.6652
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.6427
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.6369
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.5721
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.5582
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.6275
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.6353
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.743
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.6817
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.6658
+            ],
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.6014
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.6943
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.6462
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.6317
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.6323
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.6365
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.6584
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.673
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.6709
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.6317
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.5457
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.6135
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.5252
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.6263
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.6297
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.5459
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.6747
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.6921
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.6469
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.5906
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.6091
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.6772
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.7176
+            ]
+          ]
+        }
+      },
+      "no_compile_but_synthesizes": 119,
+      "synthesis_failure_subsets": {
+        "compiler_accepts": {
+          "correct": 0,
+          "n": 15,
+          "auroc_vs_successes": 0.49932659932659934,
+          "min_p": 0.5252,
+          "max_p": 0.6943
+        },
+        "compiler_rejects": {
+          "correct": 0,
+          "n": 9,
+          "auroc_vs_successes": 0.47362514029180697,
+          "min_p": 0.5459,
+          "max_p": 0.7176
+        }
+      },
+      "reason_linked": {
+        "n": 16,
+        "detected": 0,
+        "reason_correct": 5,
+        "both": 0
+      }
+    },
+    "kev-4b": {
+      "table": {
+        "compiles": {
+          "request": "basic",
+          "key": "compiles",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.926829268292683,
+          "balanced_accuracy": 0.5,
+          "truth_counts": {
+            "True": 114,
+            "False": 9
+          },
+          "pred_counts": {
+            "True": 123
+          },
+          "brier": 0.06440882739837397,
+          "auroc": 0.7631578947368421
+        },
+        "synthesizes": {
+          "request": "basic",
+          "key": "synthesizes",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.7967479674796748,
+          "balanced_accuracy": 0.494949494949495,
+          "truth_counts": {
+            "True": 99,
+            "False": 24
+          },
+          "pred_counts": {
+            "True": 122,
+            "False": 1
+          },
+          "brier": 0.14778760926829265,
+          "auroc": 0.7140151515151515
+        },
+        "higher_reach": {
+          "request": "pair",
+          "key": "higher_reach",
+          "type": "choice",
+          "n": 12,
+          "unscored": 0,
+          "accuracy": 0.8333333333333334,
+          "balanced_accuracy": 0.8333333333333333,
+          "truth_counts": {
+            "B": 6,
+            "A": 6
+          },
+          "pred_counts": {
+            "B": 8,
+            "A": 4
+          },
+          "same_letter_both_orders": 0.3333333333333333
+        },
+        "lower_power": {
+          "request": "pair",
+          "key": "lower_power",
+          "type": "choice",
+          "n": 44,
+          "unscored": 0,
+          "accuracy": 0.5681818181818182,
+          "balanced_accuracy": 0.5681818181818181,
+          "truth_counts": {
+            "A": 22,
+            "B": 22
+          },
+          "pred_counts": {
+            "B": 41,
+            "A": 3
+          },
+          "same_letter_both_orders": 0.8636363636363636
+        },
+        "smaller_area": {
+          "request": "pair",
+          "key": "smaller_area",
+          "type": "choice",
+          "n": 46,
+          "unscored": 0,
+          "accuracy": 0.7608695652173914,
+          "balanced_accuracy": 0.7608695652173914,
+          "truth_counts": {
+            "A": 23,
+            "B": 23
+          },
+          "pred_counts": {
+            "B": 32,
+            "A": 14
+          },
+          "same_letter_both_orders": 0.391304347826087
+        },
+        "area": {
+          "request": "performance",
+          "key": "area",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.358695652173913,
+          "balanced_accuracy": 0.2,
+          "truth_counts": {
+            "1": 33,
+            "2": 28,
+            "3": 20,
+            "4": 9,
+            "5": 2
+          },
+          "pred_counts": {
+            "1": 86,
+            "2": 6
+          },
+          "within_one": 0.7065217391304348,
+          "mae_levels": 0.7129474388596809
+        },
+        "power": {
+          "request": "performance",
+          "key": "power",
+          "type": "score",
+          "n": 85,
+          "unscored": 0,
+          "accuracy": 0.4588235294117647,
+          "balanced_accuracy": 0.2717391304347826,
+          "truth_counts": {
+            "2": 37,
+            "1": 23,
+            "3": 18,
+            "4": 7
+          },
+          "pred_counts": {
+            "2": 83,
+            "1": 2
+          },
+          "within_one": 0.9176470588235294,
+          "mae_levels": 0.7537280168710213
+        },
+        "reach": {
+          "request": "performance",
+          "key": "reach",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.11956521739130435,
+          "balanced_accuracy": 0.21153846153846154,
+          "truth_counts": {
+            "4": 45,
+            "3": 18,
+            "2": 16,
+            "1": 13
+          },
+          "pred_counts": {
+            "1": 89,
+            "2": 3
+          },
+          "within_one": 0.31521739130434784,
+          "mae_levels": 1.3211271061576622
+        },
+        "slack": {
+          "request": "performance",
+          "key": "slack",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.043478260869565216,
+          "balanced_accuracy": 0.125,
+          "truth_counts": {
+            "5": 63,
+            "4": 16,
+            "3": 8,
+            "2": 5
+          },
+          "pred_counts": {
+            "2": 27,
+            "3": 63,
+            "5": 2
+          },
+          "within_one": 0.2826086956521739,
+          "mae_levels": 1.6538410133790844
+        },
+        "reason": {
+          "request": "reason",
+          "key": "reason",
+          "type": "choice",
+          "n": 16,
+          "unscored": 0,
+          "accuracy": 0.5625,
+          "balanced_accuracy": 0.375,
+          "truth_counts": {
+            "multiple_drivers": 1,
+            "illegal_code": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "async_reset": 1,
+            "mixed_assignments": 2,
+            "instance_mismatch": 2
+          },
+          "pred_counts": {
+            "event_list": 3,
+            "unbounded_loop": 1,
+            "unsupported_construct": 4,
+            "timing_control": 3,
+            "simulation_statement": 5
+          }
+        }
+      },
+      "manifest": {
+        "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+        "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+        "requests": 348,
+        "questions": 875,
+        "splits": {
+          "test": {
+            "requests": 281,
+            "questions": 725
+          },
+          "dev": {
+            "requests": 67,
+            "questions": 150
+          }
+        },
+        "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl",
+        "smoke_sha256": "6f2b1710a915fb337fff55809c3071277a13c052ef4990aebc0485661cc72f6a",
+        "smoke_ids": [
+          "dataset_v1:basic:metrex_12644",
+          "dataset_v1:performance:metrex_12644",
+          "dataset_v1:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:AB",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA"
+        ],
+        "request_order": [
+          "dataset_v1_smoke",
+          "dataset_v1"
+        ],
+        "model": "jaredpalmer/kev-4b@v1.0",
+        "submission_status": "completed",
+        "last_checked": "2026-10-15T15:10:25+02:00",
+        "job_id": "5.0",
+        "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261015_141030_kev-4b.sub",
+        "resources": {
+          "gpus": 1,
+          "minimum_gpu_memory_gb": 20,
+          "minimum_gpu_compute_capability": 8.0,
+          "cpus": 2,
+          "host_memory_gb": 24,
+          "scratch_disk_gb": 25,
+          "walltime_hours": 4,
+          "gpu_backend": "NVIDIA CUDA"
+        },
+        "source_sha256": {
+          "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+          "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+          "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+          "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99"
+        },
+        "progress": {
+          "dataset_requests_answered": 348,
+          "test_questions_scored": 725
+        },
+        "completion_time": "2026-10-15 14:31:45 Europe/Paris",
+        "start_time": "2026-10-15 14:28:34 Europe/Paris",
+        "return_value": 0,
+        "host": "aristoteles.esat.kuleuven.be",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "model_revision": "6cfce5c2fa4b4bd64026336ab649c5ca78857d52",
+        "requests_answered": 348,
+        "questions_answered": 875,
+        "test_questions_scored": 725,
+        "errors": 0,
+        "maximum_actual_input_tokens": 7706,
+        "median_model_latency_ms": 201.35000000000002,
+        "maximum_model_latency_ms": 1247.3,
+        "total_request_wall_seconds": 99.433,
+        "condor_execution_seconds": 187.0,
+        "verification": {
+          "dataset_sha256_unchanged": true,
+          "all_dataset_request_ids_answered_once": true,
+          "all_answer_keys_present": true,
+          "all_status_200": true,
+          "test_missing": 0,
+          "test_unscored": 0,
+          "scores_recomputed_match_with_float_tolerance": true,
+          "condor_exit_zero": true
+        }
+      },
+      "answers_file": "results/kev/dataset_v1_kev-4b_20261015/dataset_v1__kev-4b.jsonl",
+      "answers_sha256": "9f68340c80d407377a5288c970bab9a1af2a203aa6128c56a80555dece270b6e",
+      "binary": {
+        "compiles": {
+          "pass_correct": 114,
+          "pass_wrong": 0,
+          "fail_correct": 0,
+          "fail_wrong": 9,
+          "n_pass": 114,
+          "n_fail": 9,
+          "pass_rate": 1.0,
+          "fail_rate": 0.0,
+          "yes_answers": 123
+        },
+        "synthesizes": {
+          "pass_correct": 98,
+          "pass_wrong": 1,
+          "fail_correct": 0,
+          "fail_wrong": 24,
+          "n_pass": 99,
+          "n_fail": 24,
+          "pass_rate": 0.98989898989899,
+          "fail_rate": 0.0,
+          "yes_answers": 122
+        }
+      },
+      "reason_by_class": {
+        "multiple_drivers": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1
+          }
+        },
+        "illegal_code": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "unbounded_loop": 1
+          }
+        },
+        "unsupported_construct": {
+          "n": 1,
+          "correct": 1,
+          "predictions": {
+            "unsupported_construct": 1
+          }
+        },
+        "timing_control": {
+          "n": 3,
+          "correct": 3,
+          "predictions": {
+            "timing_control": 3
+          }
+        },
+        "simulation_statement": {
+          "n": 5,
+          "correct": 5,
+          "predictions": {
+            "simulation_statement": 5
+          }
+        },
+        "async_reset": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1
+          }
+        },
+        "mixed_assignments": {
+          "n": 2,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1,
+            "unsupported_construct": 1
+          }
+        },
+        "instance_mismatch": {
+          "n": 2,
+          "correct": 0,
+          "predictions": {
+            "unsupported_construct": 2
+          }
+        }
+      },
+      "pair_counts": {
+        "smaller_area": {
+          "pairs": 23,
+          "both_correct": 13,
+          "one_correct": 9,
+          "neither_correct": 1
+        },
+        "lower_power": {
+          "pairs": 22,
+          "both_correct": 3,
+          "one_correct": 19,
+          "neither_correct": 0
+        },
+        "higher_reach": {
+          "pairs": 6,
+          "both_correct": 4,
+          "one_correct": 2,
+          "neither_correct": 0
+        }
+      },
+      "noul": {
+        "compiles": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.9194
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.859
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.9362
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.7763
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.9004
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.9294
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.9089
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.9257
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.899
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.91
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8898
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.9018
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.8643
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.857
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.8638
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8326
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.7385
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.8833
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.849
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.8746
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.7842
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.901
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.9092
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.8702
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.8897
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.8776
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.8964
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.839
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8871
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.8584
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.9062
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.8808
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.696
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.7828
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.87
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.8021
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.8454
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.761
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8363
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.846
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.86
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.9028
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.8491
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.794
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.9264
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.895
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.884
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.8398
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.8976
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.93
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.7939
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.8908
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.8975
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.8162
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.882
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.8896
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.9371
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.9061
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.9029
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.8561
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.8792
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.8429
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.7745
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.9149
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.9488
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.8827
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.9267
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.9005
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.8999
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.8901
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.8566
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.8677
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.8882
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.885
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.9086
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.846
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.8473
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.9121
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.8653
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.884
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.8203
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.8011
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.8843
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.8618
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.7639
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.8613
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.869
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.7809
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.7833
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.8742
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.8508
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.6889
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.8771
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.8612
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.751
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.7054
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.8412
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.7954
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.8084
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.778
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.9202
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.9595
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.848
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.9576
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.9371
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.8539
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.7426
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.9111
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.9343
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.9228
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.8732
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.8934
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.8925
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8711
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.888
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.7756
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.7428
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.8832
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.5055
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.725
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.7251
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.8949
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.7783
+            ]
+          ]
+        },
+        "synthesizes": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.8818
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.8445
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.8678
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.3951
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.7928
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.8486
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.8891
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.7682
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.8312
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.8431
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8428
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.7926
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.7209
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.8689
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.7962
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8056
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.7648
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.8142
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.8213
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.8286
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.7106
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.7516
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.8361
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.7301
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.7826
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.8094
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.7912
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.726
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8188
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.8021
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.7946
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.8063
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.765
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.7777
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.7359
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.7484
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.7697
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.7384
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8231
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.7991
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.8233
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.8856
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.7903
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.818
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.8483
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.8729
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.8865
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.7842
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.7869
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.844
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.6493
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.8524
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.8622
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.7994
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.8398
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.8639
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.8733
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.8787
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.8759
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.8757
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.8521
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.8595
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.855
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.8197
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.7596
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.856
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.8774
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.8896
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.8486
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.8238
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.8554
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.8466
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.8797
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.8957
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.8359
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.7504
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.8535
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.6704
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.7677
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.796
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.7629
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.8085
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.7866
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.7943
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.6784
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.8896
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.8827
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.8497
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.8966
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.9065
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.8312
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.7039
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.9048
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.8647
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.8668
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.8657
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.8504
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.9002
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8639
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.8886
+            ],
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.8229
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.8175
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.798
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.766
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.8685
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.8246
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.7401
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.7242
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.8135
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.7769
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.7299
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.668
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.7994
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.6877
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.7787
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.7072
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.7606
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.8861
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.7109
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.7668
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.6248
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.7874
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.7289
+            ]
+          ]
+        }
+      },
+      "no_compile_but_synthesizes": 0,
+      "synthesis_failure_subsets": {
+        "compiler_accepts": {
+          "correct": 0,
+          "n": 15,
+          "auroc_vs_successes": 0.6872053872053872,
+          "min_p": 0.668,
+          "max_p": 0.8886
+        },
+        "compiler_rejects": {
+          "correct": 0,
+          "n": 9,
+          "auroc_vs_successes": 0.7586980920314254,
+          "min_p": 0.6248,
+          "max_p": 0.8861
+        }
+      },
+      "reason_linked": {
+        "n": 16,
+        "detected": 0,
+        "reason_correct": 9,
+        "both": 0
+      }
+    },
+    "kev-9b": {
+      "table": {
+        "compiles": {
+          "request": "basic",
+          "key": "compiles",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.943089430894309,
+          "balanced_accuracy": 0.6111111111111112,
+          "truth_counts": {
+            "True": 114,
+            "False": 9
+          },
+          "pred_counts": {
+            "True": 121,
+            "False": 2
+          },
+          "brier": 0.06554100609756097,
+          "auroc": 0.6920077972709552
+        },
+        "synthesizes": {
+          "request": "basic",
+          "key": "synthesizes",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.8048780487804879,
+          "balanced_accuracy": 0.5315656565656566,
+          "truth_counts": {
+            "True": 99,
+            "False": 24
+          },
+          "pred_counts": {
+            "True": 119,
+            "False": 4
+          },
+          "brier": 0.1438261506504065,
+          "auroc": 0.7403198653198653
+        },
+        "higher_reach": {
+          "request": "pair",
+          "key": "higher_reach",
+          "type": "choice",
+          "n": 12,
+          "unscored": 0,
+          "accuracy": 0.75,
+          "balanced_accuracy": 0.75,
+          "truth_counts": {
+            "B": 6,
+            "A": 6
+          },
+          "pred_counts": {
+            "B": 7,
+            "A": 5
+          },
+          "same_letter_both_orders": 0.16666666666666666
+        },
+        "lower_power": {
+          "request": "pair",
+          "key": "lower_power",
+          "type": "choice",
+          "n": 44,
+          "unscored": 0,
+          "accuracy": 0.6590909090909091,
+          "balanced_accuracy": 0.6590909090909091,
+          "truth_counts": {
+            "A": 22,
+            "B": 22
+          },
+          "pred_counts": {
+            "B": 33,
+            "A": 11
+          },
+          "same_letter_both_orders": 0.5
+        },
+        "smaller_area": {
+          "request": "pair",
+          "key": "smaller_area",
+          "type": "choice",
+          "n": 46,
+          "unscored": 0,
+          "accuracy": 0.8695652173913043,
+          "balanced_accuracy": 0.8695652173913043,
+          "truth_counts": {
+            "A": 23,
+            "B": 23
+          },
+          "pred_counts": {
+            "B": 25,
+            "A": 21
+          },
+          "same_letter_both_orders": 0.08695652173913043
+        },
+        "area": {
+          "request": "performance",
+          "key": "area",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.5760869565217391,
+          "balanced_accuracy": 0.469004329004329,
+          "truth_counts": {
+            "1": 33,
+            "2": 28,
+            "3": 20,
+            "4": 9,
+            "5": 2
+          },
+          "pred_counts": {
+            "1": 38,
+            "2": 38,
+            "3": 13,
+            "5": 3
+          },
+          "within_one": 0.9021739130434783,
+          "mae_levels": 0.6494876223735829
+        },
+        "power": {
+          "request": "performance",
+          "key": "power",
+          "type": "score",
+          "n": 85,
+          "unscored": 0,
+          "accuracy": 0.4,
+          "balanced_accuracy": 0.3663337250293772,
+          "truth_counts": {
+            "2": 37,
+            "1": 23,
+            "3": 18,
+            "4": 7
+          },
+          "pred_counts": {
+            "2": 29,
+            "1": 2,
+            "3": 54
+          },
+          "within_one": 0.9294117647058824,
+          "mae_levels": 0.9001456177996443
+        },
+        "reach": {
+          "request": "performance",
+          "key": "reach",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.14130434782608695,
+          "balanced_accuracy": 0.25,
+          "truth_counts": {
+            "4": 45,
+            "3": 18,
+            "2": 16,
+            "1": 13
+          },
+          "pred_counts": {
+            "1": 89,
+            "2": 3
+          },
+          "within_one": 0.33695652173913043,
+          "mae_levels": 1.2075200778993314
+        },
+        "slack": {
+          "request": "performance",
+          "key": "slack",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.03260869565217391,
+          "balanced_accuracy": 0.011904761904761904,
+          "truth_counts": {
+            "5": 63,
+            "4": 16,
+            "3": 8,
+            "2": 5
+          },
+          "pred_counts": {
+            "2": 37,
+            "3": 1,
+            "5": 13,
+            "1": 41
+          },
+          "within_one": 0.11956521739130435,
+          "mae_levels": 1.7419230948245814
+        },
+        "reason": {
+          "request": "reason",
+          "key": "reason",
+          "type": "choice",
+          "n": 16,
+          "unscored": 0,
+          "accuracy": 0.6875,
+          "balanced_accuracy": 0.5,
+          "truth_counts": {
+            "multiple_drivers": 1,
+            "illegal_code": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "async_reset": 1,
+            "mixed_assignments": 2,
+            "instance_mismatch": 2
+          },
+          "pred_counts": {
+            "event_list": 3,
+            "unbounded_loop": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "async_reset": 1,
+            "instance_mismatch": 2
+          }
+        }
+      },
+      "manifest": {
+        "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+        "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+        "requests": 348,
+        "questions": 875,
+        "splits": {
+          "test": {
+            "requests": 281,
+            "questions": 725
+          },
+          "dev": {
+            "requests": 67,
+            "questions": 150
+          }
+        },
+        "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl",
+        "smoke_sha256": "6f2b1710a915fb337fff55809c3071277a13c052ef4990aebc0485661cc72f6a",
+        "smoke_ids": [
+          "dataset_v1:basic:metrex_12644",
+          "dataset_v1:performance:metrex_12644",
+          "dataset_v1:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:AB",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA"
+        ],
+        "request_order": [
+          "dataset_v1_smoke",
+          "dataset_v1"
+        ],
+        "model": "jaredpalmer/kev-9b@v1.0",
+        "submission_status": "completed",
+        "last_checked": "2026-10-15T15:10:25+02:00",
+        "job_id": "6.0",
+        "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261015_141031_kev-9b.sub",
+        "resources": {
+          "gpus": 1,
+          "minimum_gpu_memory_gb": 30,
+          "minimum_gpu_compute_capability": 8.0,
+          "cpus": 2,
+          "host_memory_gb": 40,
+          "scratch_disk_gb": 40,
+          "walltime_hours": 6,
+          "gpu_backend": "NVIDIA CUDA"
+        },
+        "source_sha256": {
+          "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+          "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+          "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+          "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99"
+        },
+        "progress": {
+          "dataset_requests_answered": 348,
+          "test_questions_scored": 725
+        },
+        "completion_time": "2026-10-15 14:34:55 Europe/Paris",
+        "start_time": "2026-10-15 14:31:27 Europe/Paris",
+        "return_value": 0,
+        "host": "aristoteles.esat.kuleuven.be",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "model_revision": "db029f08b290afd9fee4aa4bbcd9ae48602d1eb0",
+        "requests_answered": 348,
+        "questions_answered": 875,
+        "test_questions_scored": 725,
+        "errors": 0,
+        "maximum_actual_input_tokens": 7706,
+        "median_model_latency_ms": 243.7,
+        "maximum_model_latency_ms": 1295.2,
+        "total_request_wall_seconds": 104.114,
+        "condor_execution_seconds": 204.0,
+        "verification": {
+          "dataset_sha256_unchanged": true,
+          "all_dataset_request_ids_answered_once": true,
+          "all_answer_keys_present": true,
+          "all_status_200": true,
+          "test_missing": 0,
+          "test_unscored": 0,
+          "scores_recomputed_match_with_float_tolerance": true,
+          "condor_exit_zero": true
+        }
+      },
+      "answers_file": "results/kev/dataset_v1_kev-9b_20261015/dataset_v1__kev-9b.jsonl",
+      "answers_sha256": "5c69346a7c9211caaff5f0e6067e82a5f6022519029d5cd1634697a1710fde34",
+      "binary": {
+        "compiles": {
+          "pass_correct": 114,
+          "pass_wrong": 0,
+          "fail_correct": 2,
+          "fail_wrong": 7,
+          "n_pass": 114,
+          "n_fail": 9,
+          "pass_rate": 1.0,
+          "fail_rate": 0.2222222222222222,
+          "yes_answers": 121
+        },
+        "synthesizes": {
+          "pass_correct": 97,
+          "pass_wrong": 2,
+          "fail_correct": 2,
+          "fail_wrong": 22,
+          "n_pass": 99,
+          "n_fail": 24,
+          "pass_rate": 0.9797979797979798,
+          "fail_rate": 0.08333333333333333,
+          "yes_answers": 119
+        }
+      },
+      "reason_by_class": {
+        "multiple_drivers": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1
+          }
+        },
+        "illegal_code": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "unbounded_loop": 1
+          }
+        },
+        "unsupported_construct": {
+          "n": 1,
+          "correct": 1,
+          "predictions": {
+            "unsupported_construct": 1
+          }
+        },
+        "timing_control": {
+          "n": 3,
+          "correct": 3,
+          "predictions": {
+            "timing_control": 3
+          }
+        },
+        "simulation_statement": {
+          "n": 5,
+          "correct": 5,
+          "predictions": {
+            "simulation_statement": 5
+          }
+        },
+        "async_reset": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1
+          }
+        },
+        "mixed_assignments": {
+          "n": 2,
+          "correct": 0,
+          "predictions": {
+            "event_list": 1,
+            "async_reset": 1
+          }
+        },
+        "instance_mismatch": {
+          "n": 2,
+          "correct": 2,
+          "predictions": {
+            "instance_mismatch": 2
+          }
+        }
+      },
+      "pair_counts": {
+        "smaller_area": {
+          "pairs": 23,
+          "both_correct": 19,
+          "one_correct": 2,
+          "neither_correct": 2
+        },
+        "lower_power": {
+          "pairs": 22,
+          "both_correct": 9,
+          "one_correct": 11,
+          "neither_correct": 2
+        },
+        "higher_reach": {
+          "pairs": 6,
+          "both_correct": 4,
+          "one_correct": 1,
+          "neither_correct": 1
+        }
+      },
+      "noul": {
+        "compiles": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.9047
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.8731
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.8558
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.8105
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.8813
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.8993
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.8443
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.8738
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.8638
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.875
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8551
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.8844
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.8481
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.8624
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.8358
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8047
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.8461
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.7969
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.8439
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.8779
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.8313
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.8455
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.8713
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.8601
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.8208
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.8255
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.8607
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.801
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8322
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.8269
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.845
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.8706
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.7642
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.8006
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.8666
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.75
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.8048
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.8018
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8454
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.8031
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.8464
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.8664
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.8536
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.8544
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.894
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.8736
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.8782
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.7837
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.8684
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.8957
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.6788
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.8477
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.8543
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.7857
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.8196
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.8534
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.9116
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.8725
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.8553
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.8543
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.8566
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.8382
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.8218
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.878
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.9105
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.7981
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.7856
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.8579
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.8425
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.8503
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.7818
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.8518
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.8624
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.8486
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.8709
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.8607
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.7893
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.879
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.8023
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.7958
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.805
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.7714
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.8724
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.8514
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.8035
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.8439
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.8683
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.7991
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.799
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.8449
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.7074
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.5451
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.8764
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.7623
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.8071
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.7957
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.8365
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.8255
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.8013
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.7746
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.9051
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.8995
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.8325
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.9257
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.8979
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.8357
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.7732
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.8928
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.9074
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.9088
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.8094
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.8576
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.8611
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8493
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.8463
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.827
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.3781
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.8727
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.3354
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.8422
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.6518
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.8677
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.6897
+            ]
+          ]
+        },
+        "synthesizes": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.8557
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.8597
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.8964
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.4222
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.8337
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.9031
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.8331
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.8503
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.8701
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.8572
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8635
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.8586
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.8025
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.8638
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.8543
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8305
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.8524
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.8454
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.8516
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.8673
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.8119
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.8506
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.7789
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.8336
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.821
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.8386
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.8549
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.8598
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8368
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.8466
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.8419
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.8782
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.8243
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.7792
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.8575
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.7714
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.8179
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.7875
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8429
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.8572
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.8525
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.877
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.8538
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.8724
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.8936
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.8735
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.8768
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.5831
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.841
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.8849
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.7737
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.8571
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.8447
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.8106
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.8289
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.8919
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.8744
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.8729
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.8578
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.8579
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.8544
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.8688
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.8774
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.8763
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.8199
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.8417
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.8768
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.8788
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.878
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.8227
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.8726
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.8796
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.8724
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.8733
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.8703
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.7503
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.879
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.6299
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.7644
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.8337
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.8759
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.8498
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.8468
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.8178
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.6351
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.89
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.868
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.8831
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.9035
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.8766
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.8813
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.4928
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.883
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.9034
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.8996
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.8426
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.8949
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.8868
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8619
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.8684
+            ],
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.8569
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.8425
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.8188
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.7659
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.8727
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.8572
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.7862
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.8033
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.8513
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.7577
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.5358
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.3523
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.8407
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.8046
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.8262
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.8073
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.4391
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.8785
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.7252
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.8527
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.6894
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.8494
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.7082
+            ]
+          ]
+        }
+      },
+      "no_compile_but_synthesizes": 1,
+      "synthesis_failure_subsets": {
+        "compiler_accepts": {
+          "correct": 1,
+          "n": 15,
+          "auroc_vs_successes": 0.7474747474747475,
+          "min_p": 0.3523,
+          "max_p": 0.8727
+        },
+        "compiler_rejects": {
+          "correct": 1,
+          "n": 9,
+          "auroc_vs_successes": 0.7283950617283951,
+          "min_p": 0.4391,
+          "max_p": 0.8785
+        }
+      },
+      "reason_linked": {
+        "n": 16,
+        "detected": 1,
+        "reason_correct": 11,
+        "both": 1
+      }
+    },
+    "kev-27b": {
+      "table": {
+        "compiles": {
+          "request": "basic",
+          "key": "compiles",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.991869918699187,
+          "balanced_accuracy": 0.9444444444444444,
+          "truth_counts": {
+            "True": 114,
+            "False": 9
+          },
+          "pred_counts": {
+            "True": 115,
+            "False": 8
+          },
+          "brier": 0.029944566504065052,
+          "auroc": 0.9941520467836257
+        },
+        "synthesizes": {
+          "request": "basic",
+          "key": "synthesizes",
+          "type": "noul",
+          "n": 123,
+          "unscored": 0,
+          "accuracy": 0.8292682926829268,
+          "balanced_accuracy": 0.5782828282828283,
+          "truth_counts": {
+            "True": 99,
+            "False": 24
+          },
+          "pred_counts": {
+            "True": 118,
+            "False": 5
+          },
+          "brier": 0.12800759715447158,
+          "auroc": 0.8141835016835017
+        },
+        "higher_reach": {
+          "request": "pair",
+          "key": "higher_reach",
+          "type": "choice",
+          "n": 12,
+          "unscored": 0,
+          "accuracy": 0.8333333333333334,
+          "balanced_accuracy": 0.8333333333333334,
+          "truth_counts": {
+            "B": 6,
+            "A": 6
+          },
+          "pred_counts": {
+            "B": 6,
+            "A": 6
+          },
+          "same_letter_both_orders": 0.0
+        },
+        "lower_power": {
+          "request": "pair",
+          "key": "lower_power",
+          "type": "choice",
+          "n": 44,
+          "unscored": 0,
+          "accuracy": 0.7045454545454546,
+          "balanced_accuracy": 0.7045454545454546,
+          "truth_counts": {
+            "A": 22,
+            "B": 22
+          },
+          "pred_counts": {
+            "B": 25,
+            "A": 19
+          },
+          "same_letter_both_orders": 0.13636363636363635
+        },
+        "smaller_area": {
+          "request": "pair",
+          "key": "smaller_area",
+          "type": "choice",
+          "n": 46,
+          "unscored": 0,
+          "accuracy": 0.782608695652174,
+          "balanced_accuracy": 0.7826086956521738,
+          "truth_counts": {
+            "A": 23,
+            "B": 23
+          },
+          "pred_counts": {
+            "B": 25,
+            "A": 21
+          },
+          "same_letter_both_orders": 0.08695652173913043
+        },
+        "area": {
+          "request": "performance",
+          "key": "area",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.6630434782608695,
+          "balanced_accuracy": 0.4813708513708514,
+          "truth_counts": {
+            "1": 33,
+            "2": 28,
+            "3": 20,
+            "4": 9,
+            "5": 2
+          },
+          "pred_counts": {
+            "1": 21,
+            "2": 45,
+            "3": 20,
+            "4": 5,
+            "5": 1
+          },
+          "within_one": 1.0,
+          "mae_levels": 0.4849728009763447
+        },
+        "power": {
+          "request": "performance",
+          "key": "power",
+          "type": "score",
+          "n": 85,
+          "unscored": 0,
+          "accuracy": 0.10588235294117647,
+          "balanced_accuracy": 0.23412698412698413,
+          "truth_counts": {
+            "2": 37,
+            "1": 23,
+            "3": 18,
+            "4": 7
+          },
+          "pred_counts": {
+            "3": 54,
+            "4": 30,
+            "5": 1
+          },
+          "within_one": 0.6470588235294118,
+          "mae_levels": 1.0696787315341514
+        },
+        "reach": {
+          "request": "performance",
+          "key": "reach",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.14130434782608695,
+          "balanced_accuracy": 0.25,
+          "truth_counts": {
+            "4": 45,
+            "3": 18,
+            "2": 16,
+            "1": 13
+          },
+          "pred_counts": {
+            "1": 90,
+            "5": 2
+          },
+          "within_one": 0.31521739130434784,
+          "mae_levels": 1.2421987818481623
+        },
+        "slack": {
+          "request": "performance",
+          "key": "slack",
+          "type": "score",
+          "n": 92,
+          "unscored": 0,
+          "accuracy": 0.32608695652173914,
+          "balanced_accuracy": 0.13070436507936506,
+          "truth_counts": {
+            "5": 63,
+            "4": 16,
+            "3": 8,
+            "2": 5
+          },
+          "pred_counts": {
+            "5": 32,
+            "1": 56,
+            "4": 2,
+            "2": 2
+          },
+          "within_one": 0.40217391304347827,
+          "mae_levels": 1.6220294030148594
+        },
+        "reason": {
+          "request": "reason",
+          "key": "reason",
+          "type": "choice",
+          "n": 16,
+          "unscored": 0,
+          "accuracy": 0.9375,
+          "balanced_accuracy": 0.875,
+          "truth_counts": {
+            "multiple_drivers": 1,
+            "illegal_code": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "async_reset": 1,
+            "mixed_assignments": 2,
+            "instance_mismatch": 2
+          },
+          "pred_counts": {
+            "async_reset": 2,
+            "illegal_code": 1,
+            "unsupported_construct": 1,
+            "timing_control": 3,
+            "simulation_statement": 5,
+            "mixed_assignments": 2,
+            "instance_mismatch": 2
+          }
+        }
+      },
+      "manifest": {
+        "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+        "dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+        "requests": 348,
+        "questions": 875,
+        "splits": {
+          "test": {
+            "requests": 281,
+            "questions": 725
+          },
+          "dev": {
+            "requests": 67,
+            "questions": 150
+          }
+        },
+        "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl",
+        "smoke_sha256": "6f2b1710a915fb337fff55809c3071277a13c052ef4990aebc0485661cc72f6a",
+        "smoke_ids": [
+          "dataset_v1:basic:metrex_12644",
+          "dataset_v1:performance:metrex_12644",
+          "dataset_v1:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:AB",
+          "dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA"
+        ],
+        "request_order": [
+          "dataset_v1_smoke",
+          "dataset_v1"
+        ],
+        "model": "jaredpalmer/kev-27b@v1.0",
+        "submission_status": "completed",
+        "last_checked": "2026-10-15T15:10:25+02:00",
+        "job_id": "7.0",
+        "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261015_141031_kev-27b.sub",
+        "resources": {
+          "gpus": 1,
+          "minimum_gpu_memory_gb": 75,
+          "minimum_gpu_compute_capability": 8.0,
+          "cpus": 4,
+          "host_memory_gb": 80,
+          "scratch_disk_gb": 75,
+          "walltime_hours": 8,
+          "gpu_backend": "NVIDIA CUDA"
+        },
+        "source_sha256": {
+          "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+          "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+          "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+          "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99"
+        },
+        "progress": {
+          "dataset_requests_answered": 348,
+          "test_questions_scored": 725
+        },
+        "completion_time": "2026-10-15 14:39:12 Europe/Paris",
+        "start_time": "2026-10-15 14:32:27 Europe/Paris",
+        "return_value": 0,
+        "host": "aristoteles.esat.kuleuven.be",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "model_revision": "af0e6d551bdc2cc724f3e9d7a8bee1cd4fb8f7bf",
+        "requests_answered": 348,
+        "questions_answered": 875,
+        "test_questions_scored": 725,
+        "errors": 0,
+        "maximum_actual_input_tokens": 7706,
+        "median_model_latency_ms": 668.3,
+        "maximum_model_latency_ms": 3589.3,
+        "total_request_wall_seconds": 279.849,
+        "condor_execution_seconds": 400.0,
+        "verification": {
+          "dataset_sha256_unchanged": true,
+          "all_dataset_request_ids_answered_once": true,
+          "all_answer_keys_present": true,
+          "all_status_200": true,
+          "test_missing": 0,
+          "test_unscored": 0,
+          "scores_recomputed_match_with_float_tolerance": true,
+          "condor_exit_zero": true
+        }
+      },
+      "answers_file": "results/kev/dataset_v1_kev-27b_20261015/dataset_v1__kev-27b.jsonl",
+      "answers_sha256": "c643020e0b73e9627c81fb7b0429556c70969cfef7074b7e4f6fc71d1349bf19",
+      "binary": {
+        "compiles": {
+          "pass_correct": 114,
+          "pass_wrong": 0,
+          "fail_correct": 8,
+          "fail_wrong": 1,
+          "n_pass": 114,
+          "n_fail": 9,
+          "pass_rate": 1.0,
+          "fail_rate": 0.8888888888888888,
+          "yes_answers": 115
+        },
+        "synthesizes": {
+          "pass_correct": 98,
+          "pass_wrong": 1,
+          "fail_correct": 4,
+          "fail_wrong": 20,
+          "n_pass": 99,
+          "n_fail": 24,
+          "pass_rate": 0.98989898989899,
+          "fail_rate": 0.16666666666666666,
+          "yes_answers": 118
+        }
+      },
+      "reason_by_class": {
+        "multiple_drivers": {
+          "n": 1,
+          "correct": 0,
+          "predictions": {
+            "async_reset": 1
+          }
+        },
+        "illegal_code": {
+          "n": 1,
+          "correct": 1,
+          "predictions": {
+            "illegal_code": 1
+          }
+        },
+        "unsupported_construct": {
+          "n": 1,
+          "correct": 1,
+          "predictions": {
+            "unsupported_construct": 1
+          }
+        },
+        "timing_control": {
+          "n": 3,
+          "correct": 3,
+          "predictions": {
+            "timing_control": 3
+          }
+        },
+        "simulation_statement": {
+          "n": 5,
+          "correct": 5,
+          "predictions": {
+            "simulation_statement": 5
+          }
+        },
+        "async_reset": {
+          "n": 1,
+          "correct": 1,
+          "predictions": {
+            "async_reset": 1
+          }
+        },
+        "mixed_assignments": {
+          "n": 2,
+          "correct": 2,
+          "predictions": {
+            "mixed_assignments": 2
+          }
+        },
+        "instance_mismatch": {
+          "n": 2,
+          "correct": 2,
+          "predictions": {
+            "instance_mismatch": 2
+          }
+        }
+      },
+      "pair_counts": {
+        "smaller_area": {
+          "pairs": 23,
+          "both_correct": 17,
+          "one_correct": 2,
+          "neither_correct": 4
+        },
+        "lower_power": {
+          "pairs": 22,
+          "both_correct": 14,
+          "one_correct": 3,
+          "neither_correct": 5
+        },
+        "higher_reach": {
+          "pairs": 6,
+          "both_correct": 5,
+          "one_correct": 0,
+          "neither_correct": 1
+        }
+      },
+      "noul": {
+        "compiles": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.9643
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.8074
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.6645
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.8361
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.9563
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.5572
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.9476
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.9316
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.8102
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.9587
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8402
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.8888
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.9026
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.8476
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.8374
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8319
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.9107
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.8722
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.9394
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.9051
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.7981
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.8477
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.9305
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.9236
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.8267
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.9009
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.9409
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.8338
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8888
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.7548
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.8685
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.9407
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.9188
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.9166
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.8757
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.7679
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.9269
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.8637
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8385
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.7178
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.934
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.8871
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.7973
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.961
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.9669
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.9492
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.9667
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.8784
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.9544
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.9602
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.881
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.9044
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.9761
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.8645
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.9256
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.9619
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.9814
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.9691
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.9505
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.9692
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.9621
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.9754
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.9719
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.9635
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.991
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.9774
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.8623
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.9836
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.9762
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.9642
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.8026
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.9586
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.9794
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.9652
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.9643
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.6738
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.6377
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.9767
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.8058
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.6575
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.765
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.7664
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.9416
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.9277
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.8404
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.7724
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.8538
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.8654
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.9037
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.9526
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.8447
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.9408
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.946
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.8877
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.765
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.6517
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.9326
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.8302
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.944
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.907
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.9762
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.9889
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.8157
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.9815
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.9698
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.9616
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.9003
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.9704
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.9759
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.9753
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.9616
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.9613
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.8732
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8825
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.3614
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.6821
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.279
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.3603
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.3265
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.4288
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.2419
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.2508
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.4897
+            ]
+          ]
+        },
+        "synthesizes": {
+          "pass": [
+            [
+              "dataset_v1:basic:metrex_12644",
+              0.9479
+            ],
+            [
+              "dataset_v1:basic:metrex_03666",
+              0.851
+            ],
+            [
+              "dataset_v1:basic:metrex_11723",
+              0.8769
+            ],
+            [
+              "dataset_v1:basic:metrex_06241",
+              0.4708
+            ],
+            [
+              "dataset_v1:basic:metrex_16173",
+              0.9235
+            ],
+            [
+              "dataset_v1:basic:metrex_00290",
+              0.6319
+            ],
+            [
+              "dataset_v1:basic:metrex_20969",
+              0.8754
+            ],
+            [
+              "dataset_v1:basic:metrex_17236",
+              0.9343
+            ],
+            [
+              "dataset_v1:basic:metrex_10545",
+              0.8164
+            ],
+            [
+              "dataset_v1:basic:metrex_06036",
+              0.9355
+            ],
+            [
+              "dataset_v1:basic:metrex_18170",
+              0.8972
+            ],
+            [
+              "dataset_v1:basic:metrex_11990",
+              0.8631
+            ],
+            [
+              "dataset_v1:basic:metrex_13092",
+              0.9195
+            ],
+            [
+              "dataset_v1:basic:metrex_04348",
+              0.8973
+            ],
+            [
+              "dataset_v1:basic:metrex_19218",
+              0.8496
+            ],
+            [
+              "dataset_v1:basic:metrex_24911",
+              0.8772
+            ],
+            [
+              "dataset_v1:basic:metrex_03465",
+              0.8865
+            ],
+            [
+              "dataset_v1:basic:metrex_23826",
+              0.8994
+            ],
+            [
+              "dataset_v1:basic:metrex_22014",
+              0.9317
+            ],
+            [
+              "dataset_v1:basic:metrex_02185",
+              0.9096
+            ],
+            [
+              "dataset_v1:basic:metrex_06042",
+              0.849
+            ],
+            [
+              "dataset_v1:basic:metrex_23839",
+              0.8904
+            ],
+            [
+              "dataset_v1:basic:metrex_05112",
+              0.8468
+            ],
+            [
+              "dataset_v1:basic:metrex_06658",
+              0.8821
+            ],
+            [
+              "dataset_v1:basic:metrex_20040",
+              0.7718
+            ],
+            [
+              "dataset_v1:basic:metrex_20248",
+              0.9089
+            ],
+            [
+              "dataset_v1:basic:metrex_16212",
+              0.786
+            ],
+            [
+              "dataset_v1:basic:metrex_24965",
+              0.8946
+            ],
+            [
+              "dataset_v1:basic:metrex_21774",
+              0.8762
+            ],
+            [
+              "dataset_v1:basic:metrex_02095",
+              0.8135
+            ],
+            [
+              "dataset_v1:basic:metrex_21115",
+              0.8754
+            ],
+            [
+              "dataset_v1:basic:rev_ticket_machine_v0",
+              0.9316
+            ],
+            [
+              "dataset_v1:basic:rev_vending_machine_v0",
+              0.9026
+            ],
+            [
+              "dataset_v1:basic:rev_cpu_fsm_v0",
+              0.8987
+            ],
+            [
+              "dataset_v1:basic:rev_dsp_v0",
+              0.8023
+            ],
+            [
+              "dataset_v1:basic:rev_communication_v0",
+              0.7723
+            ],
+            [
+              "dataset_v1:basic:rev_tv80_v0",
+              0.8968
+            ],
+            [
+              "dataset_v1:basic:rev_aes_v0",
+              0.9171
+            ],
+            [
+              "dataset_v1:basic:rev_uart_v0",
+              0.8117
+            ],
+            [
+              "dataset_v1:basic:rev_cordic_v0",
+              0.8622
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_divbyfrac",
+              0.9452
+            ],
+            [
+              "dataset_v1:basic:rtllm_ring_counter",
+              0.9464
+            ],
+            [
+              "dataset_v1:basic:rtllm_multi_8bit",
+              0.8143
+            ],
+            [
+              "dataset_v1:basic:rtllm_freq_div",
+              0.9427
+            ],
+            [
+              "dataset_v1:basic:rtllm_sub_64bit",
+              0.8096
+            ],
+            [
+              "dataset_v1:basic:rtllm_parallel2serial",
+              0.9473
+            ],
+            [
+              "dataset_v1:basic:rtllm_adder_16bit",
+              0.9457
+            ],
+            [
+              "dataset_v1:basic:rtllm_alu",
+              0.8573
+            ],
+            [
+              "dataset_v1:basic:ve_Prob082_lfsr32",
+              0.9519
+            ],
+            [
+              "dataset_v1:basic:ve_Prob074_ece241_2014_q4",
+              0.9505
+            ],
+            [
+              "dataset_v1:basic:ve_Prob144_conwaylife",
+              0.8935
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_84a3280b15ed",
+              0.9244
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_03e15d87a383",
+              0.9337
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_bb49421c82a4",
+              0.8901
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob035_calendar_5fdd9180cd42",
+              0.8888
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_850b308367bc",
+              0.9522
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_8cd7ab774239",
+              0.9415
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_71f53dfc7d24",
+              0.9283
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_4e179d55a551",
+              0.9475
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_dcfc51e97f66",
+              0.9448
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_0e531c14cb8a",
+              0.9415
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_da252516a98c",
+              0.9437
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_042ff04511d9",
+              0.9467
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_44ce14612ccf",
+              0.9638
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_8ea29e26614c",
+              0.9464
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob004_adder_8bit_21c6c577ca57",
+              0.9139
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_0031bb83eec1",
+              0.9639
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_1325059c4791",
+              0.9586
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_403129dcdba5",
+              0.9443
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob118_history_shift_68502a77172c",
+              0.8714
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_0347fbac0202",
+              0.9439
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_13306bdaa439",
+              0.9541
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_43c16b7b2894",
+              0.9487
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob155_lemmings4_7bdb59935298",
+              0.9517
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_d27662cbf4ed",
+              0.8075
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_c8804c8a8cdf",
+              0.774
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_4ab9dec46975",
+              0.9568
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob105_rotate100_3aebed0fe74b",
+              0.8142
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_trap_rev_cpu_fsm_v0",
+              0.8648
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_trap_ve_Prob082_lfsr32",
+              0.9446
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_trap_ve_Prob074_ece241_2014_q4",
+              0.9393
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_trap_rtllm_freq_div",
+              0.8818
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob039_serial2parallel_02b6cc5d441c",
+              0.8829
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob034_freq_divbyodd_e52ed475685a",
+              0.8898
+            ],
+            [
+              "dataset_v1:basic:revold_rtllm_Prob009_div_16bit_346f15882300",
+              0.8178
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e",
+              0.9467
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob053_m2014_q4d_341379baa280",
+              0.9488
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob152_lemmings3_65965867f2a9",
+              0.9029
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob113_2012_q1g_bef6fd93883f",
+              0.9633
+            ],
+            [
+              "dataset_v1:basic:revold_ve_Prob094_gatesv_10e7b2f45a7c",
+              0.9518
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t5_adder_pipe_64bit",
+              0.9575
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t4_div_16bit",
+              0.851
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t5_pulse_detect",
+              0.9572
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t1_counter_12",
+              0.9591
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_right_shifter",
+              0.9556
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_calendar",
+              0.9369
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt35_t4_freq_div",
+              0.932
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t3_adder_16bit",
+              0.9255
+            ],
+            [
+              "dataset_v1:basic:rtllm_chatgpt4_t1_multi_16bit",
+              0.8882
+            ]
+          ],
+          "fail": [
+            [
+              "dataset_v1:basic:revold_rtllm_Prob036_edge_detect_035f88e177bc",
+              0.9492
+            ],
+            [
+              "dataset_v1:basic:mut_illegal_code_0_metrex_10545",
+              0.6891
+            ],
+            [
+              "dataset_v1:basic:mut_unsupported_construct_1_metrex_23826",
+              0.7766
+            ],
+            [
+              "dataset_v1:basic:mut_timing_control_1_metrex_24911",
+              0.8076
+            ],
+            [
+              "dataset_v1:basic:mut_simulation_statement_0_rtllm_ring_counter",
+              0.8143
+            ],
+            [
+              "dataset_v1:basic:mut_async_reset_1_rtllm_parallel2serial",
+              0.9401
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_0_rtllm_freq_divbyfrac",
+              0.9411
+            ],
+            [
+              "dataset_v1:basic:mut_mixed_assignments_1_rev_aes_v0",
+              0.9074
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_0_metrex_13092",
+              0.8918
+            ],
+            [
+              "dataset_v1:basic:mut_instance_mismatch_1_metrex_02185",
+              0.8675
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0",
+              0.879
+            ],
+            [
+              "dataset_v1:basic:trap_initial_1_twin_ve_Prob082_lfsr32",
+              0.7684
+            ],
+            [
+              "dataset_v1:basic:trap_display_2_twin_metrex_06036",
+              0.8726
+            ],
+            [
+              "dataset_v1:basic:trap_nb_delay_3_twin_ve_Prob074_ece241_2014_q4",
+              0.845
+            ],
+            [
+              "dataset_v1:basic:trap_initial_4_twin_rtllm_freq_div",
+              0.6016
+            ],
+            [
+              "dataset_v1:basic:trap_display_5_twin_metrex_22014",
+              0.7491
+            ],
+            [
+              "dataset_v1:basic:noncomp_0_metrex_06042",
+              0.8046
+            ],
+            [
+              "dataset_v1:basic:noncomp_1_rtllm_alu",
+              0.3906
+            ],
+            [
+              "dataset_v1:basic:noncomp_2_rtllm_adder_16bit",
+              0.7451
+            ],
+            [
+              "dataset_v1:basic:noncomp_5_rev_vending_machine_v0",
+              0.4582
+            ],
+            [
+              "dataset_v1:basic:noncomp_6_metrex_03465",
+              0.7464
+            ],
+            [
+              "dataset_v1:basic:noncomp_7_ve_Prob144_conwaylife",
+              0.3595
+            ],
+            [
+              "dataset_v1:basic:noncomp_8_metrex_11990",
+              0.4993
+            ],
+            [
+              "dataset_v1:basic:noncomp_9_rev_communication_v0",
+              0.6646
+            ]
+          ]
+        }
+      },
+      "no_compile_but_synthesizes": 4,
+      "synthesis_failure_subsets": {
+        "compiler_accepts": {
+          "correct": 0,
+          "n": 15,
+          "auroc_vs_successes": 0.7134680134680135,
+          "min_p": 0.6016,
+          "max_p": 0.9492
+        },
+        "compiler_rejects": {
+          "correct": 4,
+          "n": 9,
+          "auroc_vs_successes": 0.9820426487093153,
+          "min_p": 0.3595,
+          "max_p": 0.8046
+        }
+      },
+      "reason_linked": {
+        "n": 16,
+        "detected": 0,
+        "reason_correct": 15,
+        "both": 0
+      }
+    }
+  },
+  "reason_options": {
+    "illegal_code": "The code is not legal Verilog or SystemVerilog: a syntax error, an undeclared name, a non-constant range, or a procedural assignment to a net.",
+    "unsupported_construct": "The code is legal for a simulator, but it uses a data type or construct that synthesis does not support: real, time, string, trireg, a class, a dynamic array, a DPI import, or a user-defined primitive.",
+    "timing_control": "The code uses a timing control that synthesis does not support: wait, fork-join, or an event trigger (->).",
+    "simulation_statement": "The code uses a statement or system function for simulation only: force-release, procedural assign-deassign, or $random.",
+    "event_list": "An event list that synthesis does not support: both edges of one signal, edge and level events mixed, or different edges in one process.",
+    "async_reset": "An asynchronous reset or set that synthesis cannot build: statements outside the reset if-else, a second edge signal without the reset template, or a reset to a non-constant value.",
+    "multiple_drivers": "A signal has more than one driver, for example assignments in two always blocks.",
+    "mixed_assignments": "One variable gets blocking and nonblocking assignments in the same always block.",
+    "unbounded_loop": "A loop or a recursion that synthesis cannot unroll: a forever loop with no timing control, or a recursion with no constant limit.",
+    "instance_mismatch": "A module instance does not match a module: a missing module, an unknown parameter, or an unknown port."
+  },
+  "reason_counts_by_split": {
+    "test": {
+      "multiple_drivers": 1,
+      "illegal_code": 1,
+      "unsupported_construct": 1,
+      "timing_control": 3,
+      "simulation_statement": 5,
+      "async_reset": 1,
+      "mixed_assignments": 2,
+      "instance_mismatch": 2
+    },
+    "dev": {
+      "illegal_code": 3,
+      "timing_control": 1,
+      "simulation_statement": 1,
+      "event_list": 1,
+      "multiple_drivers": 2,
+      "unbounded_loop": 1
+    }
+  },
+  "reason_injected_edits": 22,
+  "synthesis_failures_without_reason": {
+    "n": 8,
+    "splits": {
+      "test": 8
+    },
+    "classes": {
+      "illegal_code": 8
+    },
+    "compile_fails": 8
+  }
+}

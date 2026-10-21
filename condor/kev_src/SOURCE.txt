@@ -1,0 +1,3 @@
+Kev source, copied without changes from https://github.com/jaredpalmer/kev at commit 5e42a7a
+(2026-10-05). Only kev/, pyproject.toml, uv.lock, README.md, and LICENSE (Apache-2.0) are copied.
+The condor job (condor/kev_job.sh) installs this copy with the exact versions of uv.lock.

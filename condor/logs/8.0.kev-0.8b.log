@@ -1,0 +1,39 @@
+000 (008.000.000) 2026-10-16 15:39:43 Job submitted from host: <10.87.29.42:9618?addrs=10.87.29.42-9618&alias=mercury.esat.kuleuven.be&noUDP&sock=schedd_3371845_ca5a>
+...
+001 (008.000.000) 2026-10-16 15:39:46 Job executing on host: <10.87.24.7:9618?addrs=10.87.24.7-9618&alias=goryu.esat.kuleuven.be&noUDP&sock=startd_1996_ab1f>
+	SlotName: slot1_1@goryu.esat.kuleuven.be
+	AvailableGPUs = { GPUs_GPU_d49c7bad }
+	CondorScratchDir = "/usr/data/condor/execute/dir_890901/scratch"
+	Cpus = 2
+	Disk = 15728640
+	GPUs = 1
+	GPUs_GPU_d49c7bad = [ Id = "GPU-d49c7bad"; ClockMhz = 2602.0; Capability = 12.0; CoresPerCU = 128; DeviceName = "NVIDIA GeForce RTX 5060 Ti"; DeviceUuid = "d49c7bad-9933-922c-3858-6f9d9351ce61"; ECCEnabled = false; ComputeUnits = 36; NvidiaDriver = "615.78.08"; DriverVersion = 13.4; DevicePciBusId = "0000:65:00.0"; GlobalMemoryMb = 15941; MaxSupportedVersion = 13040 ]
+	Memory = 12288
+...
+006 (008.000.000) 2026-10-16 15:39:55 Image size of job updated: 96428
+	85  -  MemoryUsage of job (MB)
+	86708  -  ResidentSetSize of job (KB)
+...
+006 (008.000.000) 2026-10-16 15:44:22 Image size of job updated: 2273868
+	85  -  MemoryUsage of job (MB)
+	86708  -  ResidentSetSize of job (KB)
+...
+005 (008.000.000) 2026-10-16 15:44:23 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:04:07, Sys 0 00:00:23  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:04:07, Sys 0 00:00:23  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.93        2         2 
+	   Disk (KB)            :     7    15728640  15728640 
+	   GPUs                 :     0           1         1 "GPU-d49c7bad"
+	   GpusMemory (MB)      :   414                       
+	   Memory (MB)          :    85       12288     12288 
+	   TimeExecute (s)      :   276                       
+	   TimeSlotBusy (s)     :   276                       
+...

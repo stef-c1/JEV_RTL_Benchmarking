@@ -1,0 +1,38 @@
+000 (003.000.000) 2026-10-15 11:27:20 Job submitted from host: <10.87.29.42:9618?addrs=10.87.29.42-9618&alias=mercury.esat.kuleuven.be&noUDP&sock=schedd_3371845_ca5a>
+...
+001 (003.000.000) 2026-10-15 11:27:27 Job executing on host: <10.87.24.215:9618?addrs=10.87.24.215-9618&alias=psi-test2.esat.kuleuven.be&noUDP&sock=startd_2297_2121>
+	SlotName: slot1_1@psi-test2.esat.kuleuven.be
+	AvailableGPUs = { GPUs_GPU_58580000 }
+	CondorScratchDir = "/usr/data/condor/execute/dir_318940/scratch"
+	Cpus = 2
+	Disk = 15728640
+	GPUs = 1
+	GPUs_GPU_58580000 = [ Id = "GPU-58580000"; Rocm = 7; xNACK = 0; ClockMhz = 2900.0; WarpSize = 32; Capability = 11.5; DeviceName = "AMD Radeon 8060S Graphics"; DeviceUuid = "58580000-0000-0000-0000-000000000000"; ECCEnabled = false; ComputeUnits = 20; DevicePciBusId = "0000:C4:00.0"; GlobalMemoryMb = 48154; AmdDriverVersion = "7.1.52802" ]
+	Memory = 12288
+...
+006 (003.000.000) 2026-10-15 11:27:36 Image size of job updated: 95960
+	76  -  MemoryUsage of job (MB)
+	77296  -  ResidentSetSize of job (KB)
+...
+006 (003.000.000) 2026-10-15 11:27:47 Image size of job updated: 234904
+	76  -  MemoryUsage of job (MB)
+	77296  -  ResidentSetSize of job (KB)
+...
+005 (003.000.000) 2026-10-15 11:27:48 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:21, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:21, Sys 0 00:00:02  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        2         2 
+	   Disk (KB)            :        7 15728640  15728640 
+	   GPUs                 :                 1         1 "GPU-58580000"
+	   Memory (MB)          :       76    12288     12288 
+	   TimeExecute (s)      :       20                    
+	   TimeSlotBusy (s)     :       20                    
+...

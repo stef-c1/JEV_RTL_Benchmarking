@@ -1,0 +1,6 @@
+export SYNOPSYS=/esat/micas-data/software/Synopsys/syn_vU-2022.12-SP2
+export SYNOPSYS_ROOT=/esat/micas-data/software/Synopsys/syn_vU-2022.12-SP2
+export SYNOPSYS_SYN_ROOT=/esat/micas-data/software/Synopsys/syn_vU-2022.12-SP2
+export SYNOPSYS_LC_ROOT=/esat/micas-data/software/Synopsys/lc_vU-2022.12-SP2
+export SNPSLMD_LICENSE_FILE=1709@licserv.esat.kuleuven.be
+export PATH=$PATH:$SYNOPSYS/amd64/syn/bin:$SYNOPSYS/bin:$SYNOPSYS_LC_ROOT/bin

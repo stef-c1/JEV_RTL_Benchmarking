@@ -1,0 +1,21 @@
+# JEV_RTL: kev-0.8b on 2 question file(s). Made by condor/submit_kev.sh on 2026-10-16 15:39:43.
+universe            = vanilla
+executable          = /users/micas/scuycken/workspace/JEV_RTL/condor/kev_job.sh
+transfer_executable = false
+arguments           = "kev-0.8b /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_fewshot3_kev-0.8b_20261016 /users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_fewshot3_smoke.jsonl /users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1_fewshot3.jsonl"
+initialdir          = /users/micas/scuycken/workspace/JEV_RTL
+environment         = "KEV_JOB_ID=$(Cluster).$(Process) KEV_CONDOR_DIR=/users/micas/scuycken/workspace/JEV_RTL/condor KEV_CLIENT_ARGS=''"
+request_cpus        = 2
+request_memory      = 12GB
+request_disk        = 15GB
+request_gpus        = 1
+require_gpus        = (DriverVersion =!= UNDEFINED) && (Capability >= 8.0) && (GlobalMemoryMb >= 12000)
++RequestWalltime    = 14400
+requirements        = (Arch == "X86_64") && Has_avx && (Machine != "andromeda.esat.kuleuven.be")
+output              = /users/micas/scuycken/workspace/JEV_RTL/condor/logs/$(Cluster).$(Process).kev-0.8b.out
+error               = /users/micas/scuycken/workspace/JEV_RTL/condor/logs/$(Cluster).$(Process).kev-0.8b.err
+log                 = /users/micas/scuycken/workspace/JEV_RTL/condor/logs/$(Cluster).$(Process).kev-0.8b.log
+stream_output       = true
+stream_error        = true
+notification        = Error
+queue

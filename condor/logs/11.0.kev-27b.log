@@ -1,0 +1,46 @@
+000 (011.000.000) 2026-10-16 15:39:44 Job submitted from host: <10.87.29.42:9618?addrs=10.87.29.42-9618&alias=mercury.esat.kuleuven.be&noUDP&sock=schedd_3371845_ca5a>
+...
+001 (011.000.000) 2026-10-16 19:57:32 Job executing on host: <10.87.24.4:9618?addrs=10.87.24.4-9618&alias=aristoteles.esat.kuleuven.be&noUDP&sock=startd_23281_6875>
+	SlotName: slot1_5@aristoteles.esat.kuleuven.be
+	AvailableGPUs = { GPUs_GPU_29b43285 }
+	CondorScratchDir = "/usr/data/condor/execute/dir_113561/scratch"
+	Cpus = 4
+	Disk = 78643200
+	GPUs = 1
+	GPUs_GPU_29b43285 = [ Id = "GPU-29b43285"; Capability = 8.0; DeviceName = "NVIDIA A100-SXM4-80GB"; DeviceUuid = "29b43285-fbe3-48d9-3c76-70102400512c"; ECCEnabled = true; NvidiaDriver = "615.71.09"; DriverVersion = 13.4; DevicePciBusId = "0000:CA:00.0"; GlobalMemoryMb = 81182; MaxSupportedVersion = 13040 ]
+	Memory = 81920
+...
+006 (011.000.000) 2026-10-16 19:57:41 Image size of job updated: 123384
+	97  -  MemoryUsage of job (MB)
+	99216  -  ResidentSetSize of job (KB)
+...
+006 (011.000.000) 2026-10-16 20:02:41 Image size of job updated: 6282496
+	2455  -  MemoryUsage of job (MB)
+	2513748  -  ResidentSetSize of job (KB)
+...
+006 (011.000.000) 2026-10-16 20:07:42 Image size of job updated: 6282496
+	2513  -  MemoryUsage of job (MB)
+	2572956  -  ResidentSetSize of job (KB)
+...
+006 (011.000.000) 2026-10-16 20:12:42 Image size of job updated: 6282496
+	2761  -  MemoryUsage of job (MB)
+	2827008  -  ResidentSetSize of job (KB)
+...
+005 (011.000.000) 2026-10-16 20:15:35 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:15:40, Sys 0 00:05:10  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:15:40, Sys 0 00:05:10  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.99        4         4 
+	   Disk (KB)            :     7    78643200  78643200 
+	   GPUs                 :                 1         1 "GPU-29b43285"
+	   Memory (MB)          :  2761       81920     81920 
+	   TimeExecute (s)      :  1074                       
+	   TimeSlotBusy (s)     :  1074                       
+...

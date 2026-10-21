@@ -1,0 +1,4 @@
+== job 3.0: kev-0.8b on psi-test2.esat.kuleuven.be at 2026-10-15 11:27:27
+   scratch /usr/data/condor/execute/dir_318940/scratch/kev (418G free)
+   CUDA_VISIBLE_DEVICES=GPU-58580000-0000-0000-0000-000000000000
+== environment ready in 16 s: torch 2.8.0+cu128 cuda False

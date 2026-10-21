@@ -1,0 +1,81 @@
+{
+ "dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1_fewshot3.jsonl",
+ "dataset_sha256": "4c4d74d86c5e96e7440a7fa7716945f9212b3382ad7b6e0584e0414ca53b5f15",
+ "requests": 725,
+ "questions": 725,
+ "splits": {
+  "test": {
+   "requests": 725,
+   "questions": 725
+  }
+ },
+ "source_dataset": "/users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl",
+ "source_dataset_sha256": "96814ea63d89b98af7f87c5f6d8e5fe0f35ec710c30755c9d0723fbec4ddbe2a",
+ "smoke": "/users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_fewshot3_smoke.jsonl",
+ "smoke_sha256": "af11bfd0160f4cfe3f14ad2a5e60d696fe049a7d984ab2c701ef704287d29f06",
+ "smoke_ids": [
+  "dataset_v1_fewshot3:basic:metrex_12644:compiles",
+  "dataset_v1_fewshot3:basic:metrex_12644:synthesizes",
+  "dataset_v1_fewshot3:performance:metrex_12644:slack",
+  "dataset_v1_fewshot3:performance:metrex_12644:reach",
+  "dataset_v1_fewshot3:performance:metrex_12644:area",
+  "dataset_v1_fewshot3:performance:metrex_12644:power",
+  "dataset_v1_fewshot3:reason:revold_rtllm_Prob036_edge_detect_035f88e177bc:reason",
+  "dataset_v1_fewshot3:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:smaller_area:AB",
+  "dataset_v1_fewshot3:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:lower_power:AB",
+  "dataset_v1_fewshot3:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:smaller_area:BA",
+  "dataset_v1_fewshot3:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:lower_power:BA"
+ ],
+ "request_order": [
+  "dataset_v1_fewshot3_smoke",
+  "dataset_v1_fewshot3"
+ ],
+ "model": "jaredpalmer/kev-4b@v1.0",
+ "model_revision": "6cfce5c2fa4b4bd64026336ab649c5ca78857d52",
+ "submission_status": "completed",
+ "job_id": "9.0",
+ "submit_file": "/users/micas/scuycken/workspace/JEV_RTL/condor/jobs/20261016_153943_kev-4b.sub",
+ "resources": {
+  "gpus": 1,
+  "require_gpus": "(DriverVersion =!= UNDEFINED) && (Capability >= 8.0) && (GlobalMemoryMb >= 20000)",
+  "cpus": 2,
+  "host_memory": "24GB",
+  "scratch_disk": "25GB",
+  "walltime_seconds": 14400
+ },
+ "submit_time": "2026-10-16 15:39:43",
+ "start_time": "2026-10-16 15:39:45",
+ "completion_time": "2026-10-16 15:49:46",
+ "return_value": 0,
+ "host": "hawberry.esat.kuleuven.be",
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "gpu_memory_mib": 24576,
+ "maximum_gpu_memory_of_server_mib": 21736,
+ "source_sha256": {
+  "condor/kev_job.sh": "4c8cbe3f7f321ad07f051abfd1305c784a972e836dfd57181c49071ff3000537",
+  "condor/submit_kev.sh": "d453ab76516dd43619b2f4fece7ce55ebf56f3235d96a802a73e7eec75179099",
+  "condor/kev_client.py": "22bca85d01040e1c9ac18c9d2fe7e715fbe14b4d2f98d4200681d47832bde00e",
+  "harness/score.py": "409db36148d75ae58aede4836fe29a2f25335ccce9bfde4847c738b5b87cba99",
+  "harness/fewshot.py": "4e1febafcd7b82f6ee325b9702c233d59f30ff124051790e4ebe51f229481831"
+ },
+ "requests_answered": 725,
+ "errors": 0,
+ "maximum_actual_input_tokens": 8607,
+ "requests_over_8192_tokens": 3,
+ "median_model_latency_ms": 555.2,
+ "maximum_model_latency_ms": 2158.6,
+ "total_request_wall_seconds": 466.565,
+ "test_questions_scored": 725,
+ "verification": {
+  "answer_ids_equal_question_ids": true,
+  "each_request_answered_once": true,
+  "all_status_200": true,
+  "all_answer_keys_present": true,
+  "input_tokens_equal_builder_count": true,
+  "smoke_answered": true,
+  "test_missing": 0,
+  "test_unscored": 0,
+  "condor_exit_zero": true
+ },
+ "comparison_with_dataset_v1": "/users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_fewshot3_kev-4b_20261016/compare_with_dataset_v1.json"
+}

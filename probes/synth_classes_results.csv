@@ -1,0 +1,52 @@
+probe,vlog_ok,vlog_error,dc_errors,dc_warnings,dc_area_um2,dc_first_error
+c00_clean,yes,,,UISN-40,19.021824,
+c01_display,yes,,,UISN-40,10.223616,
+c02_latch,yes,,,UISN-40,4.816896,
+c03_comb_loop,yes,,,UISN-40 noid,1.622016,
+c04_division,yes,,,UISN-40,37.208064,
+c05_assign_delay,yes,,,UISN-40 VER-173,10.223616,
+c06_nb_delay,yes,,,UISN-40 VER-130,10.223616,
+c07_initial,yes,,,UISN-40 VER-281,18.874368,
+c08_x_compare,yes,,,ELAB-310 UISN-40,10.223616,
+c09_assign_to_reg,yes,,,UISN-40,0.000000,
+p01_syntax_error,no,"** Error: (vlog-13069) /tmp/jev_synth_probes/p01_syntax_error/p01_syntax_error.sv(2): near ""end"": syntax error, unexpected end, expecting ';'.",LBR-0 UID-109 UID-4 VER-294,,,Error:  /tmp/jev_synth_probes/p01_syntax_error/p01_syntax_error.sv:2: Syntax error at or near token 'end'. (VER-294)
+p02_undeclared,no,** Error: /tmp/jev_synth_probes/p02_undeclared/p02_undeclared.sv(2): (vlog-2730) Undefined variable: 'undeclared_sig'.,LBR-0 UID-109 UID-4 VER-956,,,Error:  /tmp/jev_synth_probes/p02_undeclared/p02_undeclared.sv:2: The symbol 'undeclared_sig' is not defined. (VER-956)
+p03_missing_module,yes,,,LBR-1 LINK-5 PWR-428 UID-341 UISN-40,10.223616,
+p04_delay_stmt,yes,,,UISN-40 VER-140 VER-176,10.223616,
+p05_wait,yes,,LBR-0 UID-109 UID-4 VER-188,,,Error:  /tmp/jev_synth_probes/p05_wait/p05_wait.sv:2: wait statements are not supported by synthesis. (VER-188)
+p06_multi_event,yes,,,UISN-40,15.187968,
+p07_both_edges,yes,,ELAB-93 LBR-0 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p07_both_edges/p07_both_edges.sv:2: Events that depend on two edges of the same variable are not supported by synthesis. (ELAB-93)
+p08_multi_driver,yes,,ELAB-366 UID-109 UID-4,ELAB-405,,"Error:  /tmp/jev_synth_probes/p08_multi_driver/p08_multi_driver.sv:3: Net 'q[7]' or a directly connected net is driven by more than one source, and not all drivers are three-state. (ELAB-366)"
+p09_while_data,yes,,,UISN-40,8.454144,
+p10_for_var_bound,yes,,,UISN-40 VER-318,10.813440,
+p11_real,yes,,LBR-0 UID-109 UID-4 VER-177,,,Error:  /tmp/jev_synth_probes/p11_real/p11_real.sv:2: real declarations are not supported by synthesis. (VER-177)
+p12_fork,yes,,LBR-0 UID-109 UID-4 VER-187,,,Error:  /tmp/jev_synth_probes/p12_fork/p12_fork.sv:2: fork and join constructs are not supported by synthesis. (VER-187)
+p13_force,yes,,LBR-0 UID-109 UID-4 VER-967 VER-968,,,Error:  /tmp/jev_synth_probes/p13_force/p13_force.sv:2: The 'force' construct is not supported by synthesis. (VER-967)
+p14_random,yes,,ELAB-939 LBR-0 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p14_random/p14_random.sv:2: The system function '$random' is not supported for synthesis. (ELAB-939)
+p15_async_if_not_top,yes,,ELAB-302 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p15_async_if_not_top/p15_async_if_not_top.sv:2: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at 
+p16_edge_level_mix,yes,,ELAB-91 LBR-0 UID-109 UID-4,,,"Error:  /tmp/jev_synth_probes/p16_edge_level_mix/p16_edge_level_mix.sv:2: The event depends on both edge and nonedge expressions, which synthesis does not support. (ELAB-91)"
+p17_hier_ref,yes,,,UISN-40,20.447231,
+p18_class,yes,,LBR-0 UID-109 UID-4 VER-294,VER-708,,Error:  /tmp/jev_synth_probes/p18_class/p18_class.sv:3: Syntax error at or near token ';'. (VER-294)
+p19_dyn_array,yes,,LBR-0 UID-109 UID-4 VER-294,,,Error:  /tmp/jev_synth_probes/p19_dyn_array/p19_dyn_array.sv:2: Syntax error at or near token ']'. (VER-294)
+p20_string,yes,,LBR-0 UID-109 UID-4 VER-700,,,Error:  /tmp/jev_synth_probes/p20_string/p20_string.sv:2: The construct 'string' is not supported in synthesis. (VER-700)
+p21_recursion_var,yes,,ELAB-901 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p21_recursion_var/p21_recursion_var.sv:3: Function call stack exceeded maximum depth. (ELAB-901)
+p22_mixed_blocking,yes,,LBR-0 UID-109 UID-4 VER-134,,,Error:  /tmp/jev_synth_probes/p22_mixed_blocking/p22_mixed_blocking.sv:2: Variable 'q' is the target of both blocking and nonblocking assignments in the same always block. (VER-134)
+p23_proc_to_wire,no,"** Error: /tmp/jev_synth_probes/p23_proc_to_wire/p23_proc_to_wire.sv(3): (vlog-2110) Illegal reference to net ""w"".",LBR-0 UID-109 UID-4 VER-952,,,Error:  /tmp/jev_synth_probes/p23_proc_to_wire/p23_proc_to_wire.sv:3: Assigment to 'w' requires that it be a register. (VER-952)
+p24_task_delay,yes,,,UISN-40 VER-176,10.223616,
+p25_event,yes,,LBR-0 UID-109 UID-4 VER-193,VER-286,,Error:  /tmp/jev_synth_probes/p25_event/p25_event.sv:3: event triggers are not supported. (VER-193)
+p26_two_clocks,yes,,ELAB-302 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p26_two_clocks/p26_two_clocks.sv:2: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top leve
+p27_async_data_load,yes,,,TRANS-4 UISN-40,8.208384,
+p28_proc_assign,yes,,LBR-0 UID-109 UID-4 VER-966 VER-969,,,Error:  /tmp/jev_synth_probes/p28_proc_assign/p28_proc_assign.sv:2: Procedural-continuous assignments are not supported by synthesis. (VER-966)
+p29_forever_no_timing,yes,,ELAB-900 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p29_forever_no_timing/p29_forever_no_timing.sv:2: Loop exceeded maximum iteration limit. (ELAB-900)
+p30_repeat_var,yes,,,UISN-40,10.813440,
+p31_udp,yes,,LBR-0 UID-109 UID-4 VER-186 VER-518,,,Error:  /tmp/jev_synth_probes/p31_udp/p31_udp.sv:1: user-defined primitives (UDPs) are not supported by synthesis. (VER-186)
+p32_always_no_event,yes,,,UISN-40,0.000000,
+p33_dpi,yes,,LBR-0 UID-109 UID-4 VER-294,,,"Error:  /tmp/jev_synth_probes/p33_dpi/p33_dpi.sv:2: Syntax error at or near token '""DPI-C""'. (VER-294)"
+p34_trireg,yes,,LBR-0 UID-109 UID-4 VER-183,,,Error:  /tmp/jev_synth_probes/p34_trireg/p34_trireg.sv:2: trireg declarations are not supported by synthesis. (VER-183)
+p35_negedge_level_reset_mix,yes,,ELAB-91 LBR-0 UID-109 UID-4,,,"Error:  /tmp/jev_synth_probes/p35_negedge_level_reset_mix/p35_negedge_level_reset_mix.sv:2: The event depends on both edge and nonedge expressions, which synthesis does not support. (ELAB-91)"
+p36_var_part_select,no,** Error: /tmp/jev_synth_probes/p36_var_part_select/p36_var_part_select.sv(2): Range must be bounded by constant expressions.,LBR-0 UID-109 UID-4 VER-260,,,Error:  /tmp/jev_synth_probes/p36_var_part_select/p36_var_part_select.sv:2: symbol d must be a constant or parameter. (VER-260)
+p37_mult_in_sens_task,yes,,ELAB-407 UID-109 UID-4,,,Error:  /tmp/jev_synth_probes/p37_mult_in_sens_task/p37_mult_in_sens_task.sv:2: All edge events in a single process must depend on the same signal. (ELAB-407)
+p38_fileio,yes,,,UISN-40 VER-209 VER-274 VER-318,10.223616,
+p39_time_var,yes,,LBR-0 UID-109 UID-4 VER-191,,,Error:  /tmp/jev_synth_probes/p39_time_var/p39_time_var.sv:2: time declarations are not supported by synthesis. (VER-191)
+p40_unknown_port,yes,,LINK-1,LINK-5 PWR-428 UISN-40,10.223616,Error: Can't find inout port 'b' on reference to 'sub' in 'top'. (LINK-1)
+p41_unknown_param,yes,,VER-216,LINK-5 PWR-428 UID-341 UISN-40,10.223616,Error:  W is not a parameter in module sub (VER-216)

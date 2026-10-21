@@ -1,0 +1,39 @@
+000 (010.000.000) 2026-10-16 15:39:43 Job submitted from host: <10.87.29.42:9618?addrs=10.87.29.42-9618&alias=mercury.esat.kuleuven.be&noUDP&sock=schedd_3371845_ca5a>
+...
+001 (010.000.000) 2026-10-16 15:50:05 Job executing on host: <10.87.24.49:9618?addrs=10.87.24.49-9618&alias=euler.esat.kuleuven.be&noUDP&sock=startd_1766_e857>
+	SlotName: slot1_1@euler.esat.kuleuven.be
+	AvailableGPUs = { GPUs_GPU_eaffd3a3 }
+	CondorScratchDir = "/usr/data/condor/execute/dir_251984/scratch"
+	Cpus = 2
+	Disk = 41943040
+	GPUs = 1
+	GPUs_GPU_eaffd3a3 = [ Id = "GPU-eaffd3a3"; ClockMhz = 2377.0; Capability = 12.0; CoresPerCU = 128; DeviceName = "NVIDIA RTX PRO 5000 Blackwell"; DeviceUuid = "eaffd3a3-1b42-eb0b-1e4a-f4ef27c12023"; ECCEnabled = false; ComputeUnits = 110; NvidiaDriver = "615.71.09"; DriverVersion = 13.4; DevicePciBusId = "0000:42:00.0"; GlobalMemoryMb = 48491; MaxSupportedVersion = 13040 ]
+	Memory = 40960
+...
+006 (010.000.000) 2026-10-16 15:50:13 Image size of job updated: 120292
+	87  -  MemoryUsage of job (MB)
+	88400  -  ResidentSetSize of job (KB)
+...
+006 (010.000.000) 2026-10-16 15:55:13 Image size of job updated: 4754216
+	2330  -  MemoryUsage of job (MB)
+	2385568  -  ResidentSetSize of job (KB)
+...
+005 (010.000.000) 2026-10-16 15:57:06 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:05:06, Sys 0 00:01:26  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:05:06, Sys 0 00:01:26  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     1.00        2         2 
+	   Disk (KB)            :     7    41943040  41943040 
+	   GPUs                 :     0.21        1         1 "GPU-eaffd3a3"
+	   GpusMemory (MB)      : 28694                       
+	   Memory (MB)          :  2330       40960     40960 
+	   TimeExecute (s)      :   418                       
+	   TimeSlotBusy (s)     :   418                       
+...

@@ -1,0 +1,217 @@
+{
+ "split": "test",
+ "missing": 0,
+ "table": [
+  {
+   "request": "basic",
+   "key": "compiles",
+   "type": "noul",
+   "n": 123,
+   "unscored": 0,
+   "accuracy": 0.991869918699187,
+   "balanced_accuracy": 0.9444444444444444,
+   "truth_counts": {
+    "True": 114,
+    "False": 9
+   },
+   "pred_counts": {
+    "True": 115,
+    "False": 8
+   },
+   "brier": 0.029944566504065042,
+   "auroc": 0.9941520467836257
+  },
+  {
+   "request": "basic",
+   "key": "synthesizes",
+   "type": "noul",
+   "n": 123,
+   "unscored": 0,
+   "accuracy": 0.8292682926829268,
+   "balanced_accuracy": 0.5782828282828283,
+   "truth_counts": {
+    "True": 99,
+    "False": 24
+   },
+   "pred_counts": {
+    "True": 118,
+    "False": 5
+   },
+   "brier": 0.12800759715447155,
+   "auroc": 0.8141835016835017
+  },
+  {
+   "request": "pair",
+   "key": "higher_reach",
+   "type": "choice",
+   "n": 12,
+   "unscored": 0,
+   "accuracy": 0.8333333333333334,
+   "balanced_accuracy": 0.8333333333333334,
+   "truth_counts": {
+    "B": 6,
+    "A": 6
+   },
+   "pred_counts": {
+    "B": 6,
+    "A": 6
+   },
+   "same_letter_both_orders": 0.0
+  },
+  {
+   "request": "pair",
+   "key": "lower_power",
+   "type": "choice",
+   "n": 44,
+   "unscored": 0,
+   "accuracy": 0.7045454545454546,
+   "balanced_accuracy": 0.7045454545454546,
+   "truth_counts": {
+    "A": 22,
+    "B": 22
+   },
+   "pred_counts": {
+    "B": 25,
+    "A": 19
+   },
+   "same_letter_both_orders": 0.13636363636363635
+  },
+  {
+   "request": "pair",
+   "key": "smaller_area",
+   "type": "choice",
+   "n": 46,
+   "unscored": 0,
+   "accuracy": 0.782608695652174,
+   "balanced_accuracy": 0.7826086956521738,
+   "truth_counts": {
+    "A": 23,
+    "B": 23
+   },
+   "pred_counts": {
+    "B": 25,
+    "A": 21
+   },
+   "same_letter_both_orders": 0.08695652173913043
+  },
+  {
+   "request": "performance",
+   "key": "area",
+   "type": "score",
+   "n": 92,
+   "unscored": 0,
+   "accuracy": 0.6630434782608695,
+   "balanced_accuracy": 0.4813708513708514,
+   "truth_counts": {
+    "1": 33,
+    "2": 28,
+    "3": 20,
+    "4": 9,
+    "5": 2
+   },
+   "pred_counts": {
+    "1": 21,
+    "2": 45,
+    "3": 20,
+    "4": 5,
+    "5": 1
+   },
+   "within_one": 1.0,
+   "mae_levels": 0.4849728009763446
+  },
+  {
+   "request": "performance",
+   "key": "power",
+   "type": "score",
+   "n": 85,
+   "unscored": 0,
+   "accuracy": 0.10588235294117647,
+   "balanced_accuracy": 0.23412698412698413,
+   "truth_counts": {
+    "2": 37,
+    "1": 23,
+    "3": 18,
+    "4": 7
+   },
+   "pred_counts": {
+    "3": 54,
+    "4": 30,
+    "5": 1
+   },
+   "within_one": 0.6470588235294118,
+   "mae_levels": 1.069678731534152
+  },
+  {
+   "request": "performance",
+   "key": "reach",
+   "type": "score",
+   "n": 92,
+   "unscored": 0,
+   "accuracy": 0.14130434782608695,
+   "balanced_accuracy": 0.25,
+   "truth_counts": {
+    "4": 45,
+    "3": 18,
+    "2": 16,
+    "1": 13
+   },
+   "pred_counts": {
+    "1": 90,
+    "5": 2
+   },
+   "within_one": 0.31521739130434784,
+   "mae_levels": 1.2421987818481621
+  },
+  {
+   "request": "performance",
+   "key": "slack",
+   "type": "score",
+   "n": 92,
+   "unscored": 0,
+   "accuracy": 0.32608695652173914,
+   "balanced_accuracy": 0.13070436507936506,
+   "truth_counts": {
+    "5": 63,
+    "4": 16,
+    "3": 8,
+    "2": 5
+   },
+   "pred_counts": {
+    "5": 32,
+    "1": 56,
+    "4": 2,
+    "2": 2
+   },
+   "within_one": 0.40217391304347827,
+   "mae_levels": 1.6220294030148594
+  },
+  {
+   "request": "reason",
+   "key": "reason",
+   "type": "choice",
+   "n": 16,
+   "unscored": 0,
+   "accuracy": 0.9375,
+   "balanced_accuracy": 0.875,
+   "truth_counts": {
+    "multiple_drivers": 1,
+    "illegal_code": 1,
+    "unsupported_construct": 1,
+    "timing_control": 3,
+    "simulation_statement": 5,
+    "async_reset": 1,
+    "mixed_assignments": 2,
+    "instance_mismatch": 2
+   },
+   "pred_counts": {
+    "async_reset": 2,
+    "illegal_code": 1,
+    "unsupported_construct": 1,
+    "timing_control": 3,
+    "simulation_statement": 5,
+    "mixed_assignments": 2,
+    "instance_mismatch": 2
+   }
+  }
+ ]
+}

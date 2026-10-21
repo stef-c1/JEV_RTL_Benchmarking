@@ -1,0 +1,18 @@
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files:  78%|███████▊  | 7/9 [00:00<00:00,  8.31it/s]Fetching 9 files:  89%|████████▉ | 8/9 [00:01<00:00,  6.36it/s]Fetching 9 files: 100%|██████████| 9/9 [00:01<00:00,  6.59it/s]Fetching 9 files: 100%|██████████| 9/9 [00:01<00:00,  6.87it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights:  69%|██████▉   | 220/320 [00:00<00:00, 2181.79it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 2295.93it/s]
+INFO:     Started server process [135]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:45027 (Press CTRL+C to quit)
+serving jaredpalmer/kev-0.8b@v1.0 (/tmp/claude-40729/kev_scratch/hf/hub/models--jaredpalmer--kev-0.8b/snapshots/bf75a6a8848ea6960ff2ed108d9ed44c2941174f) on cpu via torch (float32) 127.0.0.1:45027; states over 65,536 tokens refused (422)
+INFO:     127.0.0.1:38212 - "GET /v1/models HTTP/1.1" 200 OK
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+INFO:     127.0.0.1:38214 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45958 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42732 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [135]

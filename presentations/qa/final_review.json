@@ -1,0 +1,128 @@
+{
+ "reviewed_at": "2026-10-21T15:00:00+02:00",
+ "slides": 29,
+ "rendered_pages": 29,
+ "all_slides_visually_reviewed": true,
+ "speaker_notes_on_every_slide": true,
+ "style_reference": "pwp_example/TinyTapeOut 2026 jullie feedback.pptx",
+ "reason": "MV (2026-10-21): the 57-slide deck of 19 October was chaotic, unstructured, and unclear.",
+ "structure_2026-10-21": [
+  "One slide per question. Each result slide shows both experiments side by side: two bars per model, light = no examples (15 October), dark = three examples (16 October). No experiment label above the titles, no orange marks.",
+  "Setup first (slides 2 to 8): the test in one picture, the designs (figure of the five sources), the eight questions, the five levels, the three examples of experiment 2, how to read the charts, the findings in one table (KEV-27B, both experiments, the constant answer, a finding per question).",
+  "Results (slides 9 to 16): yes/no checks; which synthesis failures are caught; the ten reasons; naming a known failure against detecting it; area and power levels; timing levels; the chosen levels of KEV-27B; pairs.",
+  "Conclusion (slide 17): supported, not supported, next steps. Appendix (slides 18 to 29): every score with the paired test, class counts, yes probabilities (two slides), reason classes, AUROC and Brier, within one level and level error, pair orders, design groups, Condor runs, files.",
+  "Removed: the two execution slides and the duplicate experiment 2 copies of every slide (merged into the side-by-side slides); the balanced-accuracy wording; the words held-out, pooled, per-view, views, linked analysis.",
+  "Names: the REvolution v0 designs are ARES (MV, 2026-10-16); the old candidates are REvolution ASP-DAC 2026."
+ ],
+ "data_verification": "Built with analyse_kev.py under the mx_env Python 3.9 (python-pptx 1.0.2): the four answer files of each experiment are verified against the saved scores and the paired comparisons; the data files in presentations/data were rewritten with the same values. The builder asserts every number in a title, a table, or a takeaway (for example: KEV-4B without examples, 39 of 85 power levels, is the only score above always level 2; KEV-27B compile 122 then 117 of 123).",
+ "layout_review": "The builder measures every title, subtitle, bar label, and the cells of the level table with the Liberation Sans metrics (Arial widths) and refuses to save when a text is wider than its box. All 29 LibreOffice renders reviewed on the contact sheets; slides 2, 5, 8, 9, 12, and 17 reviewed at full size.",
+ "render": "presentations/src/render_qa.py: PDF next to the PPTX, qa/slides/slide-NN.png at 110 dpi, qa/contact_N.png with 8 slides each.",
+ "old_deck": "presentations/backups/KEV_RTL_findings_20261015_deck57_20261019.{pptx,pdf}; its builder: backups/build_kev_findings_20261019_deck57_final.py.",
+ "previous_review": {
+  "reviewed_at": "2026-10-19T13:59:29+02:00",
+  "slides": 57,
+  "rendered_pages": 57,
+  "changed_slides_visually_reviewed": [
+   8,
+   9,
+   10,
+   12,
+   13,
+   40,
+   43,
+   44
+  ],
+  "speaker_notes_on_every_slide": true,
+  "style_reference": "pwp_example/TinyTapeOut 2026 jullie feedback.pptx",
+  "data_verification": "presentations/data/*.json and *.csv are byte-identical to the build of 2026-10-16; the analysis did not change. A text comparison of the old and new PPTX shows changes on slides 8, 9, 10, 12, 13, 40, 41, 43, and 44 only. The builder asserts that each yes/no bar equals the scorer accuracy and the sum of the two counts beside it, and it checks the title and the takeaway of slide 9 against the counts.",
+  "changes_2026-10-19": [
+   "MV (2026-10-19): plain accuracy replaces balanced accuracy as the yes/no score. Beside each bar: the correct answers on the designs where the tool says yes and on those where it says no (for example 98 of 99 yes · 4 of 24 no). Two dashed lines: the scores of always no and always yes.",
+   "Slide 8: the yes/no card and its notes describe the new score.",
+   "Slide 9: new title (Seven of eight scores are close to a constant answer), subtitle, takeaway, and notes.",
+   "Slide 10: the right card gives always yes (80.5%) instead of balanced accuracy; new takeaway; title hid -> hides.",
+   "Slide 12: title 27B’s synthesis score rises from 82.9% to 87.8%; the notes explain the 0.8B change and the 27B compile drop (99.2% to 95.1%).",
+   "Slide 13: the right card gives always yes instead of balanced accuracy.",
+   "Slides 40 and 41: the line below the table gives the always-yes scores.",
+   "Slides 43 and 44: an all-designs row replaces the balanced row; slide 43 is now titled Yes/no checks: every class and count."
+  ],
+  "layout_review": "Slides 8, 9, 10, 12, 13, 40, 43, and 44 reviewed in the LibreOffice render of a test build. Text widths measured with Liberation Sans before the build: the longest count label needs 1.89 in of its 1.98 in box.",
+  "typography_warnings_note": "qa/typography_warnings.json is from the estimate of 2026-10-16 10:05 on the original 32-slide deck and was not rerun.",
+  "previous_review": {
+   "reviewed_at": "2026-10-16T21:32:22+02:00",
+   "slides": 57,
+   "rendered_pages": 57,
+   "all_new_slides_visually_reviewed": true,
+   "speaker_notes_on_every_slide": true,
+   "style_reference": "pwp_example/TinyTapeOut 2026 jullie feedback.pptx",
+   "data_verification": "Experiment 2 (few-shot run of 2026-10-16, Condor jobs 8.0 to 11.0): analyse_fewshot() checks the 725 questions against dataset v1 (same question, correct answer, and state plus the new first field examples), the example texts against the development records, the four answer files (725 records, HTTP 200, answer keys, input tokens equal to the builder counts, smoke answers), the saved scores against fresh scores, and all 40 paired comparisons against compare_with_dataset_v1.json. verified_metrics.json and metrics_by_test.csv of experiment 1 are byte-identical to the earlier build.",
+   "changes_2026-10-16_evening": [
+    "MV: after the slides of each test with the first experiment data, the same slides with the data of experiment 2 (three solved examples per question).",
+    "New result slides (experiment 2): yes/no checks, KEV-27B confusion matrix, failure split, failure reasons, linked analysis, area, power, timing, KEV-27B level counts, pair rankings, both orders, execution, interpretation.",
+    "New overview slide 3 and new test slide 7 (the three examples of each question, with their tool results).",
+    "New appendix slides: experiment 2 versions of slides 40, 43, 45, 47, 49, 51, 53, 56, and slide 42 (paired McNemar test of every change).",
+    "Label above the title of every result slide: EXPERIMENT 1 or EXPERIMENT 2. Orange marks on the experiment 2 bars: the experiment 1 score.",
+    "Cover: second line names both experiments. Experiment 1 slides are otherwise unchanged (text and notes compared with the 33-slide deck)."
+   ],
+   "layout_review": "All 24 new slides reviewed at 80 dpi in the 57-page LibreOffice render; slide 42 (table height, header wrap) and slide 29 (takeaway text) were corrected and checked again. Experiment 1 slides checked for overlap of the new label.",
+   "typography_warnings_note": "qa/typography_warnings.json is from the estimate of 2026-10-16 10:05 on the original 32-slide deck and was not rerun.",
+   "previous_review": {
+    "reviewed_at": "2026-10-16T15:00:05+02:00",
+    "slides": 33,
+    "rendered_pages": 33,
+    "all_slides_visually_reviewed": true,
+    "speaker_notes_on_every_slide": true,
+    "style_reference": "pwp_example/TinyTapeOut 2026 jullie feedback.pptx",
+    "data_verification": "Four raw answer files and all saved scores recomputed and matched; 725 held-out questions per model. All fields of the earlier verified_metrics.json are unchanged; the new fields (yes_answers, noul, no_compile_but_synthesizes, subset AUROC) were checked against an independent recomputation from the raw answers.",
+    "changes_2026-10-16": [
+     "Slide 6: the yes/no card describes one score per model (balanced accuracy; always one answer = 50%).",
+     "Slide 7: one slide for both yes/no checks replaces the two split slides (old 7 and old 10). Bars: balanced accuracy with a dashed 50% line; beside each bar, the answer mix of the model (for example 118 yes · 5 no) against the tool mix in the panel subtitle.",
+     "Appendix slide 25: two rows with the 'yes' answer counts.",
+     "Appendix slide 26 (new): yes probability of every held-out design, per model, for both questions.",
+     "Speaker notes of slides 6, 7, 25, and 26 explain the numbers.",
+     "Slide 10 (new): the ten options of the failure-reason question, with their exact text and the number of reason questions per option in the test and development splits."
+    ],
+    "layout_review": "Slides 6, 7, 10, 26, and 27 were reviewed in the 33-page render. All other pages are pixel-identical (40 dpi, outside the page-number corner) to the pages of the original 32-page render reviewed at 2026-10-16T10:06:39+02:00. Old slide 10 was removed; the new slide 10 is the failure-reason options.",
+    "typography_warnings_note": "qa/typography_warnings.json is from the estimate of 2026-10-16 10:05 on the original deck and was not rerun; its slide 12 is now slide 12 again (old slide 10 removed, new slide 10 added).",
+    "previous_review": {
+     "reviewed_at": "2026-10-16T10:06:39+02:00",
+     "slides": 32,
+     "rendered_pages": 32,
+     "all_slides_visually_reviewed": true,
+     "speaker_notes_on_every_slide": true,
+     "style_reference": "pwp_example/TinyTapeOut 2026 jullie feedback.pptx",
+     "data_verification": "Four raw answer files and all saved scores recomputed and matched; 725 held-out questions per model.",
+     "layout_review": "Corrected overflowing takeaway boxes and dense table labels. Final 32-page render reviewed. Slide 12 typography estimate was a false positive: rendered statement fits and is fully visible.",
+     "files": {
+      "KEV_RTL_findings_20261015.pptx": "dfb90103fb7ff6ba53ad7fd92657ea080c463d9fa6a75dc3dabbfc258f93243d",
+      "KEV_RTL_findings_20261015.pdf": "cad87bc1993ded251262e093edcebfaa6833195294108d3bb6b0e758d2b3f7e0"
+     }
+    },
+    "files": {
+     "KEV_RTL_findings_20261015.pptx": "1b0f1867c6c0c76c72fd9875ccea4836acf825fd2d087b8e9de6612b878241d0",
+     "KEV_RTL_findings_20261015.pdf": "874cc4079b7e8a6a7eabad9f54c58ccc8d86235db0767209ed5aaec43e7f95b4"
+    },
+    "backups": {
+     "original (32 slides, 2026-10-16 10:05)": "backups/KEV_RTL_findings_20261015_20261016_144056.{pptx,pdf}",
+     "split version (33 slides, 2026-10-16 14:41)": "backups/KEV_RTL_findings_20261015_20261016_145245.{pptx,pdf}",
+     "one-score version (32 slides, 2026-10-16 14:53)": "backups/KEV_RTL_findings_20261015_20261016_145935.{pptx,pdf}"
+    }
+   },
+   "files": {
+    "KEV_RTL_findings_20261015.pptx": "7e4d4cf4c29bb968f7774d14ffa167d1d353abfcda3a1b570ef5e1a4ffd19623",
+    "KEV_RTL_findings_20261015.pdf": "b9fcd29a5d8440dc728870867a4bfe762df63a6d5c73d4442fc697c059e262ce"
+   },
+   "backups": {
+    "33-slide version (2026-10-16 14:59)": "backups/KEV_RTL_findings_20261015_20261016_213113.pptx and backups/KEV_RTL_findings_20261015_20261016_213059.pdf",
+    "scripts before experiment 2": "backups/analyse_kev_20261016_213059.py and backups/build_kev_findings_20261016_213059.py"
+   }
+  },
+  "files": {
+   "KEV_RTL_findings_20261015.pptx": "e86dd14a0afca9d0f2d3f95b5adfe88cd0cafd450d4067a02cfe2538da909a0d",
+   "KEV_RTL_findings_20261015.pdf": "8f14830e780943ee394e7ed6d95103c19601cba0af13b84c634d439aa7d003b9"
+  },
+  "backups": {
+   "57-slide version with balanced accuracy (2026-10-16 21:31)": "backups/KEV_RTL_findings_20261015_20261019_135806.pptx and backups/KEV_RTL_findings_20261015_20261019_135758.pdf",
+   "builder before the change": "backups/build_kev_findings_20261019_135758.py"
+  }
+ }
+}

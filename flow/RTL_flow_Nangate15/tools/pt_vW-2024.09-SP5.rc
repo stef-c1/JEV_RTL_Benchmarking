@@ -1,0 +1,4 @@
+export SYNOPSYS=/esat/micas-data/software/Synopsys/pt_vW-2024.09-SP5
+export SNPSLMD_LICENSE_FILE=1709@licserv.esat.kuleuven.be
+
+export PATH=$PATH:$SYNOPSYS/linux64/syn/bin:$SYNOPSYS/bin

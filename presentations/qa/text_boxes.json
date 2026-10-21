@@ -1,0 +1,4880 @@
+[
+  {
+    "slide": 1,
+    "text": "JEV_RTL STUDY  \u2022  KEV v1.0",
+    "x": 0.89,
+    "y": 1.95,
+    "w": 10,
+    "h": 0.35,
+    "size": 16
+  },
+  {
+    "slide": 1,
+    "text": "What can KEV tell us\nabout an RTL design?",
+    "x": 0.89,
+    "y": 2.55,
+    "w": 9.1,
+    "h": 1.62,
+    "size": 43
+  },
+  {
+    "slide": 1,
+    "text": "Eight questions, four model sizes, 123 test designs,\nwithout and with three solved examples",
+    "x": 0.89,
+    "y": 4.55,
+    "w": 9.9,
+    "h": 1.0,
+    "size": 23
+  },
+  {
+    "slide": 1,
+    "text": "Runs of 15 October 2026 (no examples) and 16 October 2026 (three examples)  \u2022  Deck of 21 October 2026",
+    "x": 0.89,
+    "y": 6.3,
+    "w": 11.4,
+    "h": 0.4,
+    "size": 16
+  },
+  {
+    "slide": 2,
+    "text": "The test in one picture",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 2,
+    "text": "The tools and KEV get the same RTL design. The score counts the KEV answers that agree with the tools.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 2,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 2,
+    "text": "2",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 2,
+    "text": "RTL design",
+    "x": 1.1400000000000001,
+    "y": 2.64,
+    "w": 2.2,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "Verilog source, top module, flow description. Power questions also get the testbench.",
+    "x": 1.1400000000000001,
+    "y": 3.05,
+    "w": 2.2,
+    "h": 0.93,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "Reference tools",
+    "x": 4.7,
+    "y": 2.12,
+    "w": 3.5,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "QuestaSim vlog, Design Compiler, PrimeTime give the correct answer.",
+    "x": 4.7,
+    "y": 2.5300000000000002,
+    "w": 3.5,
+    "h": 0.68,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "KEV 0.8B, 4B, 9B, 27B",
+    "x": 4.7,
+    "y": 3.41,
+    "w": 3.5,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "One typed answer per question, no text: a yes probability, a choice, or a level.",
+    "x": 4.7,
+    "y": 3.8200000000000003,
+    "w": 3.5,
+    "h": 0.68,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "Score",
+    "x": 9.55,
+    "y": 2.64,
+    "w": 2.64,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "Correct answers divided by questions. Reference: the score of one fixed answer for every design.",
+    "x": 9.55,
+    "y": 3.05,
+    "w": 2.64,
+    "h": 0.93,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "Four KEV sizes",
+    "x": 1.1400000000000001,
+    "y": 4.989999999999999,
+    "w": 3.2,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "KEV v1.0 with 0.8B, 4B, 9B, and 27B parameters. Each size answers every question.",
+    "x": 1.1400000000000001,
+    "y": 5.3999999999999995,
+    "w": 3.2,
+    "h": 0.63,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "123 test designs",
+    "x": 5.06,
+    "y": 4.989999999999999,
+    "w": 3.2,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "From 151 designs of five sources. The 28 development designs serve only as examples.",
+    "x": 5.06,
+    "y": 5.3999999999999995,
+    "w": 3.2,
+    "h": 0.63,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "Two experiments",
+    "x": 8.99,
+    "y": 4.989999999999999,
+    "w": 3.2,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 2,
+    "text": "No examples (15 October). Three solved development examples before each question (16 October).",
+    "x": 8.99,
+    "y": 5.3999999999999995,
+    "w": 3.2,
+    "h": 0.63,
+    "size": 13
+  },
+  {
+    "slide": 2,
+    "text": "KEV never sees the tool logs. A tool run of each design gives the correct answer of every question about that design.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 3,
+    "text": "The designs: 151 designs from five sources",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 3,
+    "text": "875 questions on 151 designs, both splits. An edit (mutant, trap, noncompile) counts for the source of its base design.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 3,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 3,
+    "text": "3",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 3,
+    "text": "Test split: 123 designs, 725 questions. Development split: 28 designs, 150 questions, used only for the examples of experiment 2.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 4,
+    "text": "The eight questions",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 4,
+    "text": "Each question has a typed answer. The correct answer of every question comes from a tool run of the same design.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 4,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 4,
+    "text": "4",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 4,
+    "text": "Compile and synthesize are two questions in one request; the power question of a design is in the same request as its area and timing questions.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 5,
+    "text": "The five levels of area, power, and timing",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 5,
+    "text": "The model chooses a level from the source code and the flow description, not an exact value.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 5,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 5,
+    "text": "5",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 5,
+    "text": "Units",
+    "x": 1.1400000000000001,
+    "y": 4.739999999999999,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 5,
+    "text": "1 gate equivalent (GE) = the area of one NAND2 gate = 0.196608 \u00b5m\u00b2 in NanGate 15 nm.\nPower = dynamic + leakage power for the testbench stimulus.",
+    "x": 1.1400000000000001,
+    "y": 5.1499999999999995,
+    "w": 5.15,
+    "h": 0.88,
+    "size": 13.5
+  },
+  {
+    "slide": 5,
+    "text": "Reachable frequency",
+    "x": 7.04,
+    "y": 4.739999999999999,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 5,
+    "text": "Reachable frequency = 1 / (2 ns \u2212 worst slack), from the netlist synthesized at 500 MHz.\nExample: 1.438 ns of slack gives 1 / 0.562 ns = 1.78 GHz.",
+    "x": 7.04,
+    "y": 5.1499999999999995,
+    "w": 5.15,
+    "h": 0.88,
+    "size": 13.5
+  },
+  {
+    "slide": 5,
+    "text": "One level of area or power is a factor of 10. No test design misses the 500 MHz target (slack level 1), reaches 4 GHz, or uses 10 mW or more.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 6,
+    "text": "Experiment 2: three solved examples per question",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 6,
+    "text": "The same 725 test questions, one per request. The three examples are development designs with their tool result.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 6,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 6,
+    "text": "6",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 6,
+    "text": "All questions of one kind get the same three examples. No example shares a base design with a test design.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 7,
+    "text": "How to read the result charts",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 7,
+    "text": "The same chart form on every result slide. The example: the synthesis question.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 7,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 7,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 7,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 7,
+    "text": "7",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "Does it synthesize?",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 7,
+    "text": "The tool says \u201cyes\u201d for 99 of the 123 designs and \u201cno\u201d for 24",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 7,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "50",
+    "x": 2.6350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "100",
+    "x": 3.6700000000000004,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 7,
+    "text": "80.5% \u00b7 99 of 99 yes \u00b7 0 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 2.97,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "19.5% \u00b7 0 of 99 yes \u00b7 24 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 3.24,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 7,
+    "text": "79.7% \u00b7 98 of 99 yes \u00b7 0 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 3.6500000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "81.3% \u00b7 98 of 99 yes \u00b7 2 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 3.9200000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 7,
+    "text": "80.5% \u00b7 97 of 99 yes \u00b7 2 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 4.33,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "82.9% \u00b7 98 of 99 yes \u00b7 4 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 4.6000000000000005,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 7,
+    "text": "82.9% \u00b7 98 of 99 yes \u00b7 4 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 5.01,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "87.8% \u00b7 96 of 99 yes \u00b7 12 of 24 no",
+    "x": 3.9900000000000007,
+    "y": 5.28,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 7,
+    "text": "Dashed lines: always \u201cno\u201d = 19.5% \u00b7 always \u201cyes\u201d = 80.5%",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 7,
+    "text": "Two bars per model",
+    "x": 7.04,
+    "y": 2.14,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 7,
+    "text": "Light bar: the score without examples (experiment 1).\nDark bar: the score with three solved examples (experiment 2).",
+    "x": 7.04,
+    "y": 2.55,
+    "w": 5.15,
+    "h": 0.63,
+    "size": 13.5
+  },
+  {
+    "slide": 7,
+    "text": "The label beside a bar",
+    "x": 7.04,
+    "y": 3.56,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 7,
+    "text": "The score, then the correct answers on the designs where the tool says \u201cyes\u201d, and on the designs where it says \u201cno\u201d.",
+    "x": 7.04,
+    "y": 3.9699999999999998,
+    "w": 5.15,
+    "h": 0.63,
+    "size": 13.5
+  },
+  {
+    "slide": 7,
+    "text": "The dashed lines",
+    "x": 7.04,
+    "y": 4.9799999999999995,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 7,
+    "text": "The score of a model that always answers \u201cno\u201d, and of one that always answers \u201cyes\u201d. A bar at a dashed line shows no skill.",
+    "x": 7.04,
+    "y": 5.39,
+    "w": 5.15,
+    "h": 0.64,
+    "size": 13.5
+  },
+  {
+    "slide": 7,
+    "text": "The score is the share of the test questions with a correct answer. Each question has the same weight.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 8,
+    "text": "The findings in one table",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 8,
+    "text": "KEV-27B, the largest size. Each score: correct answers in % (count). The other sizes are on the result slides.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 8,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  OVERVIEW",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 8,
+    "text": "8",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 8,
+    "text": "KEV-27B is reliable on the compile check, and good on the failure reason and on the better of two designs. It is weak on the synthesis check and on the power and timing levels.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 9,
+    "text": "Yes/no checks: only the compile check is reliable",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 9,
+    "text": "Compile: KEV-27B gets 122 of 123 right. Synthesis: all scores near always \u201cyes\u201d.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 9,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 9,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 9,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 9,
+    "text": "9",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "Does it compile?",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 9,
+    "text": "The tool says \u201cyes\u201d for 114 of the 123 designs and \u201cno\u201d for 9",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 9,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "50",
+    "x": 2.6350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "100",
+    "x": 3.6700000000000004,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "10.6% \u00b7 4 of 114 yes \u00b7 9 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 2.97,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "8.1% \u00b7 1 of 114 yes \u00b7 9 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 3.24,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "92.7% \u00b7 114 of 114 yes \u00b7 0 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 3.6500000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "94.3% \u00b7 113 of 114 yes \u00b7 3 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 3.9200000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "94.3% \u00b7 114 of 114 yes \u00b7 2 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 4.33,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "94.3% \u00b7 112 of 114 yes \u00b7 4 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 4.6000000000000005,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "99.2% \u00b7 114 of 114 yes \u00b7 8 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 5.01,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "95.1% \u00b7 108 of 114 yes \u00b7 9 of 9 no",
+    "x": 3.9900000000000007,
+    "y": 5.28,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "Dashed lines: always \u201cno\u201d = 7.3% \u00b7 always \u201cyes\u201d = 92.7%",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 9,
+    "text": "Does it synthesize?",
+    "x": 7.01,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 9,
+    "text": "The tool says \u201cyes\u201d for 99 of the 123 designs and \u201cno\u201d for 24",
+    "x": 7.01,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 9,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "50",
+    "x": 8.535,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "100",
+    "x": 9.57,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "80.5% \u00b7 99 of 99 yes \u00b7 0 of 24 no",
+    "x": 9.89,
+    "y": 2.97,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "19.5% \u00b7 0 of 99 yes \u00b7 24 of 24 no",
+    "x": 9.89,
+    "y": 3.24,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "79.7% \u00b7 98 of 99 yes \u00b7 0 of 24 no",
+    "x": 9.89,
+    "y": 3.6500000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "81.3% \u00b7 98 of 99 yes \u00b7 2 of 24 no",
+    "x": 9.89,
+    "y": 3.9200000000000004,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "80.5% \u00b7 97 of 99 yes \u00b7 2 of 24 no",
+    "x": 9.89,
+    "y": 4.33,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "82.9% \u00b7 98 of 99 yes \u00b7 4 of 24 no",
+    "x": 9.89,
+    "y": 4.6000000000000005,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "27B",
+    "x": 6.99,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 9,
+    "text": "82.9% \u00b7 98 of 99 yes \u00b7 4 of 24 no",
+    "x": 9.89,
+    "y": 5.01,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "87.8% \u00b7 96 of 99 yes \u00b7 12 of 24 no",
+    "x": 9.89,
+    "y": 5.28,
+    "w": 2.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 9,
+    "text": "Dashed lines: always \u201cno\u201d = 19.5% \u00b7 always \u201cyes\u201d = 80.5%",
+    "x": 6.99,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 9,
+    "text": "Synthesis: the best score, KEV-27B with examples, is 9 designs above always \u201cyes\u201d. KEV-0.8B with examples answers \u201cno\u201d to every design on synthesis.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 10,
+    "text": "KEV misses most synthesis failures that compile",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 10,
+    "text": "The 24 synthesis failures split by the compile check. Bars: failures answered \u201cno\u201d.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 10,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 10,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 10,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 10,
+    "text": "10",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "Failures whose source compiles",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 10,
+    "text": "15 designs: only synthesis rejects them",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 10,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "50",
+    "x": 3.1350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "100",
+    "x": 4.670000000000001,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "0.0% \u00b7 0 of 15",
+    "x": 4.99,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "100.0% \u00b7 15 of 15",
+    "x": 4.99,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "0.0% \u00b7 0 of 15",
+    "x": 4.99,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "6.7% \u00b7 1 of 15",
+    "x": 4.99,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "6.7% \u00b7 1 of 15",
+    "x": 4.99,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "13.3% \u00b7 2 of 15",
+    "x": 4.99,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "0.0% \u00b7 0 of 15",
+    "x": 4.99,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "26.7% \u00b7 4 of 15",
+    "x": 4.99,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "Failures whose source does not compile",
+    "x": 7.01,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 10,
+    "text": "9 designs: vlog rejects them too",
+    "x": 7.01,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 10,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "50",
+    "x": 9.035,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "100",
+    "x": 10.57,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "0.0% \u00b7 0 of 9",
+    "x": 10.89,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "100.0% \u00b7 9 of 9",
+    "x": 10.89,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "0.0% \u00b7 0 of 9",
+    "x": 10.89,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "11.1% \u00b7 1 of 9",
+    "x": 10.89,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "11.1% \u00b7 1 of 9",
+    "x": 10.89,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "22.2% \u00b7 2 of 9",
+    "x": 10.89,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "27B",
+    "x": 6.99,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 10,
+    "text": "44.4% \u00b7 4 of 9",
+    "x": 10.89,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "88.9% \u00b7 8 of 9",
+    "x": 10.89,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 10,
+    "text": "KEV-27B catches 4 of the 15 failures that compile with examples, 0 without; and 8 of the 9 that do not compile (4 without). KEV-0.8B\u2019s full bars are a constant \u201cno\u201d.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 11,
+    "text": "The ten failure reasons and how often each occurs",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 11,
+    "text": "The prompt says that synthesis failed. 25 reason questions: 16 in the test split, 9 in the development split (dev).",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 11,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 11,
+    "text": "11",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 11,
+    "text": "22 of the 25 failures are injected edits. 8 more test designs with an injected compile error get no reason question.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 12,
+    "text": "KEV-27B names a known failure but does not detect it",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 12,
+    "text": "Left: the reason question. Right: synthesis and reason answers of the 16 designs.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 12,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 12,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 12,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 12,
+    "text": "12",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "Why does synthesis fail?",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 12,
+    "text": "16 designs \u00b7 the prompt says that synthesis failed",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 12,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "50",
+    "x": 3.1350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "100",
+    "x": 4.670000000000001,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 12,
+    "text": "31.3% \u00b7 5 of 16",
+    "x": 4.99,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "6.3% \u00b7 1 of 16",
+    "x": 4.99,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 12,
+    "text": "56.3% \u00b7 9 of 16",
+    "x": 4.99,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "62.5% \u00b7 10 of 16",
+    "x": 4.99,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 12,
+    "text": "68.8% \u00b7 11 of 16",
+    "x": 4.99,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "68.8% \u00b7 11 of 16",
+    "x": 4.99,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 12,
+    "text": "93.8% \u00b7 15 of 16",
+    "x": 4.99,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "87.5% \u00b7 14 of 16",
+    "x": 4.99,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 12,
+    "text": "Dashed line: always simulation_statement = 31.3% (5 of 16)",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 12,
+    "text": "Each cell: designs of 16, no examples \u2192 three examples.\nThe synthesis answer comes from the yes/no request of the same design, where the prompt does not say that it fails.",
+    "x": 6.85,
+    "y": 4.85,
+    "w": 5.6,
+    "h": 1.2,
+    "size": 13
+  },
+  {
+    "slide": 12,
+    "text": "KEV-27B names the reason for 15 of 16 known failures without examples, but it says \u201csynthesis fails\u201d for 0 of these 16 designs when the prompt does not tell it (5 with examples).",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 13,
+    "text": "Area levels are usable; power levels are not",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 13,
+    "text": "Bars: exact level. Dashed line: the most common level of the tool labels.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 13,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 13,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 13,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 13,
+    "text": "13",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "Area level",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 13,
+    "text": "92 designs \u00b7 all five levels occur",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 13,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "50",
+    "x": 3.1350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "100",
+    "x": 4.670000000000001,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "35.9% \u00b7 33 of 92",
+    "x": 4.99,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "2.2% \u00b7 2 of 92",
+    "x": 4.99,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "35.9% \u00b7 33 of 92",
+    "x": 4.99,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "50.0% \u00b7 46 of 92",
+    "x": 4.99,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "57.6% \u00b7 53 of 92",
+    "x": 4.99,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "54.3% \u00b7 50 of 92",
+    "x": 4.99,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "66.3% \u00b7 61 of 92",
+    "x": 4.99,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "52.2% \u00b7 48 of 92",
+    "x": 4.99,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "Dashed line: always level 1 = 35.9% (33 of 92)",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 13,
+    "text": "Power level",
+    "x": 7.01,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 13,
+    "text": "85 designs \u00b7 levels 1 to 4 occur",
+    "x": 7.01,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 13,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "50",
+    "x": 9.035,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "100",
+    "x": 10.57,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "27.1% \u00b7 23 of 85",
+    "x": 10.89,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "0.0% \u00b7 0 of 85",
+    "x": 10.89,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "45.9% \u00b7 39 of 85",
+    "x": 10.89,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "40.0% \u00b7 34 of 85",
+    "x": 10.89,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "40.0% \u00b7 34 of 85",
+    "x": 10.89,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "28.2% \u00b7 24 of 85",
+    "x": 10.89,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "27B",
+    "x": 6.99,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 13,
+    "text": "10.6% \u00b7 9 of 85",
+    "x": 10.89,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "42.4% \u00b7 36 of 85",
+    "x": 10.89,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 13,
+    "text": "Dashed line: always level 2 = 43.5% (37 of 85)",
+    "x": 6.99,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 13,
+    "text": "Area: KEV-27B is exact for 61 of 92 designs and within one level for all 92; with examples the exact count drops to 48. Power: only KEV-4B without examples (39 of 85) is above always level 2 (37 of 85).",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 14,
+    "text": "Timing levels: no model beats a constant answer",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 14,
+    "text": "Bars: exact level. Dashed line: the most common tool level. No slack is negative.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 14,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 14,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 14,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 14,
+    "text": "14",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "Reachable clock frequency level",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 14,
+    "text": "92 designs \u00b7 levels 1 to 4 occur",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 14,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "50",
+    "x": 3.1350000000000002,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "100",
+    "x": 4.670000000000001,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "14.1% \u00b7 13 of 92",
+    "x": 4.99,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "23.9% \u00b7 22 of 92",
+    "x": 4.99,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "12.0% \u00b7 11 of 92",
+    "x": 4.99,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "22.8% \u00b7 21 of 92",
+    "x": 4.99,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "14.1% \u00b7 13 of 92",
+    "x": 4.99,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "16.3% \u00b7 15 of 92",
+    "x": 4.99,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "14.1% \u00b7 13 of 92",
+    "x": 4.99,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "39.1% \u00b7 36 of 92",
+    "x": 4.99,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "Dashed line: always level 4 = 48.9% (45 of 92)",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 14,
+    "text": "Timing margin (slack) level",
+    "x": 7.01,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 14,
+    "text": "92 designs \u00b7 levels 2 to 5 occur",
+    "x": 7.01,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 14,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "50",
+    "x": 9.035,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "100",
+    "x": 10.57,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "8.7% \u00b7 8 of 92",
+    "x": 10.89,
+    "y": 2.97,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "68.5% \u00b7 63 of 92",
+    "x": 10.89,
+    "y": 3.24,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "4.3% \u00b7 4 of 92",
+    "x": 10.89,
+    "y": 3.6500000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "10.9% \u00b7 10 of 92",
+    "x": 10.89,
+    "y": 3.9200000000000004,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "3.3% \u00b7 3 of 92",
+    "x": 10.89,
+    "y": 4.33,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "16.3% \u00b7 15 of 92",
+    "x": 10.89,
+    "y": 4.6000000000000005,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "27B",
+    "x": 6.99,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 14,
+    "text": "32.6% \u00b7 30 of 92",
+    "x": 10.89,
+    "y": 5.01,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "65.2% \u00b7 60 of 92",
+    "x": 10.89,
+    "y": 5.28,
+    "w": 1.5,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 14,
+    "text": "Dashed line: always level 5 = 68.5% (63 of 92)",
+    "x": 6.99,
+    "y": 5.83,
+    "w": 5.25,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 14,
+    "text": "With examples KEV-27B reaches 36 of 92 (frequency) and 60 of 92 (slack); the constant answers score 45 and 63. KEV-0.8B\u2019s 63 of 92 is level 5 for every design.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 15,
+    "text": "KEV-27B\u2019s chosen levels do not match the tool\u2019s levels",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 15,
+    "text": "Designs at each level: the tool, then KEV-27B without and with examples. Equal counts are not correct answers.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 15,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "15",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "Reachable clock frequency level",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 15,
+    "text": "92 designs \u00b7 counts at each level",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 0.96,
+    "y": 4.989999999999999,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "25",
+    "x": 0.96,
+    "y": 4.515,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "50",
+    "x": 0.96,
+    "y": 4.04,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "75",
+    "x": 0.96,
+    "y": 3.5650000000000004,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "100",
+    "x": 0.96,
+    "y": 3.0900000000000003,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "13",
+    "x": 1.55,
+    "y": 4.6129999999999995,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "90",
+    "x": 1.81,
+    "y": 3.1500000000000004,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "29",
+    "x": 2.0700000000000003,
+    "y": 4.309,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "1",
+    "x": 1.8,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "16",
+    "x": 2.484,
+    "y": 4.556,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 2.744,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "1",
+    "x": 3.004,
+    "y": 4.841,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "2",
+    "x": 2.734,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "18",
+    "x": 3.418,
+    "y": 4.518,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 3.6780000000000004,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "30",
+    "x": 3.938,
+    "y": 4.29,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "3",
+    "x": 3.668,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "45",
+    "x": 4.3519999999999985,
+    "y": 4.005,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 4.611999999999998,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "32",
+    "x": 4.871999999999998,
+    "y": 4.252,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "4",
+    "x": 4.6019999999999985,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 5.286,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "2",
+    "x": 5.545999999999999,
+    "y": 4.822,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 5.805999999999999,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "5",
+    "x": 5.536,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "Level",
+    "x": 1.11,
+    "y": 5.6,
+    "w": 0.6,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "tool",
+    "x": 2.14,
+    "y": 5.6,
+    "w": 0.55,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "no examples",
+    "x": 3.04,
+    "y": 5.6,
+    "w": 1.1,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "three examples",
+    "x": 4.49,
+    "y": 5.6,
+    "w": 1.3,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "Power level",
+    "x": 7.01,
+    "y": 2.16,
+    "w": 5.21,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 15,
+    "text": "85 designs \u00b7 counts at each level",
+    "x": 7.01,
+    "y": 2.58,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 6.86,
+    "y": 4.989999999999999,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "25",
+    "x": 6.86,
+    "y": 4.515,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "50",
+    "x": 6.86,
+    "y": 4.04,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "75",
+    "x": 6.86,
+    "y": 3.5650000000000004,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "100",
+    "x": 6.86,
+    "y": 3.0900000000000003,
+    "w": 0.45,
+    "h": 0.23,
+    "size": 11
+  },
+  {
+    "slide": 15,
+    "text": "23",
+    "x": 7.449999999999999,
+    "y": 4.423,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 7.709999999999999,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 7.969999999999999,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "1",
+    "x": 7.699999999999999,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "37",
+    "x": 8.383999999999999,
+    "y": 4.157,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 8.643999999999998,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "41",
+    "x": 8.903999999999998,
+    "y": 4.0809999999999995,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "2",
+    "x": 8.633999999999999,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "18",
+    "x": 9.318,
+    "y": 4.518,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "54",
+    "x": 9.578,
+    "y": 3.8339999999999996,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "25",
+    "x": 9.838,
+    "y": 4.385,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "3",
+    "x": 9.568,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "7",
+    "x": 10.251999999999999,
+    "y": 4.727,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "30",
+    "x": 10.511999999999999,
+    "y": 4.29,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "13",
+    "x": 10.771999999999998,
+    "y": 4.6129999999999995,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "4",
+    "x": 10.501999999999999,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "0",
+    "x": 11.185999999999998,
+    "y": 4.859999999999999,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "1",
+    "x": 11.445999999999998,
+    "y": 4.841,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "6",
+    "x": 11.705999999999998,
+    "y": 4.7459999999999996,
+    "w": 0.35,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 15,
+    "text": "5",
+    "x": 11.435999999999998,
+    "y": 5.18,
+    "w": 0.4,
+    "h": 0.25,
+    "size": 13
+  },
+  {
+    "slide": 15,
+    "text": "Level",
+    "x": 7.01,
+    "y": 5.6,
+    "w": 0.6,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "tool",
+    "x": 8.04,
+    "y": 5.6,
+    "w": 0.55,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "no examples",
+    "x": 8.94,
+    "y": 5.6,
+    "w": 1.1,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "three examples",
+    "x": 10.39,
+    "y": 5.6,
+    "w": 1.3,
+    "h": 0.28,
+    "size": 12
+  },
+  {
+    "slide": 15,
+    "text": "Without examples KEV-27B puts 90 of 92 designs in frequency level 1 and no design in power level 1 or 2. With examples the counts come closer to the tool\u2019s, but the exact scores stay below the constant answer.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 16,
+    "text": "Pairs: KEV-27B with examples picks the better design",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 16,
+    "text": "Two designs of one problem, A and B, asked in both orders. Always A scores 50%.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 8.35,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 16,
+    "text": "no examples",
+    "x": 9.629999999999999,
+    "y": 1.42,
+    "w": 1.2,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 16,
+    "text": "three examples",
+    "x": 11.129999999999999,
+    "y": 1.42,
+    "w": 1.4,
+    "h": 0.3,
+    "size": 12
+  },
+  {
+    "slide": 16,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  RESULTS",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 16,
+    "text": "16",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "Smaller area",
+    "x": 1.11,
+    "y": 2.16,
+    "w": 3.2600000000000002,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 16,
+    "text": "23 pairs \u00b7 46 questions",
+    "x": 1.11,
+    "y": 2.58,
+    "w": 3.2600000000000002,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 16,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50",
+    "x": 2.185,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "100",
+    "x": 2.77,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "47.8% \u00b7 22 of 46",
+    "x": 3.0900000000000003,
+    "y": 2.97,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50.0% \u00b7 23 of 46",
+    "x": 3.0900000000000003,
+    "y": 3.24,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "76.1% \u00b7 35 of 46",
+    "x": 3.0900000000000003,
+    "y": 3.6500000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "67.4% \u00b7 31 of 46",
+    "x": 3.0900000000000003,
+    "y": 3.9200000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "87.0% \u00b7 40 of 46",
+    "x": 3.0900000000000003,
+    "y": 4.33,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "76.1% \u00b7 35 of 46",
+    "x": 3.0900000000000003,
+    "y": 4.6000000000000005,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "27B",
+    "x": 1.09,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "78.3% \u00b7 36 of 46",
+    "x": 3.0900000000000003,
+    "y": 5.01,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "89.1% \u00b7 41 of 46",
+    "x": 3.0900000000000003,
+    "y": 5.28,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "Dashed line: always A = 50%",
+    "x": 1.09,
+    "y": 5.83,
+    "w": 3.3000000000000003,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 16,
+    "text": "Lower power",
+    "x": 5.029999999999999,
+    "y": 2.16,
+    "w": 3.2600000000000002,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 16,
+    "text": "22 pairs \u00b7 44 questions",
+    "x": 5.029999999999999,
+    "y": 2.58,
+    "w": 3.2600000000000002,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 16,
+    "text": "0",
+    "x": 5.52,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50",
+    "x": 6.1049999999999995,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "100",
+    "x": 6.6899999999999995,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "0.8B",
+    "x": 5.01,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "63.6% \u00b7 28 of 44",
+    "x": 7.009999999999999,
+    "y": 2.97,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "54.5% \u00b7 24 of 44",
+    "x": 7.009999999999999,
+    "y": 3.24,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "4B",
+    "x": 5.01,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "56.8% \u00b7 25 of 44",
+    "x": 7.009999999999999,
+    "y": 3.6500000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "63.6% \u00b7 28 of 44",
+    "x": 7.009999999999999,
+    "y": 3.9200000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "9B",
+    "x": 5.01,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "65.9% \u00b7 29 of 44",
+    "x": 7.009999999999999,
+    "y": 4.33,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "70.5% \u00b7 31 of 44",
+    "x": 7.009999999999999,
+    "y": 4.6000000000000005,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "27B",
+    "x": 5.01,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "70.5% \u00b7 31 of 44",
+    "x": 7.009999999999999,
+    "y": 5.01,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "79.5% \u00b7 35 of 44",
+    "x": 7.009999999999999,
+    "y": 5.28,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "Dashed line: always A = 50%",
+    "x": 5.01,
+    "y": 5.83,
+    "w": 3.3000000000000003,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 16,
+    "text": "Higher frequency",
+    "x": 8.96,
+    "y": 2.16,
+    "w": 3.2600000000000002,
+    "h": 0.4,
+    "size": 18
+  },
+  {
+    "slide": 16,
+    "text": "6 pairs \u00b7 12 questions",
+    "x": 8.96,
+    "y": 2.58,
+    "w": 3.2600000000000002,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 16,
+    "text": "0",
+    "x": 9.45,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50",
+    "x": 10.035,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "100",
+    "x": 10.62,
+    "y": 5.6,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "0.8B",
+    "x": 8.94,
+    "y": 3.1,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "66.7% \u00b7 8 of 12",
+    "x": 10.94,
+    "y": 2.97,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50.0% \u00b7 6 of 12",
+    "x": 10.94,
+    "y": 3.24,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "4B",
+    "x": 8.94,
+    "y": 3.7800000000000002,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "83.3% \u00b7 10 of 12",
+    "x": 10.94,
+    "y": 3.6500000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "50.0% \u00b7 6 of 12",
+    "x": 10.94,
+    "y": 3.9200000000000004,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "9B",
+    "x": 8.94,
+    "y": 4.46,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "75.0% \u00b7 9 of 12",
+    "x": 10.94,
+    "y": 4.33,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "75.0% \u00b7 9 of 12",
+    "x": 10.94,
+    "y": 4.6000000000000005,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "27B",
+    "x": 8.94,
+    "y": 5.14,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 16,
+    "text": "83.3% \u00b7 10 of 12",
+    "x": 10.94,
+    "y": 5.01,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "91.7% \u00b7 11 of 12",
+    "x": 10.94,
+    "y": 5.28,
+    "w": 1.45,
+    "h": 0.3,
+    "size": 11
+  },
+  {
+    "slide": 16,
+    "text": "Dashed line: always A = 50%",
+    "x": 8.94,
+    "y": 5.83,
+    "w": 3.3000000000000003,
+    "h": 0.23,
+    "size": 10.5
+  },
+  {
+    "slide": 16,
+    "text": "With examples KEV-27B is right for 41 of 46 area, 35 of 44 power, and 11 of 12 frequency questions, and for 20 of 23 area pairs in both orders (17 without).",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 17,
+    "text": "What the results support, and what to do next",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 17,
+    "text": "Observations on dataset v1 and one fixed example set, not a guarantee for other designs or other examples.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 17,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  CONCLUSION",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 17,
+    "text": "17",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 17,
+    "text": "Supported",
+    "x": 1.1400000000000001,
+    "y": 2.25,
+    "w": 3.2,
+    "h": 0.72,
+    "size": 21
+  },
+  {
+    "slide": 17,
+    "text": "\u2022 Compile check: KEV-27B, 122 of 123, no examples needed.\n\u2022 Failure reason: KEV-27B, 15 of 16, when the prompt says that synthesis failed.\n\u2022 Area level: KEV-27B, 61 of 92 exact, all 92 within one level.\n\u2022 Better of two designs: KEV-27B with examples, 41 of 46 (area), 35 of 44 (power).",
+    "x": 1.1400000000000001,
+    "y": 3.05,
+    "w": 3.2,
+    "h": 2.8999999999999995,
+    "size": 14
+  },
+  {
+    "slide": 17,
+    "text": "Not supported",
+    "x": 5.06,
+    "y": 2.25,
+    "w": 3.2,
+    "h": 0.72,
+    "size": 21
+  },
+  {
+    "slide": 17,
+    "text": "\u2022 Synthesis check: at most 9 designs above always \u201cyes\u201d; KEV-27B misses 12 of 24 failures with examples, 20 without.\n\u2022 Power, frequency, and slack levels: no score more than 2 designs above the constant answer.\n\u2022 KEV-0.8B: one answer for every design in 6 of 10 questions with examples.",
+    "x": 5.06,
+    "y": 3.05,
+    "w": 3.2,
+    "h": 2.8999999999999995,
+    "size": 14
+  },
+  {
+    "slide": 17,
+    "text": "Next steps",
+    "x": 8.99,
+    "y": 2.25,
+    "w": 3.2,
+    "h": 0.72,
+    "size": 21
+  },
+  {
+    "slide": 17,
+    "text": "\u2022 Dataset v2: more synthesis failures of code that compiles, designs that miss the timing target, equal yes and no counts.\n\u2022 Other example sets, and more than three examples.\n\u2022 Jev 1.13 and other models under the same protocol.\n\u2022 Thresholds and example sets chosen on the development split only.",
+    "x": 8.99,
+    "y": 3.05,
+    "w": 3.2,
+    "h": 2.8999999999999995,
+    "size": 14
+  },
+  {
+    "slide": 17,
+    "text": "KEV does not replace the tools: the best synthesis check misses 12 of 24 failures. KEV can screen compile errors and rank two designs.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 18,
+    "text": "APPENDIX",
+    "x": 0.89,
+    "y": 2.0,
+    "w": 11.2,
+    "h": 0.4,
+    "size": 16
+  },
+  {
+    "slide": 18,
+    "text": "Full results and\nreproduction",
+    "x": 0.89,
+    "y": 2.7,
+    "w": 10.9,
+    "h": 1.65,
+    "size": 43
+  },
+  {
+    "slide": 18,
+    "text": "Every score of every size, the class counts, the probabilities, the level errors, the pair orders, the runs, and the files",
+    "x": 0.89,
+    "y": 5.05,
+    "w": 11.2,
+    "h": 0.75,
+    "size": 23
+  },
+  {
+    "slide": 19,
+    "text": "Every score, without and with three examples",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 19,
+    "text": "Each cell: correct answers in %, no examples \u2192 three examples. Bold: p < 0.05 (9 of 40 changes).",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 19,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 19,
+    "text": "19",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 19,
+    "text": "Constant: the score of the most common test label (always \u201cyes\u201d, one level, one reason, or one letter). The p value is the exact two-sided McNemar test on the paired questions; with 40 tests about 2 fall below 0.05 by chance.",
+    "x": 0.95,
+    "y": 6.4,
+    "w": 11.4,
+    "h": 0.5,
+    "size": 12
+  },
+  {
+    "slide": 20,
+    "text": "Yes/no checks: correct answers per tool outcome",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 20,
+    "text": "Each cell: designs of the group with a correct answer, no examples \u2192 three examples. \u201cYes\u201d answers: of 123.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 20,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 20,
+    "text": "20",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 20,
+    "text": "\u201cAll designs\u201d is the score of the result slides. The paired tests within each group are in the speaker notes.",
+    "x": 0.95,
+    "y": 6.25,
+    "w": 11.4,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "Yes probability of every design, no examples",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 21,
+    "text": "Each dot is one test design. 0.5 or more counts as \u201cyes\u201d. Teal: the tool says \u201cyes\u201d; orange: it says \u201cno\u201d.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 21,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 21,
+    "text": "21",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "Does it compile?",
+    "x": 1.11,
+    "y": 2.17,
+    "w": 5.21,
+    "h": 0.55,
+    "size": 18
+  },
+  {
+    "slide": 21,
+    "text": "vlog accepts: 114   vlog rejects: 9",
+    "x": 1.11,
+    "y": 2.66,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "0.5",
+    "x": 3.25,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "1",
+    "x": 4.9,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.195,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "4 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 3.135,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7449999999999997,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "123 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 3.6849999999999996,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.295,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "121 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 4.234999999999999,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "27B",
+    "x": 1.09,
+    "y": 4.845000000000001,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "115 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 4.785,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "Yes probability of each design \u2022 dashed line: the 0.5 threshold",
+    "x": 1.09,
+    "y": 5.5,
+    "w": 5.25,
+    "h": 0.24,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "Does it synthesize?",
+    "x": 7.01,
+    "y": 2.17,
+    "w": 5.21,
+    "h": 0.55,
+    "size": 18
+  },
+  {
+    "slide": 21,
+    "text": "tool synthesizes: 99   tool fails: 24",
+    "x": 7.01,
+    "y": 2.66,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "0.5",
+    "x": 9.149999999999999,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "1",
+    "x": 10.799999999999999,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.195,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "123 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 3.135,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7449999999999997,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "122 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 3.6849999999999996,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.295,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "119 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 4.234999999999999,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "27B",
+    "x": 6.99,
+    "y": 4.845000000000001,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 21,
+    "text": "118 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 4.785,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 21,
+    "text": "Yes probability of each design \u2022 dashed line: the 0.5 threshold",
+    "x": 6.99,
+    "y": 5.5,
+    "w": 5.25,
+    "h": 0.24,
+    "size": 11
+  },
+  {
+    "slide": 21,
+    "text": "Only KEV-27B\u2019s compile answers are right for most designs of both groups: 114 of 114 and 8 of 9.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 22,
+    "text": "Yes probability of every design, three examples",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 22,
+    "text": "Each dot is one test design. 0.5 or more counts as \u201cyes\u201d. Teal: the tool says \u201cyes\u201d; orange: it says \u201cno\u201d.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 22,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 22,
+    "text": "22",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "Does it compile?",
+    "x": 1.11,
+    "y": 2.17,
+    "w": 5.21,
+    "h": 0.55,
+    "size": 18
+  },
+  {
+    "slide": 22,
+    "text": "vlog accepts: 114   vlog rejects: 9",
+    "x": 1.11,
+    "y": 2.66,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "0",
+    "x": 1.6,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "0.5",
+    "x": 3.25,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "1",
+    "x": 4.9,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "0.8B",
+    "x": 1.09,
+    "y": 3.195,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "1 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 3.135,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "4B",
+    "x": 1.09,
+    "y": 3.7449999999999997,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "119 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 3.6849999999999996,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "9B",
+    "x": 1.09,
+    "y": 4.295,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "117 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 4.234999999999999,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "27B",
+    "x": 1.09,
+    "y": 4.845000000000001,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "108 of 123\nare \u201cyes\u201d",
+    "x": 5.25,
+    "y": 4.785,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "Yes probability of each design \u2022 dashed line: the 0.5 threshold",
+    "x": 1.09,
+    "y": 5.5,
+    "w": 5.25,
+    "h": 0.24,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "Does it synthesize?",
+    "x": 7.01,
+    "y": 2.17,
+    "w": 5.21,
+    "h": 0.55,
+    "size": 18
+  },
+  {
+    "slide": 22,
+    "text": "tool synthesizes: 99   tool fails: 24",
+    "x": 7.01,
+    "y": 2.66,
+    "w": 5.21,
+    "h": 0.3,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "0",
+    "x": 7.5,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "0.5",
+    "x": 9.149999999999999,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "1",
+    "x": 10.799999999999999,
+    "y": 5.21,
+    "w": 0.44,
+    "h": 0.22,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "0.8B",
+    "x": 6.99,
+    "y": 3.195,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "0 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 3.135,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "4B",
+    "x": 6.99,
+    "y": 3.7449999999999997,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "120 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 3.6849999999999996,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "9B",
+    "x": 6.99,
+    "y": 4.295,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "118 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 4.234999999999999,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "27B",
+    "x": 6.99,
+    "y": 4.845000000000001,
+    "w": 0.66,
+    "h": 0.3,
+    "size": 14
+  },
+  {
+    "slide": 22,
+    "text": "108 of 123\nare \u201cyes\u201d",
+    "x": 11.15,
+    "y": 4.785,
+    "w": 1.1,
+    "h": 0.47,
+    "size": 12.5
+  },
+  {
+    "slide": 22,
+    "text": "Yes probability of each design \u2022 dashed line: the 0.5 threshold",
+    "x": 6.99,
+    "y": 5.5,
+    "w": 5.25,
+    "h": 0.24,
+    "size": 11
+  },
+  {
+    "slide": 22,
+    "text": "Only KEV-27B\u2019s compile answers are right for most designs of both groups: 108 of 114 and 9 of 9.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 23,
+    "text": "Failure reasons: correct answers per class",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 23,
+    "text": "The 16 test designs by their true reason. Each cell: correct answers, no examples \u2192 three examples.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 23,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 23,
+    "text": "23",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 23,
+    "text": "No test design has the reason event_list or unbounded_loop. The models chose event_list 6 times without examples and 16 times with examples (7, 3, 4, 2); it is one of the three example classes.",
+    "x": 0.95,
+    "y": 6.2,
+    "w": 11.4,
+    "h": 0.55,
+    "size": 12.5
+  },
+  {
+    "slide": 24,
+    "text": "Ranking score and probability error, yes/no checks",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 24,
+    "text": "A model can rank well and still decide badly at the 0.5 threshold. Cells: no examples \u2192 three examples.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 24,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 24,
+    "text": "24",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 24,
+    "text": "Ranking score: higher is better",
+    "x": 1.1400000000000001,
+    "y": 4.79,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 24,
+    "text": "Chance = 0.5; perfect ordering = 1. The probability that a design that works gets a higher yes probability than a design that fails.",
+    "x": 1.1400000000000001,
+    "y": 5.2,
+    "w": 5.15,
+    "h": 0.83,
+    "size": 13.5
+  },
+  {
+    "slide": 24,
+    "text": "Probability error: lower is better",
+    "x": 7.04,
+    "y": 4.79,
+    "w": 5.15,
+    "h": 0.4,
+    "size": 17
+  },
+  {
+    "slide": 24,
+    "text": "Mean squared error of the yes probability. Zero is perfect; a confident wrong answer costs more than an unsure one.",
+    "x": 7.04,
+    "y": 5.2,
+    "w": 5.15,
+    "h": 0.83,
+    "size": 13.5
+  },
+  {
+    "slide": 24,
+    "text": "KEV-27B\u2019s synthesis ranking score rises from 0.814 to 0.918 with examples, while its failure detection at 0.5 rises from 4 to 12 of 24.",
+    "x": 1.08,
+    "y": 6.31,
+    "w": 11.17,
+    "h": 0.54,
+    "size": 15
+  },
+  {
+    "slide": 25,
+    "text": "Within one level, and mean level error",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 25,
+    "text": "Within one level: higher is better. Mean level error: lower is better. Each cell: no examples \u2192 three examples.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 25,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 25,
+    "text": "25",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 25,
+    "text": "Mean level error uses the probability-weighted expected level, not only the most likely level. The level ranges are decades, so one level is not a fixed physical error.",
+    "x": 0.95,
+    "y": 6.25,
+    "w": 11.4,
+    "h": 0.5,
+    "size": 12.5
+  },
+  {
+    "slide": 26,
+    "text": "Pair questions: both orders, one order, neither",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 26,
+    "text": "Counts per pair. Each pair has two answers, one per order. Each cell: no examples \u2192 three examples.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 26,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 26,
+    "text": "26",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 26,
+    "text": "The two correct letters of a pair are opposite, so \u201cone order correct\u201d means the same letter in both orders. A letter swap can still be wrong in both orders.",
+    "x": 0.95,
+    "y": 6.3,
+    "w": 11.4,
+    "h": 0.5,
+    "size": 12.5
+  },
+  {
+    "slide": 27,
+    "text": "Design groups in the test split",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 27,
+    "text": "The retained designs by the group of the dataset plan. Pairs come from the REvolution candidates.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 27,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 27,
+    "text": "27",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 27,
+    "text": "Not measured here: energy per operation, functional equivalence, post-route timing, measured chips, other model families, and the rename and comment controls of the earlier plan.",
+    "x": 0.95,
+    "y": 6.1,
+    "w": 11.4,
+    "h": 0.55,
+    "size": 13
+  },
+  {
+    "slide": 28,
+    "text": "The Condor runs of the two experiments",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 28,
+    "text": "Job times include the setup and differ in hardware: not a speed ranking. All requests answered, zero errors.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 28,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 28,
+    "text": "28",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 28,
+    "text": "No examples: 348 requests per model (both splits), maximum input 7,706 tokens. Three examples: 725 requests per model, maximum input 8,607 tokens; 3 requests exceed 8,192 tokens, the validated context of 0.8B, 4B, and 9B.",
+    "x": 0.95,
+    "y": 6.2,
+    "w": 11.4,
+    "h": 0.6,
+    "size": 12.5
+  },
+  {
+    "slide": 29,
+    "text": "Files and checksums for reproduction",
+    "x": 0.89,
+    "y": 0.65,
+    "w": 11.55,
+    "h": 0.68,
+    "size": 31
+  },
+  {
+    "slide": 29,
+    "text": "Every number is tied to the frozen question files and the saved answers. No model was rerun for this deck.",
+    "x": 0.89,
+    "y": 1.38,
+    "w": 11.55,
+    "h": 0.48,
+    "size": 16
+  },
+  {
+    "slide": 29,
+    "text": "KEV v1.0  \u2022  Dataset v1  \u2022  runs of 15 and 16 October 2026  |  APPENDIX",
+    "x": 0.89,
+    "y": 7.04,
+    "w": 10.65,
+    "h": 0.22,
+    "size": 10.5
+  },
+  {
+    "slide": 29,
+    "text": "29",
+    "x": 11.85,
+    "y": 7.02,
+    "w": 0.58,
+    "h": 0.25,
+    "size": 11
+  },
+  {
+    "slide": 29,
+    "text": "Inputs and evidence",
+    "x": 1.05,
+    "y": 4.65,
+    "w": 11.1,
+    "h": 0.4,
+    "size": 20
+  },
+  {
+    "slide": 29,
+    "text": "Questions: data/questions/dataset_v1.jsonl and dataset_v1_fewshot3.jsonl (harness/fewshot.py)\nAnswers, scores, manifests, and comparisons: results/kev/dataset_v1_<model>_2026101[45]/ and results/kev/dataset_v1_fewshot3_<model>_20261016/\nVerified tables and the build: presentations/data/verified_metrics.json, verified_metrics_fewshot3.json, compare_fewshot3.csv; presentations/src/analyse_kev.py, build_kev_findings.py",
+    "x": 1.05,
+    "y": 5.15,
+    "w": 11.1,
+    "h": 1.0,
+    "size": 14
+  }
+]

@@ -1,0 +1,6 @@
+dataset,description,designs_original,designs_edit,questions_basic,questions_performance,questions_reason,questions_pair
+REvolution ASP-DAC 2026,"LLM answers to RTLLM, VerilogEval",42,0,84,159,2,120
+MetRex,public,40,13,106,139,11,0
+RTLLM v2.0,"public, verified + ChatGPT files",20,8,56,70,5,0
+ARES,"own medium designs, v0",10,6,32,40,3,0
+VerilogEval,"public, reference designs",5,7,24,20,4,0

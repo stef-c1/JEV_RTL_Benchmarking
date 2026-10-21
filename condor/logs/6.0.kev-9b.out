@@ -1,0 +1,74 @@
+== job 6.0: kev-9b on aristoteles.esat.kuleuven.be at 2026-10-15 14:31:27
+   scratch /usr/data/condor/execute/dir_1426930/scratch/kev (1010G free)
+   CUDA_VISIBLE_DEVICES=GPU-64dd200b-0592-1817-ef76-bc4201a74912
+   GPU: 0, NVIDIA A100-SXM4-80GB, 81920 MiB, 0 MiB, 595.91.07
+== environment ready in 22 s: torch 2.8.0+cu128 cuda True
+== server ready in 65 s: serving jaredpalmer/kev-9b@v1.0 (/usr/data/condor/execute/dir_1426930/scratch/kev/hf/hub/models--jaredpalmer--kev-9b/snapshots/db029f08b290afd9fee4aa4bbcd9ae48602d1eb0) on cuda via torch (bfloat16) 127.0.0.1:40515; states over 65,536 tokens refused (422)
+== /users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl -> /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1_smoke__kev-9b.jsonl
+0 records already answered, 5 to ask, model jaredpalmer/kev-9b@v1.0, server http://127.0.0.1:40515
+[1/5] dataset_v1:basic:metrex_12644: 365 tokens, 236.4 ms model time
+[5/5] dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA: 1996 tokens, 359.2 ms model time
+summary of /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1_smoke__kev-9b.jsonl: 5 question records, 0 with an error
+  dataset_v1     area           within 8k tokens     1 of    1 correct (100.0%)
+  dataset_v1     compiles       within 8k tokens     1 of    1 correct (100.0%)
+  dataset_v1     lower_power    within 8k tokens     1 of    2 correct (50.0%)
+  dataset_v1     power          within 8k tokens     1 of    1 correct (100.0%)
+  dataset_v1     reach          within 8k tokens     0 of    1 correct (0.0%)
+  dataset_v1     reason         within 8k tokens     0 of    1 correct (0.0%)
+  dataset_v1     slack          within 8k tokens     0 of    1 correct (0.0%)
+  dataset_v1     smaller_area   within 8k tokens     1 of    2 correct (50.0%)
+  dataset_v1     synthesizes    within 8k tokens     1 of    1 correct (100.0%)
+  model time per request: median 271 ms, maximum 363 ms
+kev on /users/micas/scuycken/workspace/JEV_RTL/data/pilot/dataset_v1_smoke.jsonl (split test); requests with no answer: 0
+  basic        compiles      noul   n=   1 unscored=  0 accuracy=1.000 balanced_accuracy=1.000 brier=0.009
+  basic        synthesizes   noul   n=   1 unscored=  0 accuracy=1.000 balanced_accuracy=1.000 brier=0.021
+  pair         lower_power   choice n=   2 unscored=  0 accuracy=0.500 balanced_accuracy=0.500 same_letter_both_orders=1.000
+  pair         smaller_area  choice n=   2 unscored=  0 accuracy=0.500 balanced_accuracy=0.500 same_letter_both_orders=1.000
+  performance  area          score  n=   1 unscored=  0 accuracy=1.000 balanced_accuracy=1.000 within_one=1.000 mae_levels=0.883
+  performance  power         score  n=   1 unscored=  0 accuracy=1.000 balanced_accuracy=1.000 within_one=1.000 mae_levels=0.734
+  performance  reach         score  n=   1 unscored=  0 accuracy=0.000 balanced_accuracy=0.000 within_one=0.000 mae_levels=1.800
+  performance  slack         score  n=   1 unscored=  0 accuracy=0.000 balanced_accuracy=0.000 within_one=0.000 mae_levels=2.008
+  reason       reason        choice n=   1 unscored=  0 accuracy=0.000 balanced_accuracy=0.000
+written: /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1_smoke__kev-9b.jsonl.score.json
+== /users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl -> /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1__kev-9b.jsonl
+0 records already answered, 348 to ask, model jaredpalmer/kev-9b@v1.0, server http://127.0.0.1:40515
+[1/348] dataset_v1:basic:metrex_12644: 365 tokens, 92.2 ms model time
+[25/348] dataset_v1:basic:metrex_11990: 781 tokens, 192.9 ms model time
+[50/348] dataset_v1:performance:metrex_23839: 6494 tokens, 1109.5 ms model time
+[75/348] dataset_v1:basic:metrex_02095: 980 tokens, 209.3 ms model time
+[100/348] dataset_v1:performance:rtllm_freq_divbyfrac: 1468 tokens, 266.7 ms model time
+[125/348] dataset_v1:performance:ve_Prob144_conwaylife: 1596 tokens, 286.8 ms model time
+[150/348] dataset_v1:basic:revold_rtllm_Prob001_accu_073d6fc7c9fe: 669 tokens, 150.3 ms model time
+[175/348] dataset_v1:performance:revold_ve_Prob118_history_shift_68502a77172c: 1850 tokens, 327.2 ms model time
+[200/348] dataset_v1:basic:mut_timing_control_1_metrex_24911: 3215 tokens, 548.7 ms model time
+[225/348] dataset_v1:basic:trap_nb_delay_0_twin_rev_cpu_fsm_v0: 2553 tokens, 435.6 ms model time
+[250/348] dataset_v1:basic:revold_ve_Prob095_review2015_fsmshift_4149bc78443e: 338 tokens, 91.3 ms model time
+[275/348] dataset_v1:performance:rtllm_chatgpt35_t4_freq_div: 1410 tokens, 245.0 ms model time
+[300/348] dataset_v1:pair:revold_rtllm_Prob004_adder_8bit_042ff04511d9~revold_rtllm_Prob004_adder_8bit_8ea29e26614c:BA: 1996 tokens, 345.7 ms model time
+[325/348] dataset_v1:pair:revold_ve_Prob105_rotate100_3aebed0fe74b~revold_ve_Prob105_rotate100_4ab9dec46975:AB: 1540 tokens, 279.9 ms model time
+[348/348] dataset_v1:pair:revold_ve_Prob155_lemmings4_43c16b7b2894~revold_ve_Prob155_lemmings4_7bdb59935298:BA: 3220 tokens, 538.0 ms model time
+summary of /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1__kev-9b.jsonl: 348 question records, 0 with an error
+  dataset_v1     area           within 8k tokens    63 of  110 correct (57.3%)
+  dataset_v1     compiles       within 8k tokens   141 of  151 correct (93.4%)
+  dataset_v1     higher_reach   within 8k tokens     9 of   12 correct (75.0%)
+  dataset_v1     lower_power    within 8k tokens    32 of   50 correct (64.0%)
+  dataset_v1     power          within 8k tokens    39 of   98 correct (39.8%)
+  dataset_v1     reach          within 8k tokens    16 of  110 correct (14.5%)
+  dataset_v1     reason         within 8k tokens    16 of   25 correct (64.0%)
+  dataset_v1     slack          within 8k tokens     3 of  110 correct (2.7%)
+  dataset_v1     smaller_area   within 8k tokens    47 of   58 correct (81.0%)
+  dataset_v1     synthesizes    within 8k tokens   120 of  151 correct (79.5%)
+  model time per request: median 244 ms, maximum 1295 ms
+kev on /users/micas/scuycken/workspace/JEV_RTL/data/questions/dataset_v1.jsonl (split test); requests with no answer: 0
+  basic        compiles      noul   n= 123 unscored=  0 accuracy=0.943 balanced_accuracy=0.611 brier=0.066 auroc=0.692
+  basic        synthesizes   noul   n= 123 unscored=  0 accuracy=0.805 balanced_accuracy=0.532 brier=0.144 auroc=0.740
+  pair         higher_reach  choice n=  12 unscored=  0 accuracy=0.750 balanced_accuracy=0.750 same_letter_both_orders=0.167
+  pair         lower_power   choice n=  44 unscored=  0 accuracy=0.659 balanced_accuracy=0.659 same_letter_both_orders=0.500
+  pair         smaller_area  choice n=  46 unscored=  0 accuracy=0.870 balanced_accuracy=0.870 same_letter_both_orders=0.087
+  performance  area          score  n=  92 unscored=  0 accuracy=0.576 balanced_accuracy=0.469 within_one=0.902 mae_levels=0.649
+  performance  power         score  n=  85 unscored=  0 accuracy=0.400 balanced_accuracy=0.366 within_one=0.929 mae_levels=0.900
+  performance  reach         score  n=  92 unscored=  0 accuracy=0.141 balanced_accuracy=0.250 within_one=0.337 mae_levels=1.208
+  performance  slack         score  n=  92 unscored=  0 accuracy=0.033 balanced_accuracy=0.012 within_one=0.120 mae_levels=1.742
+  reason       reason        choice n=  16 unscored=  0 accuracy=0.688 balanced_accuracy=0.500
+written: /users/micas/scuycken/workspace/JEV_RTL/results/kev/dataset_v1_kev-9b_20261015/dataset_v1__kev-9b.jsonl.score.json
+== job 6.0 done at 2026-10-15 14:34:50, status 0

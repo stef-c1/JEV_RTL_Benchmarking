@@ -1,0 +1,17 @@
+# Everything the flow generates
+results/
+
+# Tool leftovers
+.claude/
+sim_build/
+__pycache__/
+results.xml
+work/
+alib-*/
+modelsim.ini
+transcript
+vsim.wlf
+*.vcd
+*.log
+default.svf
+command.log

@@ -1,0 +1,38 @@
+000 (006.000.000) 2026-10-15 14:11:28 Job submitted from host: <10.87.29.42:9618?addrs=10.87.29.42-9618&alias=mercury.esat.kuleuven.be&noUDP&sock=schedd_3371845_ca5a>
+...
+001 (006.000.000) 2026-10-15 14:31:27 Job executing on host: <10.87.24.4:9618?addrs=10.87.24.4-9618&alias=aristoteles.esat.kuleuven.be&noUDP&sock=startd_2544_8d06>
+	SlotName: slot1_1@aristoteles.esat.kuleuven.be
+	AvailableGPUs = { GPUs_GPU_64dd200b }
+	CondorScratchDir = "/usr/data/condor/execute/dir_1426930/scratch"
+	Cpus = 2
+	Disk = 41943040
+	GPUs = 1
+	GPUs_GPU_64dd200b = [ Id = "GPU-64dd200b"; Capability = 8.0; DeviceName = "NVIDIA A100-SXM4-80GB"; DeviceUuid = "64dd200b-0592-1817-ef76-bc4201a74912"; ECCEnabled = true; NvidiaDriver = "595.91.07"; DriverVersion = 13.2; DevicePciBusId = "0000:07:00.0"; GlobalMemoryMb = 81153; MaxSupportedVersion = 13020 ]
+	Memory = 40960
+...
+006 (006.000.000) 2026-10-15 14:31:36 Image size of job updated: 117948
+	96  -  MemoryUsage of job (MB)
+	97432  -  ResidentSetSize of job (KB)
+...
+006 (006.000.000) 2026-10-15 14:34:51 Image size of job updated: 3537564
+	96  -  MemoryUsage of job (MB)
+	97432  -  ResidentSetSize of job (KB)
+...
+005 (006.000.000) 2026-10-15 14:34:55 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:03:02, Sys 0 00:01:04  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:03:02, Sys 0 00:01:04  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     1.80        2         2 
+	   Disk (KB)            :     7    41943040  41943040 
+	   GPUs                 :                 1         1 "GPU-64dd200b"
+	   Memory (MB)          :    96       40960     40960 
+	   TimeExecute (s)      :   204                       
+	   TimeSlotBusy (s)     :   204                       
+...

@@ -1,0 +1,157 @@
+{
+ "split": "test",
+ "missing": 0,
+ "table": [
+  {
+   "request": "basic",
+   "key": "compiles",
+   "type": "noul",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "truth_counts": {
+    "True": 1
+   },
+   "pred_counts": {
+    "False": 1
+   },
+   "brier": 0.39526369000000006,
+   "auroc": null
+  },
+  {
+   "request": "basic",
+   "key": "synthesizes",
+   "type": "noul",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "truth_counts": {
+    "True": 1
+   },
+   "pred_counts": {
+    "False": 1
+   },
+   "brier": 0.59644729,
+   "auroc": null
+  },
+  {
+   "request": "pair",
+   "key": "lower_power",
+   "type": "choice",
+   "n": 2,
+   "unscored": 0,
+   "accuracy": 0.5,
+   "balanced_accuracy": 0.5,
+   "truth_counts": {
+    "A": 1,
+    "B": 1
+   },
+   "pred_counts": {
+    "B": 2
+   },
+   "same_letter_both_orders": 1.0
+  },
+  {
+   "request": "pair",
+   "key": "smaller_area",
+   "type": "choice",
+   "n": 2,
+   "unscored": 0,
+   "accuracy": 0.5,
+   "balanced_accuracy": 0.5,
+   "truth_counts": {
+    "A": 1,
+    "B": 1
+   },
+   "pred_counts": {
+    "A": 2
+   },
+   "same_letter_both_orders": 1.0
+  },
+  {
+   "request": "performance",
+   "key": "area",
+   "type": "score",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "truth_counts": {
+    "1": 1
+   },
+   "pred_counts": {
+    "5": 1
+   },
+   "within_one": 0.0,
+   "mae_levels": 2.6252999999999997
+  },
+  {
+   "request": "performance",
+   "key": "power",
+   "type": "score",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "truth_counts": {
+    "2": 1
+   },
+   "pred_counts": {
+    "5": 1
+   },
+   "within_one": 0.0,
+   "mae_levels": 1.7176
+  },
+  {
+   "request": "performance",
+   "key": "reach",
+   "type": "score",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 1.0,
+   "balanced_accuracy": 1.0,
+   "truth_counts": {
+    "4": 1
+   },
+   "pred_counts": {
+    "4": 1
+   },
+   "within_one": 1.0,
+   "mae_levels": 0.9886988698869885
+  },
+  {
+   "request": "performance",
+   "key": "slack",
+   "type": "score",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 1.0,
+   "balanced_accuracy": 1.0,
+   "truth_counts": {
+    "5": 1
+   },
+   "pred_counts": {
+    "5": 1
+   },
+   "within_one": 1.0,
+   "mae_levels": 0.7459999999999996
+  },
+  {
+   "request": "reason",
+   "key": "reason",
+   "type": "choice",
+   "n": 1,
+   "unscored": 0,
+   "accuracy": 0.0,
+   "balanced_accuracy": 0.0,
+   "truth_counts": {
+    "multiple_drivers": 1
+   },
+   "pred_counts": {
+    "async_reset": 1
+   }
+  }
+ ]
+}
